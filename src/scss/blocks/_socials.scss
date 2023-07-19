@@ -1,0 +1,21 @@
+.socials {
+    left: 30px;
+    max-height: 184px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &__item {
+        width: 40px;
+        height: 40px;
+        background-color: #fff;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        
+    }
+    &__ico {
+
+    }
+}

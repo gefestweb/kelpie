@@ -1,0 +1,28 @@
+.container-page {
+    width: 100%;
+    max-width: 1825px;
+    margin: 28px  auto;
+    position: relative;
+}
+.container-content {
+    padding: 30px 100px;
+}
+
+.container-relative {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.absolutX-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+.abolusteY-center {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}

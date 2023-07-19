@@ -1,0 +1,555 @@
+@charset "UTF-8";
+.container-page {
+  width: 100%;
+  max-width: 1825px;
+  margin: 28px auto;
+  position: relative;
+}
+
+.container-content {
+  padding: 30px 100px;
+}
+
+.container-relative {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.absolutX-center {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 1;
+}
+
+.abolusteY-center {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 1;
+}
+
+@font-face {
+  font-family: "Ruberoid Oblique";
+  src: url("../fonts/Ruberoid-Oblique.eot");
+  src: local("Ruberoid Oblique"), local("Ruberoid-Oblique"), url("../fonts/Ruberoid-Oblique.eot?#iefix") format("embedded-opentype"), url("../fonts/Ruberoid-Oblique.woff2") format("woff2"), url("../fonts/Ruberoid-Oblique.woff") format("woff"), url("../fonts/Ruberoid-Oblique.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Ruberoid Extra";
+  src: url("../fonts/Ruberoid-ExtraLight.eot");
+  src: local("Ruberoid Extra Light"), local("Ruberoid-ExtraLight"), url("../fonts/Ruberoid-ExtraLight.eot?#iefix") format("embedded-opentype"), url("../fonts/Ruberoid-ExtraLight.woff2") format("woff2"), url("../fonts/Ruberoid-ExtraLight.woff") format("woff"), url("../fonts/Ruberoid-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ruberoid Bold Oblique";
+  src: url("../fonts/Ruberoid-BoldOblique.eot");
+  src: local("Ruberoid Bold Oblique"), local("Ruberoid-BoldOblique"), url("../fonts/Ruberoid-BoldOblique.eot?#iefix") format("embedded-opentype"), url("../fonts/Ruberoid-BoldOblique.woff2") format("woff2"), url("../fonts/Ruberoid-BoldOblique.woff") format("woff"), url("../fonts/Ruberoid-BoldOblique.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Ruberoid";
+  src: url("../fonts/Ruberoid-Bold.eot");
+  src: local("Ruberoid Bold"), local("Ruberoid-Bold"), url("../fonts/Ruberoid-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Ruberoid-Bold.woff2") format("woff2"), url("../fonts/Ruberoid-Bold.woff") format("woff"), url("../fonts/Ruberoid-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ruberoid Light Oblique";
+  src: url("../fonts/Ruberoid-LightOblique.eot");
+  src: local("Ruberoid Light Oblique"), local("Ruberoid-LightOblique"), url("../fonts/Ruberoid-LightOblique.eot?#iefix") format("embedded-opentype"), url("../fonts/Ruberoid-LightOblique.woff2") format("woff2"), url("../fonts/Ruberoid-LightOblique.woff") format("woff"), url("../fonts/Ruberoid-LightOblique.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Ruberoid Extra";
+  src: url("../fonts/Ruberoid-ExtraBold.eot");
+  src: local("Ruberoid Extra Bold"), local("Ruberoid-ExtraBold"), url("../fonts/Ruberoid-ExtraBold.eot?#iefix") format("embedded-opentype"), url("../fonts/Ruberoid-ExtraBold.woff2") format("woff2"), url("../fonts/Ruberoid-ExtraBold.woff") format("woff"), url("../fonts/Ruberoid-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ruberoid Extra Bold Oblique";
+  src: url("../fonts/Ruberoid-ExtraBoldOblique.eot");
+  src: local("Ruberoid Extra Bold Oblique"), local("Ruberoid-ExtraBoldOblique"), url("../fonts/Ruberoid-ExtraBoldOblique.eot?#iefix") format("embedded-opentype"), url("../fonts/Ruberoid-ExtraBoldOblique.woff2") format("woff2"), url("../fonts/Ruberoid-ExtraBoldOblique.woff") format("woff"), url("../fonts/Ruberoid-ExtraBoldOblique.ttf") format("truetype");
+  font-weight: 800;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Ruberoid Medium Oblique";
+  src: url("../fonts/Ruberoid-MediumOblique.eot");
+  src: local("Ruberoid Medium Oblique"), local("Ruberoid-MediumOblique"), url("../fonts/Ruberoid-MediumOblique.eot?#iefix") format("embedded-opentype"), url("../fonts/Ruberoid-MediumOblique.woff2") format("woff2"), url("../fonts/Ruberoid-MediumOblique.woff") format("woff"), url("../fonts/Ruberoid-MediumOblique.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Ruberoid";
+  src: url("../fonts/Ruberoid-Light.eot");
+  src: local("Ruberoid Light"), local("Ruberoid-Light"), url("../fonts/Ruberoid-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Ruberoid-Light.woff2") format("woff2"), url("../fonts/Ruberoid-Light.woff") format("woff"), url("../fonts/Ruberoid-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ruberoid Extra Light Oblique";
+  src: url("../fonts/Ruberoid-ExtraLightOblique.eot");
+  src: local("Ruberoid Extra Light Oblique"), local("Ruberoid-ExtraLightOblique"), url("../fonts/Ruberoid-ExtraLightOblique.eot?#iefix") format("embedded-opentype"), url("../fonts/Ruberoid-ExtraLightOblique.woff2") format("woff2"), url("../fonts/Ruberoid-ExtraLightOblique.woff") format("woff"), url("../fonts/Ruberoid-ExtraLightOblique.ttf") format("truetype");
+  font-weight: 200;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Ruberoid";
+  src: url("../fonts/Ruberoid-Medium.eot");
+  src: local("Ruberoid Medium"), local("Ruberoid-Medium"), url("../fonts/Ruberoid-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/Ruberoid-Medium.woff2") format("woff2"), url("../fonts/Ruberoid-Medium.woff") format("woff"), url("../fonts/Ruberoid-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ruberoid Semi Bold Oblique";
+  src: url("../fonts/Ruberoid-SemiBoldOblique.eot");
+  src: local("Ruberoid Semi Bold Oblique"), local("Ruberoid-SemiBoldOblique"), url("../fonts/Ruberoid-SemiBoldOblique.eot?#iefix") format("embedded-opentype"), url("../fonts/Ruberoid-SemiBoldOblique.woff2") format("woff2"), url("../fonts/Ruberoid-SemiBoldOblique.woff") format("woff"), url("../fonts/Ruberoid-SemiBoldOblique.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Ruberoid Thin Oblique";
+  src: url("../fonts/Ruberoid-ThinOblique.eot");
+  src: local("Ruberoid Thin Oblique"), local("Ruberoid-ThinOblique"), url("../fonts/Ruberoid-ThinOblique.eot?#iefix") format("embedded-opentype"), url("../fonts/Ruberoid-ThinOblique.woff2") format("woff2"), url("../fonts/Ruberoid-ThinOblique.woff") format("woff"), url("../fonts/Ruberoid-ThinOblique.ttf") format("truetype");
+  font-weight: 100;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Ruberoid Semi";
+  src: url("../fonts/Ruberoid-SemiBold.eot");
+  src: local("Ruberoid Semi Bold"), local("Ruberoid-SemiBold"), url("../fonts/Ruberoid-SemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/Ruberoid-SemiBold.woff2") format("woff2"), url("../fonts/Ruberoid-SemiBold.woff") format("woff"), url("../fonts/Ruberoid-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ruberoid";
+  src: url("../fonts/Ruberoid-Thin.eot");
+  src: local("Ruberoid Thin"), local("Ruberoid-Thin"), url("../fonts/Ruberoid-Thin.eot?#iefix") format("embedded-opentype"), url("../fonts/Ruberoid-Thin.woff2") format("woff2"), url("../fonts/Ruberoid-Thin.woff") format("woff"), url("../fonts/Ruberoid-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ruberoid";
+  src: url("../fonts/Ruberoid-Regular.eot");
+  src: local("Ruberoid"), local("Ruberoid-Regular"), url("../fonts/Ruberoid-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Ruberoid-Regular.woff2") format("woff2"), url("../fonts/Ruberoid-Regular.woff") format("woff"), url("../fonts/Ruberoid-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ruberoid Ultra Light Oblique";
+  src: url("../fonts/Ruberoid-UltraLightOblique.eot");
+  src: local("Ruberoid Ultra Light Oblique"), local("Ruberoid-UltraLightOblique"), url("../fonts/Ruberoid-UltraLightOblique.eot?#iefix") format("embedded-opentype"), url("../fonts/Ruberoid-UltraLightOblique.woff2") format("woff2"), url("../fonts/Ruberoid-UltraLightOblique.woff") format("woff"), url("../fonts/Ruberoid-UltraLightOblique.ttf") format("truetype");
+  font-weight: 200;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Ruberoid Ultra";
+  src: url("../fonts/Ruberoid-UltraLight.eot");
+  src: local("Ruberoid Ultra Light"), local("Ruberoid-UltraLight"), url("../fonts/Ruberoid-UltraLight.eot?#iefix") format("embedded-opentype"), url("../fonts/Ruberoid-UltraLight.woff2") format("woff2"), url("../fonts/Ruberoid-UltraLight.woff") format("woff"), url("../fonts/Ruberoid-UltraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+body {
+  line-height: 1.2;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, button, textarea {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  font-family: "Ruberoid";
+}
+
+a, body a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button {
+  padding: 0;
+  outline: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border: none;
+  padding: 0;
+}
+
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: none;
+}
+
+input {
+  padding: 0;
+  /* шрифт унаследуется у body */
+  font: inherit;
+  border: none;
+  margin: 0;
+  background-color: transparent;
+}
+
+textarea {
+  resize: none;
+}
+
+address {
+  font-style: normal;
+}
+
+i {
+  font-style: normal;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.menu-items-txt {
+  white-space: nowrap;
+  color: rgba(29, 12, 51, 0.8);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.72px;
+  text-transform: uppercase;
+}
+
+.menu-contacts-txt {
+  color: rgba(29, 12, 51, 0.8);
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.title {
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -2.1px;
+  background: -webkit-gradient(linear, left top, right top, from(#FBC2EB), to(#A18CD1));
+  background: -o-linear-gradient(left, #FBC2EB 0%, #A18CD1 100%);
+  background: linear-gradient(90deg, #FBC2EB 0%, #A18CD1 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.button {
+  max-width: 180px;
+  width: 100%;
+  padding: 15px 0;
+  border-radius: 51px;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+}
+
+.button.button_transparent {
+  border: 1px solid rgba(29, 12, 51, 0.8);
+  background-color: transparent;
+  -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  color: rgba(29, 12, 51, 0.8);
+}
+
+.button.button_purple-text {
+  background: -o-linear-gradient(33deg, #1D0C33 0%, #D283EA 100%);
+  background: linear-gradient(57deg, #1D0C33 0%, #D283EA 100%);
+  color: #fff;
+}
+
+.bcg-color {
+  background-color: #FDFDFD;
+}
+
+.first-screen__bcg {
+  background-image: url("../../img/Product-page/1-screen-bg-2.png");
+  -webkit-filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.2));
+          filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.2));
+  border-radius: 100px;
+  width: 100%;
+  height: 1050px;
+}
+.first-screen__content-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 150px;
+  max-width: 450px;
+  max-height: 650px;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.first-screen__content-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 33%;
+  left: 60%;
+  width: 115px;
+  height: 115px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#FBC2EB), to(#A18CD1));
+  background-image: -o-linear-gradient(left, #FBC2EB 0%, #A18CD1 100%);
+  background-image: linear-gradient(90deg, #FBC2EB 0%, #A18CD1 100%);
+  -webkit-filter: drop-shadow(0px 3px 7px rgba(23, 4, 47, 0.25)) drop-shadow(0px -3px 4px rgba(239, 175, 255, 0.19));
+          filter: drop-shadow(0px 3px 7px rgba(23, 4, 47, 0.25)) drop-shadow(0px -3px 4px rgba(239, 175, 255, 0.19));
+  border-radius: 100%;
+}
+.first-screen__content {
+  position: absolute;
+}
+.first-screen__first-title {
+  max-width: 935px;
+  width: 100%;
+  margin-top: 30%;
+  margin-left: auto;
+}
+
+.scroll-ico {
+  bottom: 20px;
+}
+
+.header {
+  background-color: #fff;
+  border-radius: 25px;
+  -webkit-box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.2);
+}
+.header__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 11px 15px 11px 45px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 70px;
+}
+.header__nav {
+  max-width: 750px;
+  width: 100%;
+}
+.header__contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+
+.header-contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.header-contacts__calls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.header-contacts__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 20px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 380px;
+}
+
+.switcher {
+  position: absolute;
+  max-width: 210px;
+  width: 100%;
+  height: 113px;
+}
+.switcher__holder {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  position: relative;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+.switcher__toggler {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  position: absolute;
+  width: 95px;
+  height: 85%;
+  background-color: #fff;
+  border-radius: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.switcher.switcher--scroll .switcher__toggler {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  margin-left: 0;
+  margin-right: 10px;
+  right: 10px;
+}
+
+.socials {
+  left: 30px;
+  max-height: 184px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.socials__item {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}

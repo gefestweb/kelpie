@@ -1,0 +1,16 @@
+@import "options/variables";
+@import "options/common";
+@import "options/fonts";
+@import "options/reset";
+
+
+
+@import "ui/text.scss";
+@import "ui/buttons.scss";
+@import "ui/colors.scss";
+
+@import "pages/product-page";
+
+@import "blocks/header";
+@import "blocks/switcher";
+@import "blocks/socials";

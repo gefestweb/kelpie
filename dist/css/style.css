@@ -1,13 +1,24 @@
 @charset "UTF-8";
-.container-page {
-  width: 100%;
+.container-page-margin {
+  width: calc(100vw - 56px);
+  height: calc(100vh - 36px);
+  position: relative;
+  max-height: 969px;
   max-width: 1825px;
-  margin: 28px auto;
+  margin: 0 auto;
+}
+
+.container-page {
+  width: 100vw;
+  height: 100vh;
   position: relative;
 }
 
 .container-content {
   padding: 30px 100px;
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
 }
 
 .container-relative {
@@ -337,23 +348,53 @@ img {
   color: #fff;
 }
 
-.bcg-color {
+.main {
   background-color: #FDFDFD;
+  overflow-x: hidden;
+}
+
+.screen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 100vh;
 }
 
 .first-screen__bcg {
-  background-image: url("../../img/Product-page/1-screen-bg-2.png");
+  background: url(../../img/Product-page/hero-bg.png) no-repeat center center/cover;
   -webkit-filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.2));
           filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.2));
   border-radius: 100px;
-  width: 100%;
-  height: 1050px;
 }
-.first-screen__content-wrapper {
+.first-screen__content {
   position: absolute;
-  bottom: 0;
-  left: 150px;
-  max-width: 450px;
+}
+.first-screen__first-title {
+  max-width: 935px;
+  width: 100%;
+  position: absolute;
+  bottom: 30%;
+  right: 0;
+}
+
+.scroll-ico {
+  bottom: 20px;
+}
+
+.rama {
+  position: absolute;
+  bottom: -30px;
+  left: 60px;
+  padding-left: 50px;
+  padding-top: 30px;
+  max-width: 550px;
   max-height: 650px;
   height: 100%;
   width: 100%;
@@ -366,8 +407,11 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: url(../../img/Product-page/frame-bg.png) no-repeat top center/cover;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
 }
-.first-screen__content-wrapper::before {
+.rama::before {
   content: "";
   position: absolute;
   top: 33%;
@@ -381,18 +425,148 @@ img {
           filter: drop-shadow(0px 3px 7px rgba(23, 4, 47, 0.25)) drop-shadow(0px -3px 4px rgba(239, 175, 255, 0.19));
   border-radius: 100%;
 }
-.first-screen__content {
-  position: absolute;
+
+.second-screen__content {
+  margin-top: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
-.first-screen__first-title {
-  max-width: 935px;
+.second-screen__left-part img {
+  max-width: 423px;
   width: 100%;
-  margin-top: 30%;
-  margin-left: auto;
+}
+.second-screen__right-part {
+  max-width: 1000px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 50px;
+}
+.second-screen__text h2 {
+  background: -o-linear-gradient(33deg, #1D0C33 0%, #D283EA 100%);
+  background: linear-gradient(57deg, #1D0C33 0%, #D283EA 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: bold;
+  -webkit-text-fill-color: transparent;
+}
+.second-screen__text p {
+  margin-top: 20px;
+  color: rgba(29, 12, 51, 0.8);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+}
+.second-screen__tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-column-gap: 42px;
+     -moz-column-gap: 42px;
+          column-gap: 42px;
+  row-gap: 24px;
+}
+.second-screen__button {
+  max-width: 272px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 5px;
+  font-size: 13px;
+  letter-spacing: 0.26px;
+  text-transform: capitalize;
 }
 
-.scroll-ico {
-  bottom: 20px;
+.tab {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 20px;
+  background-color: rgba(120, 113, 165, 0.12);
+  border-radius: 27px;
+  gap: 10px;
+}
+.tab__dot {
+  width: 6px;
+  height: 6px;
+  background-color: rgba(29, 12, 51, 0.8);
+  border-radius: 100%;
+}
+.tab__key {
+  color: rgba(29, 12, 51, 0.8);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+.tab__value {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 0.84px;
+  background: -webkit-gradient(linear, left top, right top, from(#E100FF), to(#7F00FF));
+  background: -o-linear-gradient(left, #E100FF 0%, #7F00FF 100%);
+  background: linear-gradient(90deg, #E100FF 0%, #7F00FF 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+          background-clip: text;
+}
+
+.third-screen {
+  background: url("../../img/Product-page/3-bg.png") no-repeat center center/cover;
+  position: relative;
+}
+.third-screen--filter::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5)));
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 }
 
 .header {

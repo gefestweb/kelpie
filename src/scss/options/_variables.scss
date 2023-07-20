@@ -1,2 +1,11 @@
+:root {
+    
+}
+
 $purple-text: rgba(29, 12, 51, 0.80);
-$black-text: rgba(29, 12, 51, 0.8);
+// $black-text: rgba(29, 12, 51, 0.8);
+
+//gradients
+
+$purple-to-pink: linear-gradient(57deg, #1D0C33 0%, #D283EA 100%);
+$pink-to-purple: linear-gradient(90deg, #E100FF 0%, #7F00FF 100%);

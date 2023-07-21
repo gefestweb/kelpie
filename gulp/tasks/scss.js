@@ -1,12 +1,12 @@
 import dartSass from "sass";
 import gulpSass from "gulp-sass";
 import rename from "gulp-rename";
+import sourcemaps from "gulp-sourcemaps"; // импортируйте плагин gulp-sourcemaps
 
 import cleanCss from "gulp-clean-css";
 import webpcss from "gulp-webpcss";
 import autoprefixer from "gulp-autoprefixer";
 import groupCssMediaQueries from "gulp-group-css-media-queries";
-
 
 const sass = gulpSass(dartSass);
 
@@ -19,6 +19,7 @@ export const scss = () => {
             })
         ))
         .pipe(app.plugins.replace(/\@img\//g, '../img/'))
+        .pipe(sourcemaps.init()) // инициализируйте source map
         .pipe(sass({
             outputStyle: 'expanded',
         }))
@@ -51,6 +52,7 @@ export const scss = () => {
         .pipe(rename({
             extname: '.min.css'
         }))
+        .pipe(sourcemaps.write('.')) // запись source map
         .pipe(app.gulp.dest(app.path.build.css))
         .pipe(app.plugins.browsersync.stream())
 }

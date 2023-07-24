@@ -2,14 +2,16 @@
 @import "options/common";
 @import "options/fonts";
 @import "options/reset";
-
+@import "options/swiper";
 
 
 @import "ui/text.scss";
 @import "ui/buttons.scss";
 @import "ui/colors.scss";
 
+
 @import "pages/product-page";
+
 
 @import "blocks/header";
 @import "blocks/switcher";

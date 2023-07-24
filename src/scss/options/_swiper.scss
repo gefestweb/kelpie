@@ -1,0 +1,13 @@
+.swiper-container {
+    overflow: hidden;
+}
+
+#rent-content-swiper {
+    max-width: 690px;
+    width: 100%;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    top: unset;
+    color: unset;
+}

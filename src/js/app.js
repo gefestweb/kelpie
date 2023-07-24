@@ -1,5 +1,6 @@
 import * as mainFuncs from "./modules/functions.js";
-mainFuncs.isWebp();
+import {swiperInit} from "./modules/swiperInit.js";
 
-import Swiper, { Navigation, Pagination } from 'swiper';
-const swiper=new Swiper();
+
+mainFuncs.isWebp();
+swiperInit();

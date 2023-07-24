@@ -339,33 +339,93 @@
                             </div>
                         </div>
                         <div class="sixth-screen__right-part sixth-screen__content">
-                            <form id="rent-content-form" class="rent-content-form">
-                                <p class="form-title">Аренда и контент</p>
-                                <div class="rent-content-form__info">
-                                    <div class="rent-content-form__tabs">
+                            <div class="rent-content__container">
+                                <p class="rent-content__title">Аренда и контент</p>
+                                <div class="rent-content__content-wrapper">
+                                    <div class="rent-content__tabs">
                                         <div class="rent-content-form__tab"></div>
                                         <div class="rent-content-form__tab"></div>
                                         <div class="rent-content-form__tab"></div>
                                     </div>
-                                    <div class="rent-content-form__tab-content">
-                                        <div class="">
-                                            <div class="">1 день</div>
-                                            <div class="">60 000 р</div>
+                                    <div class="rent-content__tab-content tab-content">
+                                        <div class="tab-content__item">
+                                            <div class="tab-content__key">1 день</div>
+                                            <div class="tab-content__value">60 000 р</div>
                                         </div>
-                                        <div class="">
-                                            <div class="">2 дня</div>
-                                            <div class="">90 000 р</div>
+                                        <div class="tab-content__item">
+                                            <div class="tab-content__key">2 дня</div>
+                                            <div class="tab-content__value">90 000 р</div>
                                         </div>
-                                        <div class="">
-                                            <div class="">выставка</div>
-                                            <div class="">120 000 р</div>
+                                        <div class="tab-content__item">
+                                            <div class="tab-content__key">выставка</div>
+                                            <div class="tab-content__value">120 000 р</div>
                                         </div>
                                     </div>
-                                    <div class="rent-content-form__tab-content"></div>
-                                    <div class="rent-content-form__tab-content"></div> 
+                                    <div class="rent-content__tab-content tab-content">
+                                        <div class="tab-content__item">
+                                            <div class="tab-content__key">сенсорный</div>
+                                            <div class="tab-content__value">1 500 000 р</div>
+                                        </div>
+                                        <div class="tab-content__item">
+                                            <div class="tab-content__key">не сенсорный</div>
+                                            <div class="tab-content__value">1 000 000 р</div>
+                                        </div>
+                                    </div>
+                                    <div class="rent-content__tab-content tab-content">
+                                        <div class="tab-content__item">
+                                            <div class="tab-content__key">3д модели</div>
+                                            <div class="tab-content__value">по запросу</div>
+                                        </div>
+                                        <div class="tab-content__item">
+                                            <div class="tab-content__key">Инфографика</div>
+                                            <div class="tab-content__value">по запросу</div>
+                                        </div>
+                                        <div class="tab-content__item">
+                                            <div class="tab-content__key">видеоконтент</div>
+                                            <div class="tab-content__value">по запросу</div>
+                                        </div>
+                                    </div> 
                                 </div>
-                                
-                            </form>
+                                <form id="rent-content-form">
+                                    <div class="rent-content-form__row">
+                                        <div class="form-item">
+                                            <label for="name">Имя:</label>
+                                            <input type="text" id="name" name="name">
+                                        </div>
+                                        <div class="form-item">
+                                            <label for="phone">Телефон:</label>
+                                            <input type="text" id="phone" name="phone">
+                                        </div>
+                                    </div>
+                                    <div class="rent-content-form__row">
+                                        <p>Нажимая на кнопку, вы <a href="#">соглашаетесь</a> на обработку персональных данных</p>
+                                        <button type="submit">Отправить</button>
+                                    </div>
+                                </form>
+                                <div class="list-wrapper">
+                                    <div class="list-item">первая аренда <span>со скидкой 20%</span></div>
+                                    <div class="list-item">третий день аренды <span>бесплатно</span></div>
+                                </div>
+                                <div class="rent-content__conditionals">
+                                    <p>Условия размещения</p>
+                                    <div class="rent-content__conditionals-items">
+                                        <div class="second-screen__tab tab">
+                                            <div class="tab__dot"></div>
+                                            <div class="tab__key">свободное пространство</div>
+                                            <div class="tab__value">1 м<sup>2</sup></div>
+                                        </div>
+                                        <div class="second-screen__tab tab">
+                                            <div class="tab__dot"></div>
+                                            <div class="tab__key">питание</div>
+                                            <div class="tab__value">220В</div>
+                                        </div>
+                                        <div class="second-screen__tab tab">
+                                            <div class="tab__dot"></div>
+                                            <div class="tab__key">наличие свободного пространства позади для эффекта прозрачности</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

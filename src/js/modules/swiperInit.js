@@ -5,7 +5,7 @@ Swiper.use([Navigation, Pagination, Thumbs]);
 
 export const swiperInit = () => {
 //Счетчик у слайдера
-
+    
     function counter (counterSelector, swiperSelector) {
         let counterElem = document.querySelector(counterSelector);
         let swiperElem = document.querySelector(swiperSelector);
@@ -40,4 +40,5 @@ export const swiperInit = () => {
             },
           },
     });
+    console.log(rentContentSwiper);
 }

@@ -3,11 +3,34 @@
 }
 
 #rent-content-swiper {
-    max-width: 690px;
+    // max-width: 100%;
     width: 100%;
 }
 
-.swiper-button-next, .swiper-button-prev {
+.swiper-button-next,
+.swiper-button-prev {
     top: unset;
     color: unset;
+}
+
+.swiper-slide>img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.swiper-button-prev.rent-content-left,
+.swiper-button-next.rent-content-right {
+    position: unset;
+    color: unset;
+    margin-top: unset;
+}
+
+.swiper-button-prev.rent-content-left::after,
+.swiper-button-next.rent-content-right::after {
+    font-family: unset;
+    content: url('../../img/ico/arrow-left.svg');
+}
+
+.swiper-button-next.rent-content-right::after {
+    transform: rotate(180deg);
 }

@@ -40,5 +40,5 @@ export const swiperInit = () => {
             },
           },
     });
-    console.log(rentContentSwiper);
+    // console.log(rentContentSwiper);
 }

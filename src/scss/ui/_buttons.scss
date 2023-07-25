@@ -20,5 +20,8 @@
 
 .button.button_purple-text {
     background: $purple-to-pink;
-    color: #fff; 
+    color: #fff;
+    &--submit {
+        max-width: unset;
+    }
 }

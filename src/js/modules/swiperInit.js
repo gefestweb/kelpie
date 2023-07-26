@@ -1,7 +1,7 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination, Thumbs } from 'swiper';
+import {Autoplay, Navigation, Pagination, Thumbs, EffectCube } from 'swiper';
 
-Swiper.use([Navigation, Pagination, Thumbs]);
+Swiper.use([Navigation, Pagination, Autoplay, Thumbs, EffectCube]);
 
 export const swiperInit = () => {
 //Счетчик у слайдера
@@ -40,5 +40,25 @@ export const swiperInit = () => {
             },
           },
     });
-    // console.log(rentContentSwiper);
+
+    const seventhScreenSwiper = new Swiper('.swiper-container.seventh-screen__swiper-container', {
+
+        slidesPerView: 1,
+        spaceBetween: 0,
+        speed: 600,
+        effect: 'cube',
+        navigation: {
+            nextEl: '.swiper-button-next.rent-content-right.seventh-screen__right',
+            prevEl: '.swiper-button-prev.rent-content-left.seventh-screen__left'
+        },
+        on: {
+            transitionEnd: function() {
+                counter('.seventh-screen__counter', '.seventh-screen__swiper-container');
+            },
+        },
+        autoplay: {
+            delay: 5000,
+          },
+        // loop: true,
+    });
 }

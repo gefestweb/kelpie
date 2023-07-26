@@ -1,80 +1,64 @@
 const oko = () => {
-    
 
-    const okoBinder = (form) => {
+    const bindForms = (form) => {
+
         let customForm = document.querySelector(form),
             okoForm = document.querySelector('.custom-fields-form-wrapper');
 
-        let formInputs = customForm.querySelectorAll('input'),
-            formName = customForm.querySelector('input[name="name"]'),
-            formPhone = customForm.querySelector('input[name="phone"]'),
-            formEmail = customForm.querySelector('input[name="email"]'),
-            formButton = customForm.querySelector('button[type="submit"]');
+        okoForm.style.display = 'none';
 
+        let formInputs = customForm.querySelectorAll('input'),
+            formName = customForm.querySelector('input[type="text"]'),
+            formPhone = customForm.querySelector('input[type="number"]'),
+            formEmail = customForm.querySelector('input[type="email"]'),
+            formButton = customForm.querySelector('button[type="submit"]');
 
         let okoName = okoForm.querySelector('input[type="text"]'),
             okoPhone = okoForm.querySelector('input[type="number"]'),
             okoEmail = okoForm.querySelector('input[type="email"]'),
             okoButton = okoForm.querySelector('button');
 
-        let valueName,
-            valuePhone,
-            valueEmail;
+        // связываем поля ввода
+        formInputs.forEach((input) => {
+            input.addEventListener('input', (event) => {
+                okoButton = okoForm.querySelector('button');
 
-        getValue();
-        setValue();
-        sendForm();
-
-        // console.log(customForm);
-        // console.log(okoForm);
-        // console.log(formName);
-        // console.log(formPhone);
-        // console.log(formEmail);
-        // console.log(okoName);
-        // console.log(okoPhone);
-        // console.log(okoEmail);
-
-        function getValue() {
-            formInputs.forEach(input => {
-                input.addEventListener('change', event => {
-                    console.log(event.target);
-                    switch (event.target) {
-                        case formName :
-                            valueName = formName.value;
-                            console.log(valueName);
-                            break;
-                        case formPhone :
-                            valuePhone = formPhone.value;
-                            console.log(valuePhone);
-                            break;
-                        case formEmail :
-                            valueEmail = formEmail.value;
-                            break;
-                    }
-                })
+                switch (event.target) {
+                    case formName:
+                        okoName = okoForm.querySelector('input[type="text"]');
+                        okoName.value = event.target.value;
+                        break;
+                    case formPhone:
+                        okoPhone = okoForm.querySelector('input[type="number"]');
+                        okoPhone.value = event.target.value;
+                        break;
+                    case formEmail:
+                        okoEmail = okoForm.querySelector('input[type="email"]');
+                        okoEmail.value = event.target.value;
+                        break;
+                }
             });
-        }
+        });
 
-        function setValue() {
-            okoName.value = valueName;
-            okoPhone = valuePhone;
-            okoEmail = valueEmail;
-        }
-
-        function sendForm() {
-            formButton.addEventListener('click', () => {
-                okoButton.click();
+        // связываем кнопки отправки формы
+        formButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            okoButton.click();
+            // очищаем поля ввода
+            formInputs.forEach((input) => {
+                input.value = '';
             });
-        }
-    }
+        });
+    };
 
+    // ждем появления oko-формы на странице
     const checkInterval = setInterval(() => {
         const anyOkoElement = document.querySelector('.custom-fields-form-wrapper');
-    
         if (anyOkoElement) {
             clearInterval(checkInterval);
-    
-            okoBinder('#rent-content-form')
+            //тут вызывать функцию. Аргумент - id сверстанной формы!
+            bindForms('#rent-content-form');
+            bindForms('#contact-form');
         }
     }, 100);
 }

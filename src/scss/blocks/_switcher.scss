@@ -55,3 +55,15 @@
         right: 10px;
     }
 }
+
+@media(max-width: 1000px) {
+    .switcher {
+        max-width: 150px;
+        height: 53px;
+        &__toggler {
+            width: 63px;
+            height: 75%;
+        }
+    }
+}
+    

@@ -7,6 +7,16 @@
     line-height: normal;
     letter-spacing: 0.72px;
     text-transform: uppercase;
+
+    @media (max-width: 1750px) {
+        font-size: 9px;
+        letter-spacing: 0.54px;
+    }
+
+    @media (max-width: 1325px) {
+        font-size: 6.4px;
+        letter-spacing: 0.384px;
+    }
 }
 
 .menu-contacts-txt {
@@ -27,4 +37,9 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
 
+    // @media(max-width: 1440px) {
+    //     max-width: 685px;
+    //     font-size: 52px;
+
+    // }
 }

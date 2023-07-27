@@ -1,7 +1,7 @@
 .button {
     max-width: 180px;
     width: 100%;
-    padding: 15px 0;
+    padding: 11px 0;
     border-radius: 51px;
     font-size: 11px;
     font-style: normal;
@@ -9,6 +9,18 @@
     letter-spacing: 1.1px;
     text-transform: uppercase;
     cursor: pointer;
+
+    @media (max-width: 1750px) {
+        font-size: 8.25px;
+        letter-spacing: 0.825px;
+        max-width: 135px;
+    }
+
+    @media (max-width: 1325px) {
+        font-size: 5.867px;
+        letter-spacing: 0.587px;
+
+    }
 }
 
 .button.button_transparent {
@@ -16,11 +28,14 @@
     background-color: transparent;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     color: $purple-text;
+
+
 }
 
 .button.button_purple-text {
     background: $purple-to-pink;
     color: #fff;
+
     &--submit {
         max-width: unset;
     }

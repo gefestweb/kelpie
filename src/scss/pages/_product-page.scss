@@ -11,6 +11,10 @@
 
     width: 100vw;
     height: 100vh;
+    @media(max-width: 1000px) {
+        height: unset;
+        width: 100%;
+    }
 }
 
 // FIRST SCREEN
@@ -19,7 +23,7 @@
     &__bcg {
         background: url(../../img/Product-page/hero-bg.png) no-repeat center center / cover;
         filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.20));
-        border-radius: 100px;
+        border-radius: 40px;
 
     }
 
@@ -62,7 +66,9 @@
     justify-content: center;
     align-items: center;
     background: url(../../img/Product-page/frame-bg.png) no-repeat top center/cover;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(2.5px);
+    fill: rgba(39, 2, 32, 0.47);
+    z-index: -1;
 
     &::before {
         content: '';
@@ -78,15 +84,152 @@
     }
 }
 
+@media(max-width: 1830px) {
+    .rama {
+        // left: 10px;
+        max-width: 460px;
+        max-height: 611px;
+    }
+
+    .first-screen {
+
+        &__first-title {
+            max-width: 685px;
+            font-size: 52px;
+        }
+    }
+}
+
+@media (max-width: 1439px) {
+
+    .first-screen {
+
+        &__first-title {
+            max-width: 650px;
+            font-size: 50px;
+        }
+    }
+}
+
+@media (max-width: 1384px) {
+    .rama {
+        max-width: 380px;
+        max-height: 491px;
+    }
+
+    .first-screen {
+
+        &__first-title {
+            max-width: 510px;
+            font-size: 40px;
+
+        }
+    }
+}
+
+@media (max-width: 1161px) {
+
+    .rama {
+        max-width: 350px;
+        max-height: 440px;
+    }
+
+    .first-screen {
+
+        &__first-title {
+            font-size: 35px;
+            letter-spacing: -1.12px;
+            max-width: 467px;
+
+        }
+    }
+}
+
+@media (max-width: 1095px) {
+
+    .rama {
+        max-width: 320px;
+        max-height: 420px;
+    }
+
+    .first-screen {
+
+        &__first-title {
+            font-size: 33px;
+            letter-spacing: -1.12px;
+            max-width: 439px;
+
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .rama {
+
+        position: unset;
+        bottom: unset;
+        left: unset;
+        width: 100%;
+    }
+
+    .first-screen {
+
+        &__first-title {
+            max-width: unset;
+            width: 100%;
+            font-size: calc($index * 2.9);
+            position: unset;
+            margin-top: calc($index * 3.55);
+            bottom: 0;
+            right: 0;
+        }
+
+        &__bcg {
+            border-radius: 20px;
+
+        }
+
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .rama {
+        max-width: 350px;
+        max-height: 440px;
+    }
+
+    .first-screen {
+
+
+        &__bcg {
+            border-radius: 11px;
+
+        }
+
+    }
+}
+
+
+
 //SECOND SCREEN
 
 .second-screen {
+    &__content-wrapper {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
     &__content {
-        margin-top: 60px;
+        // margin-top: 60px;
+        width: 100%;
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
     }
 
     &__left-part {
@@ -148,11 +291,13 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
+        align-items: center;
         gap: 5px;
         font-size: 13px;
         letter-spacing: 0.26px;
         text-transform: capitalize;
         padding: 13px 0;
+
         &:nth-child(2) {
             background: rgba(29, 12, 51, 0.80);
         }
@@ -192,6 +337,129 @@
         background: $pink-to-purple;
         -webkit-text-fill-color: transparent;
         background-clip: text;
+    }
+}
+
+@media (max-width: 1240px) {
+    .second-screen {
+        &__right-part {
+            gap: 25px;
+        }
+
+        &__text {
+            h2 {
+                font-size: 21.333px;
+            }
+
+            p {
+                font-size: 10.667px;
+            }
+        }
+
+        &__tabs {
+            column-gap: 22px;
+            row-gap: 12px;
+        }
+
+        &__button {
+            max-width: calc($index * 9);
+            font-size: 6.933px;
+            letter-spacing: 0.26px;
+            text-transform: capitalize;
+            padding: 3px 0;
+
+            &:nth-child(2) {
+                background: rgba(29, 12, 51, 0.80);
+            }
+        }
+    }
+
+    .tab {
+        padding: 0 20px;
+        height: 20px;
+        gap: 5.5px;
+
+        &__dot {
+            width: 3.2px;
+            height: 3.2px;
+        }
+
+        &__key {
+            font-size: 5.33px;
+            letter-spacing: 0.32px;
+        }
+
+        &__value {
+            font-size: 7.5px;
+            letter-spacing: 0.44px;
+        }
+    }
+}
+
+@media(max-width: 1000px) {
+    .second-screen {
+        &__content {
+            flex-direction: column-reverse;
+            gap: 40px;
+        }
+
+        &__right-part {
+            gap: 25px;
+        }
+
+        &__left-part {
+            img {
+                max-width: 300px;
+            }
+        }
+
+        &__text {
+            h2 {
+                font-size: 39.468px;
+            }
+
+            p {
+                font-size: 19.734px;
+            }
+        }
+
+        &__tabs {
+            column-gap: 22px;
+            row-gap: 12px;
+        }
+
+        &__button {
+            max-width: calc($index * 9);
+            font-size: 6.933px;
+            letter-spacing: 0.26px;
+            text-transform: capitalize;
+            padding: 3px 0;
+
+            &:nth-child(2) {
+                background: rgba(29, 12, 51, 0.80);
+            }
+        }
+    }
+
+    .tab {
+        padding: 0 20px;
+        height: 38px;
+        gap: 5.5px;
+
+        &__dot {
+            width: 6px;
+            height: 6px;
+        }
+
+        &__key {
+            font-size: 10.035px;
+            letter-spacing: 0.602px;
+        }
+
+        &__value {
+            font-size: 14.049px;
+            letter-spacing: 0.843px;
+        }
     }
 }
 
@@ -691,6 +959,7 @@
 
 .contact-form {
     padding: 160px 0;
+
     &__content {
         display: flex;
         flex-direction: row;
@@ -726,8 +995,21 @@
     &__form {
         margin-top: 0;
     }
+
     &__part:nth-child(1) {
         max-width: 410px;
         width: 100%;
     }
+}
+
+@media (max-width: 1650px) {}
+
+@media(max-width: 1000px) {
+    .rama::before {
+        width: 70px;
+        height: 70px;
+        top: 39%;
+        left: 65%;
+    }
+
 }

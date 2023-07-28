@@ -17,8 +17,10 @@
     }
 
     @media (max-width: 1325px) {
-        font-size: 5.867px;
+        font-size: 6.867px;
         letter-spacing: 0.587px;
+        padding-left: 10px;
+        padding-right: 10px;
 
     }
 }
@@ -38,5 +40,8 @@
 
     &--submit {
         max-width: unset;
+        @media(max-width: 1000px) {
+            font-size: 12px;
+        }
     }
 }

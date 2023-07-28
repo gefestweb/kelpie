@@ -7,7 +7,7 @@
     max-height: 969px;
     max-width: 1825px;
     margin: 20px auto;
-    transition: .3s;
+    // transition: .3s;
 
     @media (max-width: 1000px) {
         max-height: unset;
@@ -32,6 +32,9 @@
     width: 100vw;
     height: 100vh;
     // position: relative;
+    @media(max-width: 1000px){
+        height: unset;
+    }
 }
 
 .container-content {
@@ -50,12 +53,16 @@
     }
 
     @media (max-width: 1000px) {
-        padding: 11px 20px;
-        padding-top: 21px;
+        padding: 0 77px;
+        padding-top: 11px;
+        &--no-margin {
+            padding: 0 52px;
+            padding-top: 11px;
+        }
     }
 
     @media (max-width: 680px) {
-        padding: 11px 15px;
+        padding: 11px 30px;
     }
 }
 

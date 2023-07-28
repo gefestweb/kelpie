@@ -7,3 +7,9 @@ $purple-text: rgba(29, 12, 51, 0.80);
 
 $purple-to-pink: linear-gradient(57deg, #1D0C33 0%, #D283EA 100%);
 $pink-to-purple: linear-gradient(90deg, #E100FF 0%, #7F00FF 100%);
+
+@mixin fontSize($pcSize, $mobSize,$maxWidth) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}

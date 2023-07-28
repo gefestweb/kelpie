@@ -11,6 +11,7 @@
 
     width: 100vw;
     height: 100vh;
+
     @media(max-width: 1000px) {
         height: unset;
         width: 100%;
@@ -171,6 +172,10 @@
         bottom: unset;
         left: unset;
         width: 100%;
+        height: calc($index * 43);
+        margin-top: 60px;
+        // max-width: 350px;
+        // max-height: 440px;
     }
 
     .first-screen {
@@ -186,24 +191,6 @@
         }
 
         &__bcg {
-            border-radius: 20px;
-
-        }
-
-    }
-}
-
-@media (max-width: 1000px) {
-
-    .rama {
-        max-width: 350px;
-        max-height: 440px;
-    }
-
-    .first-screen {
-
-
-        &__bcg {
             border-radius: 11px;
 
         }
@@ -211,6 +198,15 @@
     }
 }
 
+@media(max-width: 420px) {
+
+    .first-screen {
+
+        &__first-title {
+            font-size: 24px;
+        }
+    }
+}
 
 
 //SECOND SCREEN
@@ -342,19 +338,19 @@
 
 @media (max-width: 1240px) {
     .second-screen {
-        &__right-part {
-            gap: 25px;
-        }
+        // &__right-part {
+        //     gap: 25px;
+        // }
 
-        &__text {
-            h2 {
-                font-size: 21.333px;
-            }
+        // &__text {
+        //     h2 {
+        //         font-size: 21.333px;
+        //     }
 
-            p {
-                font-size: 10.667px;
-            }
-        }
+        //     p {
+        //         font-size: 10.667px;
+        //     }
+        // }
 
         &__tabs {
             column-gap: 22px;
@@ -363,7 +359,7 @@
 
         &__button {
             max-width: calc($index * 9);
-            font-size: 6.933px;
+            font-size: 8px;
             letter-spacing: 0.26px;
             text-transform: capitalize;
             padding: 3px 0;
@@ -376,7 +372,7 @@
 
     .tab {
         padding: 0 20px;
-        height: 20px;
+        height: 25px;
         gap: 5.5px;
 
         &__dot {
@@ -385,12 +381,12 @@
         }
 
         &__key {
-            font-size: 5.33px;
+            font-size: 8px;
             letter-spacing: 0.32px;
         }
 
         &__value {
-            font-size: 7.5px;
+            font-size: 9px;
             letter-spacing: 0.44px;
         }
     }
@@ -430,10 +426,12 @@
 
         &__button {
             max-width: calc($index * 9);
-            font-size: 6.933px;
+            font-size: 13.045px;
             letter-spacing: 0.26px;
             text-transform: capitalize;
-            padding: 3px 0;
+            padding: 3px 50px;
+            height: 43px;
+            max-width: unset;
 
             &:nth-child(2) {
                 background: rgba(29, 12, 51, 0.80);
@@ -459,6 +457,14 @@
         &__value {
             font-size: 14.049px;
             letter-spacing: 0.843px;
+        }
+    }
+}
+
+@media (max-width: 520px) {
+    .second-screen {
+        &__buttons {
+            flex-wrap: wrap;
         }
     }
 }
@@ -498,7 +504,8 @@
         max-width: 1072px;
 
         h2 {
-            font-size: calc($index * .9);
+            // font-size: calc($index * .9);
+            @include fontSize (34, 22, 1800);
             font-weight: 500;
 
         }
@@ -535,6 +542,42 @@
     }
 }
 
+@media(max-width: 1000px) {
+    .third-screen {
+        &__content {
+            min-height: 690px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &__text-block {
+
+
+            h2 {
+                font-size: 20px;
+                font-weight: 500;
+
+            }
+
+            p {
+                font-size: 12px;
+                line-height: 161.5%;
+                letter-spacing: 0.4px;
+
+            }
+
+            h2,
+            p {
+                color: #fff;
+                text-align: center;
+            }
+        }
+    }
+}
+
 // Четвертый экран
 
 .four-screen {
@@ -542,52 +585,57 @@
     &__bcg {
         background: url(../../img/Product-page/4-screen-bg1.png) no-repeat center center / cover;
         filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.20));
-        border-radius: 100px;
+        border-radius: 40px;
 
     }
 
     &__rama {
         position: absolute;
-        max-width: calc($index * 18);
+        // max-width: calc($index * 18);
         left: 50%;
         transform: translateX(-50%);
-        bottom: calc((1vw + 1vh) * -1.5);
+        // bottom: calc((1vw + 1vh) * -1.5);
         z-index: -1;
+        height: 98%;
+        bottom: -30px;
 
         &::before {
             /* создайте псевдоэлемент ::before */
             content: "";
             display: block;
-            padding-bottom: 56.25%;
+            // padding-bottom: 56.25%;
             /* установите соотношение сторон 16:9 */
         }
 
         &-blur {
             position: absolute;
-            top: 0;
+            // top: 0;
             width: 100%;
             height: 100%;
             backdrop-filter: blur(2.5px);
-            fill: rgba(113, 99, 77, 0.20);
+            background-color: rgba(113, 99, 77, 0.35);
             z-index: -1;
 
             &--full-blur {
                 backdrop-filter: blur(18px);
             }
         }
+
+        img {
+            height: 100%;
+        }
     }
 
     &__buttons {
+        position: absolute;
         display: flex;
         flex-direction: column;
         gap: 50px;
-
-        // max-width: 272px;
-        margin-left: auto;
-        // margin-right: 0;
         max-width: calc((1vw + 1vh) * 9);
-        margin-right: calc((1vw + 1vh) * 9);
-        margin-top: calc((1vw + 1vh) * 9);
+        width: 100%;
+        top: calc(50% + 55px);
+        transform: translateY(-50%);
+        right: 10%;
     }
 
     &__button {
@@ -607,6 +655,77 @@
     }
 
 }
+
+@media(max-width: 1400px) {
+    .four-screen {
+        &__buttons {
+            right: 5%;
+        }
+    }
+
+}
+
+@media(max-width: 1146px) {
+    .four-screen {
+
+        &__rama {
+            // max-width: calc($index * 18);
+            bottom: -11px;
+            height: 100%;
+
+            &::before {
+                content: none;
+            }
+
+            &-blur {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 98%;
+
+            }
+        }
+
+    }
+}
+
+@media(max-width: 1000px) {
+    .four-screen {
+
+        &__bcg {
+            border-radius: 11px;
+        }
+        &__rama {
+            // max-width: calc($index * 18);
+            // bottom: -11px;
+            // height: 100%;
+            margin-top: 20px;
+            position: relative;
+            transform: none;
+            left: unset;
+
+            &::before {
+                content: none;
+            }
+            img {
+                margin: 0 auto;
+            }
+
+            &-blur {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 97%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+
+    }
+}
+
+// Пятый экран
 
 .fifth-screen {
     &__content {
@@ -654,13 +773,15 @@
         align-items: center;
         justify-content: center;
         mix-blend-mode: screen;
-        font-size: calc($index * 3.4);
+        @include fontSize(93, 30, 1800)
     }
 
     &__button {
         margin: 0 auto;
     }
 }
+
+// ШЕСТОЙ ЭКРАН
 
 .sixth-screen {
     &__content-wrapper {
@@ -838,6 +959,7 @@
         width: 100%;
         gap: 20px;
         justify-content: space-between;
+        align-items: center;
 
         input {
             border-radius: 20px;
@@ -939,7 +1061,71 @@
     &-tab {
         width: max-content;
         height: 38px;
+        div:nth-child(3) {
+            font-size: 13px;
+        }
     }
+}
+
+@media(max-width: 1000px) {
+    .sixth-screen {
+        &__content-wrapper {
+            margin-top: 64px;
+            flex-direction: column;
+            gap: 35px;
+        }
+        &__content {
+            max-width: unset;
+        }
+    }
+    .rent-content {
+        &-swiper__nav {
+            max-width: 150px;
+        }
+    }
+}
+@media(max-width: 630px) {
+    .sixth-screen {
+        &__content-wrapper {
+            margin-top: 64px;
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+        }
+        &__content {
+            max-width: unset;
+        }
+    }
+    .rent-content {
+        &-swiper__nav {
+            max-width: 150px;
+        }
+        &__tab {
+            width: calc(33.33% - 15px);
+            max-width: none;
+        }
+        &__conditionals-tab {
+            height: unset;
+            max-height: none;
+            padding: 10px 20px;
+        }
+    }
+    .rent-content-form {
+        flex-direction: column;
+    
+        &__row {
+            flex-direction: column;
+    
+            &>p {
+                max-width: 285px;
+                text-align: center;
+            }
+        }
+    }
+    .rent-content__conditionals {
+
+    }
+    
 }
 
 .seventh-screen {

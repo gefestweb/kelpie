@@ -14,8 +14,15 @@
     }
 
     @media (max-width: 1325px) {
-        font-size: 6.4px;
+        font-size: 8px;
         letter-spacing: 0.384px;
+    }
+    @media (max-width: 1167px) {
+        font-size: 6px;
+        letter-spacing: 0.587px;
+        padding-left: 10px;
+        padding-right: 10px;
+
     }
 }
 

@@ -35,7 +35,7 @@
         width: 134px;
 
         @media (max-width: 1919px) {
-           width: 100px; 
+            width: 100px;
         }
 
         @media (max-width: 1439px) {
@@ -46,6 +46,7 @@
             &--mob {
                 width: 117px;
             }
+
             &--mob-menu {
                 width: 175px;
             }
@@ -106,6 +107,17 @@
 
 }
 
+@media (max-width: 1167px) {
+    .header__wrapper {
+        padding: 11px 15px 11px 15px;
+        gap: 0;
+    }
+    .header__menu {
+        gap: 0;
+    }
+}
+
+
 @media (max-width: 1000px) {
 
     .header {
@@ -115,6 +127,6 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items:center;
+        align-items: center;
     }
 }

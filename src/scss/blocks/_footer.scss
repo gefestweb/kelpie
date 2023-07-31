@@ -7,6 +7,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        gap: 70px;
     }
 
     &__part {
@@ -58,7 +59,7 @@
         font-size: 13px;
         font-style: normal;
         font-weight: 300;
-        
+
     }
 
     &__socials {
@@ -77,5 +78,148 @@
         font-weight: 400;
         line-height: 130%;
         text-decoration-line: underline;
+        color: #fff;
+        text-align: end;
+    }
+}
+
+.footer__part.footer__left {
+    max-width: 147px;
+}
+
+.footer__part.footer__right {
+    address {
+        text-align: end;
+    }
+}
+
+@media (max-width: 1500px) {
+    .footer-container {
+        padding: 43px 110px;
+    }
+
+    .nav__item.footer__item.footer__title {
+        font-size: 11.24px;
+    }
+
+    .nav__item.footer__item {
+        font-size: 9.74px;
+    }
+
+    .footer__part.footer__left {
+        max-width: 110px;
+    }
+
+    .footer__block.footer__nav {
+        max-width: 147px;
+    }
+
+    .footer__part.footer__right {
+        font-size: 9.74px;
+    }
+
+    .footer__socials.socials {
+        gap: 18px;
+
+        .socials__item {
+            width: 27.74px;
+            height: 27.74px;
+
+            .socials__ico {
+                width: 13px;
+                height: 13px;
+            }
+        }
+    }
+
+    .footer__politica {
+        font-size: 8.25px;
+        margin-top: 67px;
+    }
+}
+
+@media (max-width: 1150px) {
+    .footer-container {
+        padding: 30px 78px;
+    }
+
+    .nav__item.footer__item.footer__title {
+        font-size: 10px;
+    }
+
+    .nav__item.footer__item {
+        font-size: 9px;
+    }
+
+    .footer__part.footer__left {
+        max-width: 79px;
+    }
+
+    .footer__block.footer__nav {
+        max-width: 121px;
+    }
+
+    .footer__part.footer__right {
+        font-size: 9px;
+    }
+
+    .footer__socials.socials {
+
+        .socials__item {
+            width: 19.74px;
+            height: 19.74px;
+
+            .socials__ico {
+                width: 9px;
+                height: 9px;
+            }
+        }
+    }
+
+    .footer__politica {
+        font-size: 7px;
+        margin-top: 48px;
+    }
+}
+
+@media(max-width: 1000px) {
+    .footer-container {
+        padding: 60px 77px 63px;
+    }
+
+    .footer__part.footer__left {
+        max-width: 180px;
+    }
+
+    .footer__part.footer__right {
+        font-size: 10.73px;
+    }
+}
+
+@media(max-width: 630px) {
+    .footer-container {
+        padding: 23px 30px;
+    }
+    .footer__part.footer__left {
+        max-width: 76.05px;
+    }
+    .footer__part.footer__right {
+        font-size: 8px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+        letter-spacing: 0.209px;
+    }
+    .footer__socials.socials {
+
+        .socials__item {
+            width: 19.74px;
+            height: 19.74px;
+
+            .socials__ico {
+                width: 9px;
+                height: 9px;
+            }
+        }
     }
 }

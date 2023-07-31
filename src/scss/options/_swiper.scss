@@ -24,6 +24,12 @@
     color: unset;
     margin-top: unset;
 }
+.swiper-button-prev.rent-content-left,
+.swiper-button-next.rent-content-right {
+    position: unset;
+    color: unset;
+    margin-top: unset;
+}
 
 .swiper-button-prev.rent-content-left::after,
 .swiper-button-next.rent-content-right::after {

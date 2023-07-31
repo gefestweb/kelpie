@@ -1,13 +1,14 @@
 .main {
     background-color: #FDFDFD;
-
     overflow-x: hidden;
+
 }
 
 .screen {
     display: flex;
     justify-content: center;
-    align-items: center;
+    // align-items: center;
+
 
     width: 100vw;
     height: 100vh;
@@ -32,7 +33,6 @@
 
     &__content {
         position: absolute;
-
         &:nth-child(2),
         &:nth-child(3) {
             display: none;
@@ -695,6 +695,7 @@
         &__bcg {
             border-radius: 11px;
         }
+
         &__rama {
             // max-width: calc($index * 18);
             // bottom: -11px;
@@ -707,6 +708,7 @@
             &::before {
                 content: none;
             }
+
             img {
                 margin: 0 auto;
             }
@@ -1061,9 +1063,55 @@
     &-tab {
         width: max-content;
         height: 38px;
+
         div:nth-child(3) {
             font-size: 13px;
         }
+    }
+}
+
+
+@media (max-width: 1600px) {
+    .rent-content-form__row {
+        flex-direction: column;
+    }
+
+    .rent-content-form__row>p {
+        text-align: center;
+    }
+
+    .sixth-screen__content-wrapper {
+        gap: 0;
+        justify-content: space-between;
+    }
+
+    .sixth-screen__left-part {
+        max-width: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 1600px) and (min-height: 1050px) {
+    .rent-content-form__row {
+        flex-direction: column;
+    }
+
+    .rent-content-form__row>p {
+        text-align: center;
+    }
+
+    .sixth-screen__content-wrapper {
+        gap: 0;
+        justify-content: space-between;
+    }
+
+    .sixth-screen__left-part {
+        max-width: calc(50% - 40px);
+    }
+}
+
+@media (min-width: 400px) {
+    .sixth-screen__content {
+        min-width: 340px;
     }
 }
 
@@ -1074,16 +1122,25 @@
             flex-direction: column;
             gap: 35px;
         }
+
         &__content {
             max-width: unset;
         }
     }
+
     .rent-content {
         &-swiper__nav {
             max-width: 150px;
         }
     }
+
+    .sixth-screen {
+        .container-content {
+            padding-bottom: 52px;
+        }
+    }
 }
+
 @media(max-width: 630px) {
     .sixth-screen {
         &__content-wrapper {
@@ -1092,47 +1149,54 @@
             flex-direction: column;
             gap: 35px;
         }
+
         &__content {
             max-width: unset;
         }
     }
+
     .rent-content {
         &-swiper__nav {
             max-width: 150px;
         }
+
         &__tab {
             width: calc(33.33% - 15px);
             max-width: none;
         }
+
         &__conditionals-tab {
             height: unset;
             max-height: none;
             padding: 10px 20px;
         }
     }
+
     .rent-content-form {
         flex-direction: column;
-    
+
         &__row {
             flex-direction: column;
-    
+
             &>p {
                 max-width: 285px;
                 text-align: center;
             }
         }
     }
-    .rent-content__conditionals {
 
-    }
-    
+    // .rent-content__conditionals {
+
+    // }
 }
+
+//Седьмой экран
 
 .seventh-screen {
     &__bcg {
-        background: url(../../img/Product-page/7-screen-bg1.png) no-repeat top center / cover;
+        // background: url(../../img/Product-page/7-screen-bg1.png) no-repeat top center / cover;
         filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.20));
-        border-radius: 100px;
+        border-radius: 40px;
     }
 
     &__swiper-container {
@@ -1140,6 +1204,29 @@
         top: 0;
         left: 0;
         z-index: 0;
+        height: 100%;
+    }
+
+    &__slide-img {
+        height: 100%;
+    }
+
+    .rent-content-swiper__nav.seventh-screen__swiper-nav {
+        gap: 35px;
+        max-width: max-content;
+        justify-content: normal;
+    }
+}
+
+@media(max-width: 1000px) {
+    .seventh-screen {
+        &__bcg {
+            border-radius: 11px;
+        }
+
+        .container-page-margin {
+            height: calc(100vh - 36px);
+        }
     }
 }
 
@@ -1187,6 +1274,29 @@
         width: 100%;
     }
 }
+
+@media(max-width: 1600px) {
+    .contact-form__part {
+        width: 100%;
+        max-width: 700px;
+    }
+}
+
+@media(max-width: 1000px) {
+    .contact-form__content {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .contact-form__part:nth-child(1) {
+        max-width: none;
+    }
+
+}
+
+
+
+
 
 @media (max-width: 1650px) {}
 

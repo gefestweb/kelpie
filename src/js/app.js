@@ -3,7 +3,8 @@ import {swiperInit} from "./modules/swiperInit.js";
 import tabs from "./modules/tabs.js";
 import oko from "./modules/oko.js";
 import mobMenu from "./modules/mobmenu.js";
-import ramaObserve from "./modules/helper.js"
+import ramaObserve from "./modules/helper.js";
+import amimations from "./modules/gsap.js";
 
 mainFuncs.isWebp();
 
@@ -15,4 +16,5 @@ document.addEventListener("DOMContentLoaded", function() {
     mobMenu();
     oko();
     ramaObserve();
+    amimations();
 })

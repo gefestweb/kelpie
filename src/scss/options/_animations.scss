@@ -1,0 +1,36 @@
+@media (min-width: 1001px) {
+
+    //Спрятать текст 
+    .hide-element-bottom {
+        bottom: -50px !important;
+        transform: translateY(100%) !important;
+    }
+
+    .hide-element-top {
+        top: -50px !important;
+        transform: translateY(-100%) !important;
+    }
+
+    .opacity-on {
+        opacity: 1 !important;
+    }
+
+    .opacity-off {
+        opacity: 0 !important;
+    }
+    .margin-100pr {
+        margin-bottom: -100%;
+    }
+
+}
+
+// .second-screen__text,
+.second-screen__tabs,
+.second-screen__buttons {
+  visibility: hidden;
+}
+
+// .second-screen__tabs,
+// .second-screen__buttons {
+//     transform-origin: bottom;
+// }

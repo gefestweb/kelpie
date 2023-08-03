@@ -14,5 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     mobMenu();
     oko();
     ramaObserve();
-    gsapAnimate();
+    if (window.matchMedia("(min-width: 1000px)").matches) {
+        gsapAnimate();
+    }
 })

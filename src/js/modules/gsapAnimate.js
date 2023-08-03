@@ -2,28 +2,40 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin.js";
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+import { calculateOffscreenPositionY, calculateOffscreenPositionX } from "./calculations.js";
 import { debounce } from "./debounce.js";
 
 const gsapAnimate = () => {
 
+    let isAnimating = false;
+    let currentStep = 1;
+    let currentScreen = 1;
+
+    // Элементы с первого экрана
+
     const screens = document.querySelectorAll('.screen');
     const firstScreenElements = screens[0].querySelectorAll('.animate-element');
-    let isAnimating = false;
-    let currentStep = 0;
+    const ramaElements = screens[0].querySelector('.rama').querySelectorAll('.animate-element');
 
+    // Элементы со второго экрана
+
+    const secondScreenElements = screens[1].querySelectorAll('.animate-element');
+    // secondScreenElements[0].style.marginTop = '100%';
+    secondScreenElements[0].style.visibility = 'hidden';
 
 
     function blockScroll() {
         document.body.style.overflow = 'hidden';
     }
 
-    blockScroll();
+    // blockScroll();
 
     //ПРОВЕРКА. ИДЕТ ЛИ АНИМАЦИЯ В ДАННЫЙ МОМЕНТ
 
     function checkEndAnimation(animation) {
         if (!isAnimating) {
             isAnimating = true;
+            console.log(isAnimating)
             animation();
         } else {
             console.log('Идет анимация, жди!')
@@ -35,22 +47,29 @@ const gsapAnimate = () => {
     function wheelHandler() {
         if (!isAnimating) {
 
-            if (currentStep === 0) {
-                animationStart(animations.s1e1);
-                currentStep++;
-                console.log(currentStep);
-            } else if (currentStep === 1) {
-                animationStart(animations.s1e2);
-                currentStep++;
-                console.log(currentStep);
-            } else if (currentStep === 2) {
-                animationStart(animations.s1e3);
-                currentStep++;
-                console.log(currentStep);
-            } else if (currentStep === 3) {
-                animationStart(animations.s1e4);
-                currentStep++;
-                console.log(currentStep);
+            switch (currentScreen) {
+                case 1:
+                    switch (currentStep) {
+                        case 1:
+                            animationStart(animations.s1e1);
+                        case 2:
+                            animationStart(animations.s1e2);
+                        case 3:
+                            animationStart(animations.s1e3);
+                            break;
+                    }
+                case 2:
+                    switch (currentStep) {
+                        case 1:
+                            console.log('b nen')
+                            animationStart(animations.s2);
+                        case 2:
+                            animationStart(animations.s2e2);
+                        case 3:
+                            animationStart(animations.s2e3);
+                        case 4:
+                            animationStart(animations.s2e4);
+                    }
             }
         }
 
@@ -66,15 +85,21 @@ const gsapAnimate = () => {
 
     let animations = {
         s1e1: debounce(() => {
-            console.log('scroll');
+            console.log(`Анимация ${currentStep} началась!`);
+            const switherNode = screens[0].querySelector('.switcher__toggler');
+            switherNode.classList.add('switcher__toggler--scroll');
+            firstScreenElements[0].classList.add('hide-element-bottom');
 
             gsap.fromTo(firstScreenElements[0], { y: 0 }, {
-                y: -window.innerHeight,
-                duration: 3,
-                ease: "power2.inOut",
+                duration: 1.5,
                 onComplete: function () {
                     isAnimating = false;
-                    console.log(isAnimating);
+                    console.log("Анимация закончилась!");
+                    currentStep++;
+                    console.log(`Готово ко ${currentStep} анимации!`)
+
+
+
                 }
             });
         }, 250),
@@ -82,14 +107,19 @@ const gsapAnimate = () => {
 
         s1e2: debounce(() => {
             console.log('scroll');
+            firstScreenElements[1].classList.remove('hide-element-bottom');
+            document.querySelector('.rama').classList.remove('rama--circle');
+            ramaElements[0].classList.add('opacity-off');
+            ramaElements[1].classList.add('opacity-on');
 
-            gsap.fromTo(firstScreenElements[1], { y: window.innerHeight }, {
-                y: 0,
-                duration: 3,
-                ease: "power2.inOut",
+
+            gsap.fromTo(firstScreenElements[1], { y: 0 }, {
+                duration: 1.5,
                 onComplete: function () {
                     isAnimating = false;
-                    console.log(isAnimating);
+                    console.log("Анимация закончилась!");
+                    currentStep++;
+                    console.log(`Готово ко ${currentStep} анимации!`);
                 }
             });
         }, 250),
@@ -97,31 +127,108 @@ const gsapAnimate = () => {
 
         s1e3: debounce(() => {
             console.log('scroll');
+            ramaElements[1].classList.remove('opacity-on');
+            ramaElements[2].classList.add('opacity-on');
+
+
+            gsap.fromTo(firstScreenElements[1], { y: 0 }, {
+                y: -calculateOffscreenPositionY('top', firstScreenElements[1]) - 36,
+                duration: .5,
+                onComplete: function () {
+
+                }
+            });
+
+            firstScreenElements[2].classList.remove('hide-element-bottom');
 
             gsap.fromTo(firstScreenElements[2], { y: 0 }, {
-                y: 300,
-                duration: 2,
-                ease: "power2.inOut",
+                duration: 1.5,
                 onComplete: function () {
                     isAnimating = false;
-                    console.log(isAnimating);
+                    console.log("Анимация закончилась!");
+                    currentStep = 1;
+                    currentScreen++;
+                    console.log(`Готово ко ${currentStep} анимации!`)
                 }
             });
         }, 250),
 
-        s1e4: debounce(() => {
+        s2: debounce(() => {
             console.log('scroll');
 
-            gsap.fromTo(firstScreenElements[3], { y: 0 }, {
-                y: -300,
-                duration: 2,
-                ease: "power2.inOut",
+            gsap.fromTo(screens[1], { y: 0 }, {
+                yPercent: -100,
+                duration: 1.5,
+                onComplete: function () {
+                    console.log("Анимация закончилась!");
+
+                }
+            });
+
+            gsap.fromTo(secondScreenElements[0], { autoAlpha: 0 }, {
+                duration: 1,
+                delay: 2,
+                autoAlpha: 1,
+                ease: 'power0.none',
+                onComplete: function () {
+                    console.log("Анимация закончилась!");
+                    console.log(`Готово ко ${currentStep} анимации!`)
+                }
+            });
+            
+            gsap.fromTo(secondScreenElements[1], { autoAlpha: 0 }, {
+                autoAlpha: 1,
+                delay: 2.3,
+                duration: 1,
+                ease: 'power0.none',
+                onComplete: function () {
+                    console.log("Анимация закончилась!");
+                    console.log(`Готово ко ${currentStep} анимации!`)
+                }
+            });
+
+            gsap.fromTo(secondScreenElements[2], { autoAlpha: 0 }, {
+                autoAlpha: 1,
+                delay: 3,
+                duration: 1,
+                ease: 'power0.none',
                 onComplete: function () {
                     isAnimating = false;
-                    console.log(isAnimating);
+                    console.log("Анимация закончилась!");
+                    console.log(`Готово ко ${currentStep} анимации!`)
+                }
+            });
+
+            gsap.fromTo(secondScreenElements[3], { autoAlpha: 0 }, {
+                autoAlpha: 1,
+                delay: 3.5,
+                duration: 1,
+                ease: 'power0.none',
+                onComplete: function () {
+                    isAnimating = false;
+                    console.log("Анимация закончилась!");
+                    currentStep++;
+                    console.log(`Готово ко ${currentStep} анимации!`)
                 }
             });
         }, 250),
+        s2e1: debounce(() => {
+            console.log('SCROLL');
+            console.log('пытаюсь...');
+
+            // gsap.fromTo(secondScreenElements[0], { marginTop: 0 }, {
+            //     duration: 1,
+            //     ease: 'power0.none',
+            //     onComplete: function () {
+            //         console.log("Анимация закончилась!");
+            //         console.log(`Готово ко ${currentStep} анимации!`)
+            //     }
+            // });
+
+            
+
+        }, 250),
+
     }
 }
 

@@ -478,11 +478,6 @@ img {
     margin-bottom: -100%;
   }
 }
-.second-screen__tabs,
-.second-screen__buttons {
-  visibility: hidden;
-}
-
 .menu-items-txt {
   white-space: nowrap;
   color: rgba(29, 12, 51, 0.8);
@@ -1022,16 +1017,21 @@ img {
   background: url("../../img/Product-page/3-bg.png") no-repeat center center/cover;
   position: relative;
 }
-.third-screen--filter::before {
+.third-screen::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5)));
-  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  -webkit-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+.third-screen--filter::before {
+  opacity: 1;
 }
 .third-screen__content {
   width: 100%;
@@ -1081,6 +1081,9 @@ img {
           align-items: center;
   background-color: #fff;
   text-transform: none;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
 }
 .third-screen__button p {
   background: -o-linear-gradient(33deg, #1D0C33 0%, #D283EA 100%);
@@ -1120,6 +1123,9 @@ img {
     color: #fff;
     text-align: center;
   }
+}
+.four-screen {
+  background-color: #FDFDFD;
 }
 .four-screen__bcg {
   background: url(../../img/Product-page/4-screen-bg1.png) no-repeat center center/cover;
@@ -1732,6 +1738,10 @@ img {
   left: 0;
   z-index: 0;
   height: 100%;
+}
+.seventh-screen__swiper-slide {
+  border-radius: 40px;
+  overflow: hidden;
 }
 .seventh-screen__slide-img {
   height: 100%;

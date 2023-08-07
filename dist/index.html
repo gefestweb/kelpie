@@ -5,8 +5,10 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
         <link rel="stylesheet" href="css/style.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+
 
         <title>Kelpie</title>
     </head>
@@ -76,9 +78,9 @@
                                 технология,
                                 которую легко применить уже сегодня
                             </h1>
-                            <h1 class="title first-screen__first-title animate-element hide-element-bottom" data-animate="firstScreen">VR-эффект без дополнительного оборудования
+                            <h1 class="title first-screen__first-title animate-element hide-element-bottom for-desc-block" data-animate="firstScreen">VR-эффект без дополнительного оборудования
                             </h1>
-                            <h1 class="title first-screen__first-title animate-element hide-element-bottom" data-animate="firstScreen">OLED-transparent для реализации самых креативных рекламных решений
+                            <h1 class="title first-screen__first-title animate-element hide-element-bottom for-desc-block" data-animate="firstScreen">OLED-transparent для реализации самых креативных рекламных решений
                             </h1>
                             
                             <div class="rama rama--circle">
@@ -88,10 +90,10 @@
                                         <div class="switcher__toggler" data-animate="firstScreen"></div>
                                     </div>
                                 </div>
-                                <div class="first-screen__content animate-element" data-firstScreen-content="2-content"><img
+                                <div class="first-screen__content animate-element for-desc-block" data-firstScreen-content="2-content"><img
                                         src="../img/Product-page/1-screen-2-elem.svg" alt="">
                                 </div>
-                                <div class="first-screen__content animate-element" data-firstScreen-content="3-content"><img
+                                <div class="first-screen__content animate-element for-desc-block" data-firstScreen-content="3-content"><img
                                         src="../img/Product-page/1-screen-3-elem.png" alt="">
                                 </div>
                             </div>
@@ -332,9 +334,10 @@
                         </header>
                         <div class="fifth-screen__content">
                             <div class="fifth-screen__text-block">
-                                <img class="fifth-screen__bcg" src="../img/Product-page/hero-bg.png" alt="">
-                                <h3 class="fifth-screen__text">Всё, что нужно — прозрачный OLED-дисплей от Гефест
-                                    Капитал и
+                                <!-- <div class="fifth-screen__text-cover"></div> -->
+                                <img class="fifth-screen__bcg animate-element" src="../img/Product-page/hero-bg.png" alt="">
+                                <h3 class="fifth-screen__text">Всё, что нужно —<br>прозрачный OLED-дисплей<br>от Гефест
+                                    Капитал и<br>
                                     немного креативности!</h3>
                             </div>
                             <div class="button button_purple-text second-screen__button fifth-screen__button">
@@ -372,7 +375,7 @@
                         </header>
                         <div class="sixth-screen__content-wrapper">
                             <div class="sixth-screen__left-part sixth-screen__content">
-                                <div id="rent-content-swiper" class="swiper-container rent-content-swiper">
+                                <div id="rent-content-swiper" class="swiper-container rent-content-swiper animate-element">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide rent-content-slide"><img
                                                 src="../img/Product-page/6-slider-1.png"></div>
@@ -414,26 +417,26 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="sixth-screen__right-part sixth-screen__content">
+                            <div class="sixth-screen__right-part sixth-screen__content animate-element">
                                 <div class="rent-content__container">
-                                    <p class="rent-content__title">Аренда и контент</p>
+                                    <p class="rent-content__title six-screen-anim">Аренда и контент</p>
                                     <div class="rent-content__content-wrapper">
-                                        <div class="rent-content__tabs">
+                                        <div class="rent-content__tabs six-screen-anim">
                                             <div class="rent-content__tab">Аренда</div>
                                             <div class="rent-content__tab">Покупка</div>
                                             <div class="rent-content__tab">Контент</div>
                                         </div>
                                         <div class="rent-content__tab-contents">
                                             <div class="rent-content__tab-content tab-content">
-                                                <div class="tab-content__item">
+                                                <div class="tab-content__item six-screen-anim">
                                                     <div class="tab-content__key">1 день</div>
                                                     <div class="tab-content__value">60 000 р</div>
                                                 </div>
-                                                <div class="tab-content__item">
+                                                <div class="tab-content__item six-screen-anim">
                                                     <div class="tab-content__key">2 дня</div>
                                                     <div class="tab-content__value">90 000 р</div>
                                                 </div>
-                                                <div class="tab-content__item">
+                                                <div class="tab-content__item six-screen-anim">
                                                     <div class="tab-content__key">выставка</div>
                                                     <div class="tab-content__value">120 000 р</div>
                                                 </div>
@@ -466,7 +469,7 @@
 
                                     </div>
                                     <form id="rent-content-form" class="rent-content-form">
-                                        <div class="rent-content-form__row">
+                                        <div class="rent-content-form__row six-screen-anim">
                                             <div class="form-item">
                                                 <label for="name"></label>
                                                 <input type="text" id="name" name="name" placeholder="ваше имя">
@@ -481,7 +484,7 @@
                                                 <input type="email" id="email" name="email" placeholder="Ваш email">
                                             </div>
                                         </div>
-                                        <div class="rent-content-form__row">
+                                        <div class="rent-content-form__row six-screen-anim">
                                             <p>Нажимая на кнопку, вы <a href="#">соглашаетесь</a> на обработку
                                                 персональных
                                                 данных</p>
@@ -493,13 +496,13 @@
                                     <script async
                                         src="https://okocrm.ru/static/oko-static/js/form.js?token=DGklp8IO7_iwlJgAzOp8Cw65VsZDw27EwagtkfzAb4A0LeP3klBWcCB2r-QFx-NS7vSntheO1Pe5hx7rn_Etc_IY8p2HQnscsHo4xRZRWU084a3wSrZemcC95ymMjfwcnNaaMrQB2PStjLzA4Gq4C1OvT7IME36xium5xPZdX2UNFLo3cXDhC107aPHdlHAMa4wy9HegDfL5zk70zqFX4lUYh86hYTNAQkWXhmOl0GSLkpKPcbywk9y3Koj9xR0VxCGUrOJ1GXiBSwHwczBqdX050pGQIFI8sFG2U4Es5bMdRTo4VLEmm2plF2iZ7QIg9j0qgLRP_4Pi4JTJ6nbMuw%3D%3D"></script>
                                     <div class="width-1300-more">
-                                        <div class="list-wrapper">
+                                        <div class="list-wrapper six-screen-anim">
                                             <div class="list-item">первая аренда <span>со скидкой 20%</span></div>
                                             <div class="list-item">третий день аренды <span>бесплатно</span></div>
                                         </div>
                                         <div class="rent-content__conditionals">
-                                            <p>Условия размещения</p>
-                                            <div class="rent-content__conditionals-items">
+                                            <p class="six-screen-anim">Условия размещения</p>
+                                            <div class="rent-content__conditionals-items six-screen-anim">
                                                 <div class="second-screen__tab tab rent-content__conditionals-tab">
                                                     <div class="tab__dot"></div>
                                                     <div class="tab__key">свободное пространство</div>

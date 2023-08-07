@@ -8,12 +8,17 @@ import { debounce } from "./debounce.js";
 const tl = gsap.timeline();
 const t2 = gsap.timeline();
 const t3 = gsap.timeline();
+const t4 = gsap.timeline();
 
 const gsapAnimate = () => {
 
+    window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+    }
+
     let isAnimating = false;
     let currentStep = 1;
-    let currentScreen = 3;
+    let currentScreen = 5;
 
     // Элементы с первого экрана
 
@@ -30,13 +35,35 @@ const gsapAnimate = () => {
 
     const thirdScreenElements = screens[2].querySelectorAll('.animate-element');
 
+    // Элементы с пятого экрана
+
+    const fifthScreenElements = screens[4].querySelector('.animate-element');
+    const fifthScreenText = screens[4].querySelector('.fifth-screen__text');
+    let textHeightStep = fifthScreenText.offsetHeight / 4;
+
+    // Элементы с шестого экрана
+
+    const sixthScreenElements = screens[5].querySelectorAll('.animate-element');
+    const forSixthScreenAnimations = sixthScreenElements[1].querySelectorAll('.six-screen-anim');
+
+    // Элементы с седьмого экрана
+
+    const seventhScreenElements = screens[6].querySelector('.animate-element')
+
+
 
 
     function blockScroll() {
         document.body.style.overflow = 'hidden';
     }
 
-    // blockScroll();
+    function allowScroll() {
+        document.body.style.overflow = '';
+    }
+
+
+
+    blockScroll();
 
     //ПРОВЕРКА. ИДЕТ ЛИ АНИМАЦИЯ В ДАННЫЙ МОМЕНТ
 
@@ -93,9 +120,29 @@ const gsapAnimate = () => {
                     }
                 case 4:
                     switch (currentStep) {
-                        case 1: 
+                        case 1:
                             animationStart(animations.s4);
                     }
+                case 5:
+                    switch (currentStep) {
+                        case 1:
+                            animationStart(animations.s5);
+                        case 2:
+                            animationStart(animations.s5e1);
+                    }
+                case 6:
+                    switch (currentStep) {
+                        case 1:
+                            animationStart(animations.s6);
+                    }
+                case 7:
+                    switch (currentStep) {
+                        case 1:
+                            animationStart(animations.s7);
+                    }
+                case 8:
+                    animationStart(animations.s8);
+                    break;
             }
         }
 
@@ -370,11 +417,159 @@ const gsapAnimate = () => {
             t2.fromTo(screens[3], { y: 0 }, {
                 yPercent: -300,
                 duration: 1,
+
+            });
+
+            gsap.fromTo(screens[4], { y: 0 }, {
+                yPercent: -300,
+                duration: 1,
                 onComplete: function () {
                     isAnimating = false;
                     console.log(isAnimating);
+                    currentStep = 1;
+                    currentScreen++;
+                }
+            })
+            // СДЕЛАТЬ БЛЮР РАМЫ
+        }, 250),
+        s5: debounce(() => {
+            console.log('scroll');
+
+            gsap.fromTo(screens[4], { y: 0 }, {
+                yPercent: -400,
+                duration: 1,
+            })
+            t4.to(fifthScreenElements, {
+                ease: 'power0.none',
+                delay: 1,
+                duration: .1,
+                css: {
+                    yPercent: -30
+                }
+            })
+            t4.to(fifthScreenElements, {
+                ease: 'power0.none',
+                delay: .5,
+                duration: .1,
+                css: {
+                    yPercent: -70
+                }
+            })
+            t4.to(fifthScreenElements, {
+                ease: 'power0.none',
+                delay: .5,
+                duration: .1,
+                css: {
+                    yPercent: -100
+                },
+                onComplete: function () {
+                    isAnimating = false;
+                    currentStep++;
+
+                }
+            })
+        }, 250),
+        s5e1: debounce(() => {
+            console.log('scroll');
+            t4.to(fifthScreenElements, {
+                ease: 'power0.none',
+                // delay: .5,
+                duration: .1,
+                css: {
+                    yPercent: -130
+                }
+            })
+            t4.to(fifthScreenElements, {
+                ease: 'power0.none',
+                delay: .5,
+                duration: .1,
+                css: {
+                    yPercent: -170
+                }
+            })
+            t4.to(fifthScreenElements, {
+                ease: 'power0.none',
+                delay: .5,
+                duration: .1,
+                css: {
+                    yPercent: -200
+                },
+                onComplete: function () {
+                    gsap.to(screens[5], {
+                        yPercent: -400,
+                        duration: 0
+                    });
+                    isAnimating = false;
+                    currentScreen++;
+                    currentStep = 1;
+                }
+            })
+
+        }, 250),
+
+        s6: debounce(() => {
+            console.log('scroll');
+            const t5 = gsap.timeline();
+            t4.to(screens[4], {
+                yPercent: -500,
+                duration: .5,
+            });
+            gsap.to(screens[5], {
+                yPercent: -500,
+                duration: .5,
+            });
+            gsap.from(sixthScreenElements[0], {
+                delay: .5,
+                scale: 0, // Начинаем с масштаба 0 (элемент полностью скрыт)
+                duration: .2, // Продолжительность анимации в секундах
+                ease: 'back.out(1.7)' // Эффект анимации (можно выбрать другой)
+            });
+            t5.from(forSixthScreenAnimations, {
+                scale: 0, // Начинаем с масштаба 0 (элементы полностью скрыты)
+                duration: 0.5, // Продолжительность анимации в секундах
+                stagger: 0.1, // Задержка между анимациями каждого элемента
+                ease: 'back.out(1.7)', // Эффект анимации (можно выбрать другой)
+                onComplete: function () {
+                    gsap.to(screens[6], {
+                        yPercent: -500,
+                        duration: 0
+                    });
+                    isAnimating = false;
+                    currentScreen++;
+                    currentStep = 1;
                 }
             });
+        }, 250),
+        s7: debounce(() => {
+            console.log('scroll');
+            gsap.to(screens[6], {
+                yPercent: -600,
+                duration: .5,
+                onComplete: function () {
+                    // firstScreenElements[1].style.display = 'none';
+                    // firstScreenElements[2].style.display = 'none';
+                    // fifthScreenElements.style.top = '0';
+                    // fifthScreenElements.style.transform = 'translate(0, 0)';
+                    // gsap.set(screens, { clearProps: 'all' });
+                    // gsap.globalTimeline.clear();
+                    // allowScroll();
+
+                    firstScreenElements[1].style.display = 'none';
+                    firstScreenElements[2].style.display = 'none';
+                    fifthScreenElements.style.top = '0';
+                    fifthScreenElements.style.transform = 'translate(0, 0)';
+                    isAnimating = false;
+                    currentScreen++;
+                }
+            });
+        }, 250),
+        s8: debounce(() => {
+
+
+            gsap.set(screens, { clearProps: 'all' });
+            gsap.globalTimeline.clear();
+            allowScroll();
+
         }, 250),
 
     }

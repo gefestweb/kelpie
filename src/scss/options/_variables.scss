@@ -13,3 +13,10 @@ $pink-to-purple: linear-gradient(90deg, #E100FF 0%, #7F00FF 100%);
     $maxWidth: $maxWidth - 320;
     font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
 }
+
+@mixin observeTextSize($pcSize, $mobSize,$maxWidth) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    transform: translateY(calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth})));
+    
+}

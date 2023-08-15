@@ -5,6 +5,11 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 import { calculateOffscreenPositionY, calculateOffscreenPositionX } from "./calculations.js";
 import { debounce } from "./debounce.js";
 
+ScrollSmoother.create({
+    wrapper: '.main',
+    content: '.scrolling-content'
+})
+
 const tl = gsap.timeline();
 const t2 = gsap.timeline();
 const t3 = gsap.timeline();
@@ -18,7 +23,7 @@ const gsapAnimate = () => {
 
     let isAnimating = false;
     let currentStep = 1;
-    let currentScreen = 5;
+    let currentScreen = 1;
 
     // Элементы с первого экрана
 
@@ -63,7 +68,7 @@ const gsapAnimate = () => {
 
 
 
-    blockScroll();
+    // blockScroll();
 
     //ПРОВЕРКА. ИДЕТ ЛИ АНИМАЦИЯ В ДАННЫЙ МОМЕНТ
 
@@ -556,6 +561,7 @@ const gsapAnimate = () => {
 
                     firstScreenElements[1].style.display = 'none';
                     firstScreenElements[2].style.display = 'none';
+                    firstScreenElements[0].classList.remove('hide-element-bottom');
                     fifthScreenElements.style.top = '0';
                     fifthScreenElements.style.transform = 'translate(0, 0)';
                     isAnimating = false;

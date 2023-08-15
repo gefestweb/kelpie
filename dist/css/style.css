@@ -1223,6 +1223,7 @@ img {
 @media (max-width: 1000px) {
   .four-screen__bcg {
     border-radius: 11px;
+    overflow: hidden;
   }
   .four-screen__rama {
     margin-top: 20px;
@@ -1313,12 +1314,17 @@ img {
       -ms-flex-pack: center;
           justify-content: center;
   mix-blend-mode: lighten;
-  font-size: 96px;
+  font-size: calc(30px + 63 * ((100vw - 320px) / 1480));
 }
 .fifth-screen__button {
   margin: 0 auto;
 }
 
+@media (max-width: 1000px) {
+  .fifth-screen__bcg {
+    top: 0;
+  }
+}
 .sixth-screen {
   background-color: #fdfdfd;
 }
@@ -1835,6 +1841,9 @@ img {
   }
 }
 @media (max-width: 1000px) {
+  .contact-form {
+    padding: 50px 0;
+  }
   .contact-form__content {
     display: -webkit-box;
     display: -ms-flexbox;

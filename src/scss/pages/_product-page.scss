@@ -600,6 +600,7 @@
 
 .four-screen {
     background-color: #FDFDFD;
+
     &__bcg {
         background: url(../../img/Product-page/4-screen-bg1.png) no-repeat center center / cover;
         filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.20));
@@ -712,6 +713,7 @@
 
         &__bcg {
             border-radius: 11px;
+            overflow: hidden;
         }
 
         &__rama {
@@ -749,6 +751,7 @@
 
 .fifth-screen {
     background-color: #FDFDFD;
+
     &__content {
         // margin-top: calc($index * 4);
         height: 100%;
@@ -805,8 +808,7 @@
         align-items: center;
         justify-content: center;
         mix-blend-mode: lighten;
-        // @include fontSize(93, 30, 1800)
-        font-size: 96px;
+        @include fontSize(93, 30, 1800) // font-size: 96px;
     }
 
     &__button {
@@ -814,10 +816,19 @@
     }
 }
 
+@media(max-width: 1000px) {
+    .fifth-screen {
+        &__bcg {
+            top: 0;
+        }
+    }
+}
+
 // ШЕСТОЙ ЭКРАН
 
 .sixth-screen {
     background-color: #fdfdfd;
+
     &__content-wrapper {
         margin-top: 64px;
         display: flex;
@@ -1322,6 +1333,12 @@
 }
 
 @media(max-width: 1000px) {
+
+    .contact-form {
+        padding: 50px 0;
+
+    }
+
     .contact-form__content {
         display: flex;
         flex-direction: column;

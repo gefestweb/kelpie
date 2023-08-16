@@ -1867,6 +1867,20 @@ img {
   }
 }
 .header {
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 30px;
+  padding: 0 100px;
+  -webkit-transition: 0.3s all;
+  -o-transition: 0.3s all;
+  transition: 0.3s all;
+}
+.header__desc {
+  width: 100%;
+  -webkit-transition: 0.3s all;
+  -o-transition: 0.3s all;
+  transition: 0.3s all;
   background-color: #fff;
   border-radius: 25px;
   -webkit-box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.2);
@@ -1938,6 +1952,14 @@ img {
   .header__logo--mob-menu {
     width: 175px;
   }
+}
+
+.header.active {
+  padding: 0px;
+  top: 0;
+}
+.header.active .header__desc {
+  border-radius: 0;
 }
 
 .header-contacts {

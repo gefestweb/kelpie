@@ -1,8 +1,51 @@
 <body>
 
     <main class="main">
-        <div class="scrolling-content">
-            <div class="screen first-screen scrolling-item">
+        <header class="header">
+            <div class="header__desc">
+                <div class="header__wrapper for-desc-flex">
+                    <img class="header__logo logo for-desc" src="../img/ico/logo.svg" alt="">
+                    <nav class="header__nav">
+                        <ul class="header__menu menu">
+                            <li class="menu__item menu-items-txt">Kelpi3 holostand</li>
+                            <li class="menu__item menu-items-txt">Характеристики</li>
+                            <li class="menu__item menu-items-txt">интерактив</li>
+                            <li class="menu__item menu-items-txt">Сценарии использования</li>
+                            <li class="menu__item menu-items-txt">Аренда и продажа</li>
+                        </ul>
+                    </nav>
+                    <div class="header-contacts__buttons">
+                        <button class="button button_transparent">Купить</button>
+                        <button class="button button_purple-text">Обратная связь</button>
+                    </div>
+                </div>
+                <img class="header__logo--mob logo for-mob-block" src="../img/ico/logo-mob.svg" alt="">
+                <div class="burger for-mob-block">
+                    <div class="burger__center-stick"></div>
+                </div>
+            </div>
+            <div class="mob-menu for-mob-block">
+                <div class="mob-menu__container">
+                    <div class="mob-menu__header">
+                        <img class="header__logo--mob-menu logo for-mob-block" src="../img/ico/logo.svg" alt="">
+                        <img class="mob-menu__cross" src="../img/ico/cross.svg"></img>
+                    </div>
+                    <div class="mob-menu__nav">
+                        <a href="#" class="mob-menu__items">Kelpie holostand</a>
+                        <a href="#" class="mob-menu__items">Характеристики</a>
+                        <a href="#" class="mob-menu__items">интерактив</a>
+                        <a href="#" class="mob-menu__items">Использование</a>
+                        <a href="#" class="mob-menu__items">Аренда и продажа</a>
+                    </div>
+                    <div class="mob-menu__buttons">
+                        <button class="button button_transparent mob-menu__button">Купить</button>
+                        <button class="button button_purple-text mob-menu__button">Обратная связь</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="content">
+            <section class="screen first-screen scrolling-item">
                 <div class="container-page-margin shadow">
                     <div class="mob-menu for-mob-block">
                         <div class="mob-menu__container">
@@ -35,38 +78,21 @@
 
                     <div class="first-screen__bcg container-content container-content--no-margin">
                         <div class="container-relative">
-                            <header class="header">
-                                <div class="header__wrapper for-desc-flex">
-                                    <img class="header__logo logo for-desc" src="../img/ico/logo.svg" alt="">
-                                    <nav class="header__nav">
-                                        <ul class="header__menu menu">
-                                            <li class="menu__item menu-items-txt">Kelpi3 holostand</li>
-                                            <li class="menu__item menu-items-txt">Характеристики</li>
-                                            <li class="menu__item menu-items-txt">интерактив</li>
-                                            <li class="menu__item menu-items-txt">Сценарии использования</li>
-                                            <li class="menu__item menu-items-txt">Аренда и продажа</li>
-                                        </ul>
-                                    </nav>
-                                    <div class="header-contacts__buttons">
-                                        <button class="button button_transparent">Купить</button>
-                                        <button class="button button_purple-text">Обратная связь</button>
-                                    </div>
-                                </div>
-                                <img class="header__logo--mob logo for-mob-block" src="../img/ico/logo-mob.svg" alt="">
-                                <div class="burger for-mob-block">
-                                    <div class="burger__center-stick"></div>
-                                </div>
-                            </header>
 
-                            <h1 class="title first-screen__first-title animate-element" data-animate="firstScreen">Уникальная
+
+                            <h1 class="title first-screen__first-title animate-element" data-animate="firstScreenText">
+                                Уникальная
                                 технология,
                                 которую легко применить уже сегодня
                             </h1>
-                            <h1 class="title first-screen__first-title animate-element hide-element-bottom for-desc-block" data-animate="firstScreen">VR-эффект без дополнительного оборудования
+                            <!-- <h1 class="title first-screen__first-title animate-element hide-element-bottom for-desc-block"
+                                data-animate="firstScreen">VR-эффект без дополнительного оборудования
                             </h1>
-                            <h1 class="title first-screen__first-title animate-element hide-element-bottom for-desc-block" data-animate="firstScreen">OLED-transparent для реализации самых креативных рекламных решений
-                            </h1>
-                            
+                            <h1 class="title first-screen__first-title animate-element hide-element-bottom for-desc-block"
+                                data-animate="firstScreen">OLED-transparent для реализации самых креативных рекламных
+                                решений
+                            </h1> -->
+
                             <div class="rama rama--circle">
                                 <div id="switcher" class="switcher screen__content animate-element opacity-on">
                                     <div class="switcher__holder">
@@ -74,10 +100,12 @@
                                         <div class="switcher__toggler" data-animate="firstScreen"></div>
                                     </div>
                                 </div>
-                                <div class="first-screen__content animate-element for-desc-block" data-firstScreen-content="2-content"><img
+                                <div class="first-screen__content animate-element for-desc-block"
+                                    data-firstScreen-content="2-content"><img
                                         src="../img/Product-page/1-screen-2-elem.svg" alt="">
                                 </div>
-                                <div class="first-screen__content animate-element for-desc-block" data-firstScreen-content="3-content"><img
+                                <div class="first-screen__content animate-element for-desc-block"
+                                    data-firstScreen-content="3-content"><img
                                         src="../img/Product-page/1-screen-3-elem.png" alt="">
                                 </div>
                             </div>
@@ -85,9 +113,9 @@
                     </div>
 
                 </div>
-            </div>
+            </section>
 
-            <div class="screen second-screen scrolling-item">
+            <section class="screen second-screen scrolling-item">
                 <div class="container-page">
                     <div class="container-content">
                         <!-- @@include('header.html') -->
@@ -170,8 +198,8 @@
                     </div>
 
                 </div>
-            </div>
-            <div class="screen third-screen scrolling-item">
+            </section>
+            <section class="screen third-screen scrolling-item">
                 <div class="container-page">
                     <div class="container-content">
                         <!-- @@include('header.html') -->
@@ -192,8 +220,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="screen four-screen scrolling-item">
+            </section>
+            <section class="screen four-screen scrolling-item">
                 <div class="container-page-margin">
 
                     <div class="socials abolusteY-center for-desc-flex">
@@ -229,8 +257,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="screen fifth-screen scrolling-item">
+            </section>
+            <section class="screen fifth-screen scrolling-item">
                 <div class="container-page">
                     <div class="container-content">
                         <!-- @@include('header.html') -->
@@ -250,8 +278,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="screen sixth-screen scrolling-item">
+            </section>
+            <section class="screen sixth-screen scrolling-item">
                 <div class="container-page">
                     <div class="container-content ">
                         <!-- @@include('header.html') -->
@@ -410,8 +438,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="screen seventh-screen scrolling-item">
+            </section>
+            <section class="screen seventh-screen scrolling-item">
                 <div class="container-page-margin">
 
                     <div class="scroll-ico absolutX-center for-desc-block"><img src="../img/ico/scroll-ico.svg" alt="">
@@ -443,48 +471,48 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-        </div>
-        <div class="contact-form">
-            <div class="container-content">
-                <div class="contact-form__content">
-                    <div class="contact-form__part">
-                        <h2 class="contact-form__title">Остались вопросы?</h2>
-                        <p class="contact-form__descr">Оставьте свои контактные данные, и мы свяжемся с вами в ближайшее
-                            время</p>
-                    </div>
-                    <div class="contact-form__part">
-                        <form id="contact-form" class="rent-content-form contact-form__form">
-                            <div class="rent-content-form__row">
-                                <div class="form-item">
-                                    <label for="name"></label>
-                                    <input type="text" id="name" name="name" placeholder="ваше имя">
+            <section class="contact-form">
+                <div class="container-content">
+                    <div class="contact-form__content">
+                        <div class="contact-form__part">
+                            <h2 class="contact-form__title">Остались вопросы?</h2>
+                            <p class="contact-form__descr">Оставьте свои контактные данные, и мы свяжемся с вами в
+                                ближайшее
+                                время</p>
+                        </div>
+                        <div class="contact-form__part">
+                            <form id="contact-form" class="rent-content-form contact-form__form">
+                                <div class="rent-content-form__row">
+                                    <div class="form-item">
+                                        <label for="name"></label>
+                                        <input type="text" id="name" name="name" placeholder="ваше имя">
+                                    </div>
+                                    <div class="form-item">
+                                        <label for="phone"></label>
+                                        <input type="number" id="phone" name="phone"
+                                            placeholder="+7 _ _ _   _ _ _   _ _   _ _">
+                                    </div>
                                 </div>
-                                <div class="form-item">
-                                    <label for="phone"></label>
-                                    <input type="number" id="phone" name="phone"
-                                        placeholder="+7 _ _ _   _ _ _   _ _   _ _">
+                                <div class="rent-content-form__row">
+                                    <div class="form-item">
+                                        <label for="email"></label>
+                                        <input type="email" id="email" name="email" placeholder="Ваш email">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="rent-content-form__row">
-                                <div class="form-item">
-                                    <label for="email"></label>
-                                    <input type="email" id="email" name="email" placeholder="Ваш email">
+                                <div class="rent-content-form__row">
+                                    <p>Нажимая на кнопку, вы <a href="#">соглашаетесь</a> на обработку персональных
+                                        данных</p>
+                                    <button
+                                        class="rent-content-form__submit button button_purple-text button_purple-text--submit"
+                                        type="submit">Отправить</button>
                                 </div>
-                            </div>
-                            <div class="rent-content-form__row">
-                                <p>Нажимая на кнопку, вы <a href="#">соглашаетесь</a> на обработку персональных
-                                    данных</p>
-                                <button
-                                    class="rent-content-form__submit button button_purple-text button_purple-text--submit"
-                                    type="submit">Отправить</button>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
-
     </main>
 </body>

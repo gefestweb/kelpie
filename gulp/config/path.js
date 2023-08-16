@@ -16,7 +16,8 @@ export const path={
         src:{
             img: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp}`,
             svg:`${srcFolder}/img/**/*.svg`,
-            js:`${srcFolder}/js/app.js`,
+            js: `${srcFolder}/js/app.js`,
+            scrollSmoother: `${srcFolder}/js/scrollSmoother.js`,
             scss:`${srcFolder}/scss/style.scss`,
             html:`${srcFolder}/*.html`,
             files:`${srcFolder}/files/**/*.*`,

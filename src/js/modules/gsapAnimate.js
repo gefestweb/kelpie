@@ -4,6 +4,7 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin.js";
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 import { calculateOffscreenPositionY, calculateOffscreenPositionX } from "./calculations.js";
 import { debounce } from "./debounce.js";
+import header from "./header.js";
 
 const tl = gsap.timeline();
 const t2 = gsap.timeline();
@@ -580,7 +581,10 @@ const gsapAnimate = () => {
 
     const screens = document.querySelectorAll('.screen');
     const firstScreenElements = screens[0].querySelectorAll('.animate-element');
+    const switcherNode = screens[0].querySelector('.switcher__toggler');
     const ramaElements = screens[0].querySelector('.rama').querySelectorAll('.animate-element');
+    const firstScreenText = screens[0].querySelectorAll('.first-screen__first-title');
+    console.log(firstScreenText)
 
     // Элементы со второго экрана
 
@@ -612,20 +616,134 @@ const gsapAnimate = () => {
     const t3 = gsap.timeline();
     const t4 = gsap.timeline();
 
-    tl.to('.first-screen__first-title', 
-    {
+    // Фиксируем первый экран на время выполнения анимаций.
+    ScrollTrigger.create({
+        trigger: screens[0],
+        start: "top top",
+        end: "+=2100",
+        pin: true,
+        pinSpacing: true
+    });
+    ScrollTrigger.create({
+        trigger: screens[1],
+        start: "top top",
+        end: "+=2200",
+        pin: true,
+    });
+    // pinScreen(screens[0])
 
+    // Анимация первого текста.
+
+    gsap.fromTo(firstScreenText[0], {
+        opacity: 1,
+    }, {
         scrollTrigger: {
-            trigger: screens[0],
             start: "top top",
             end: "+=500",
-            pin: true,
             scrub: true,
         },
-        y: -500,
-        opacity: 0
+        y: -300,
+        opacity: 0,
+        // Запуск анимации свичера.
+        onStart: function () {
+            switcherNode.classList.toggle('switcher__toggler--scroll');
+        }
     });
 
+
+
+    // Анимация второго текста.
+
+    gsap.fromTo(firstScreenText[1], {
+        y: 400,
+        opacity: 0,
+    }, {
+        scrollTrigger: {
+            trigger: firstScreenText[0],
+            start: "top top",
+            end: "+=1000",
+            scrub: true,
+            onUpdate: self => {
+                if (self.progress < 0.5) {
+                    // Изменение прозрачности на половине анимации
+                    const opacity = 2 * self.progress; // Прозрачность будет увеличиваться до 1
+                    firstScreenText[1].style.opacity = opacity;
+                } else {
+                    // Изменение прозрачности после половины анимации
+                    const opacity = 2 - 2 * self.progress; // Прозрачность будет уменьшаться до 0
+                    firstScreenText[1].style.opacity = opacity;
+                }
+            },
+        },
+        y: -300,
+        opacity: 1,
+
+        // Анимация третьего текста
+        onComplete: function () {
+            gsap.fromTo(firstScreenText[2], {
+                y: 400,
+                opacity: 0,
+            }, {
+                scrollTrigger: {
+                    trigger: firstScreenText[1],
+                    start: "top top",
+                    end: "+=500",
+                    scrub: true,
+                },
+                y: 0,
+                opacity: 1
+            });
+        }
+    });
+    // Прячем свичер (первый элемент в раме)
+    gsap.to(ramaElements[0], {
+        scrollTrigger: {
+            trigger: firstScreenText[0],
+            start: "top top",
+            end: "+=300",
+            scrub: true,
+        },
+        opacity: 0,
+        onComplete: function () {
+            screens[0].querySelector('.rama').classList.remove('rama--circle');
+        }
+    })
+
+    // Показываем и прячем второй элемент в раме
+
+    gsap.to(ramaElements[1], {
+        scrollTrigger: {
+            trigger: firstScreenText[0],
+            start: "top top",
+            end: "+=1000",
+            scrub: true,
+            onUpdate: self => {
+                if (self.progress < 0.5) {
+                    // Изменение прозрачности на половине анимации
+                    const opacity = 2 * self.progress; // Прозрачность будет увеличиваться до 1
+                    ramaElements[1].style.opacity = opacity;
+                } else {
+                    // Изменение прозрачности после половины анимации
+                    const opacity = 2 - 2 * self.progress; // Прозрачность будет уменьшаться до 0
+                    ramaElements[1].style.opacity = opacity;
+                }
+            },
+        },
+        opacity: 1,
+
+        // Показываем третий элемент в раме
+        onComplete: function () {
+            gsap.to(ramaElements[2], {
+                scrollTrigger: {
+                    trigger: firstScreenText[2],
+                    start: "top bottom",
+                    end: "+=500",
+                    scrub: true,
+                },
+                opacity: 1,
+            })
+        }
+    })
 
 }
 

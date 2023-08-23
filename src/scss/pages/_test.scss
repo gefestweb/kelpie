@@ -1,0 +1,26 @@
+body {
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text {
+    font-size: 60px;
+
+}
+
+.blue {
+    background-color:aqua;
+}
+.red {
+    background-color: crimson;
+}
+.yellow {
+    background-color: bisque;
+}

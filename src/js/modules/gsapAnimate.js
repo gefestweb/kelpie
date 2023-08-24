@@ -1,10 +1,11 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin.js";
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, TweenMax);
 import { calculateOffscreenPositionY, calculateOffscreenPositionX } from "./calculations.js";
 import { debounce } from "./debounce.js";
 import header from "./header.js";
+import { TweenMax } from "gsap/gsap-core.js";
 
 const tl = gsap.timeline();
 const t2 = gsap.timeline();
@@ -589,7 +590,7 @@ const gsapAnimate = () => {
     // Элементы со второго экрана
 
     const secondScreenElements = screens[1].querySelectorAll('.animate-element');
-    secondScreenElements[0].style.visibility = 'hidden';
+    // secondScreenElements[0].style.visibility = 'hidden';
 
     // Элементы с третьего экрана
 
@@ -611,26 +612,26 @@ const gsapAnimate = () => {
     const seventhScreenElements = screens[6].querySelector('.animate-element');
 
 
-    const tl = gsap.timeline();
-    const t2 = gsap.timeline();
-    const t3 = gsap.timeline();
-    const t4 = gsap.timeline();
-
     // Фиксируем первый экран на время выполнения анимаций.
-    ScrollTrigger.create({
-        trigger: screens[0],
-        start: "top top",
-        end: "+=2100",
-        pin: true,
-        pinSpacing: true
-    });
-    ScrollTrigger.create({
-        trigger: screens[1],
-        start: "top top",
-        end: "+=2200",
-        pin: true,
-    });
-    // pinScreen(screens[0])
+
+    function fixScreen(screen, scroll) {
+
+        ScrollTrigger.create({
+            trigger: screen,
+            start: "top top",
+            end: "+=" + scroll,
+            pin: true,
+            // pinSpacing: false,
+        });
+    }
+
+    fixScreen(screens[0], 2200);
+    fixScreen(screens[1], 1200);
+    fixScreen(screens[2], 1200);
+    fixScreen(screens[3], 1200);
+    fixScreen(screens[4], 1200);
+    fixScreen(screens[5], 1200);
+    fixScreen(screens[6], 1200);
 
     // Анимация первого текста.
 
@@ -745,6 +746,73 @@ const gsapAnimate = () => {
         }
     })
 
+
+    const tline2 = gsap.timeline({ paused: true }); // Создаем таймлайн, но не запускаем его сразу
+
+    secondScreenElements.forEach((element, index) => {
+        tline2.fromTo(element, {
+            opacity: 0,
+            y: 50,
+        }, {
+            opacity: 1,
+            y: 0,
+            duration: 1.5,
+        });
+    });
+
+    const scrollDuration = 600; // Время, которое вы хотите потратить на скролл (в миллисекундах)
+    const maxScroll = 800; // Максимальное количество пикселей, которые вы скроллите
+
+    // Рассчитываем значение timeScale на основе скорости скролла
+    const timeScaleValue = scrollDuration / maxScroll;
+
+    ScrollTrigger.create({
+        trigger: screens[1],
+        start: 'top top+300',
+        end: '+=600',
+        scrub: true,
+        animation: tline2,
+        onUpdate: self => {
+            // Обновляем timeScale в соответствии со скоростью скролла
+            if(self.getVelocity()>=2500) {
+                tline2.pause()
+                
+            }
+            
+            //tline2.timeScale(timeScaleValue * self.progress);
+        },
+    });
+
+
+    const tline3 = gsap.timeline();
+
+    tline3.to( screens[2], {
+        delay: 1,
+        onStart: function() {
+            screens[2].classList.add('third-screen--filter');
+        },
+        onReverseComplete: function() {
+            screens[2].classList.remove('third-screen--filter');
+        }
+    });
+    thirdScreenElements.forEach((element, index) => {
+        tline3.fromTo(element, {
+            opacity: 0,
+            y: 50,
+        }, {
+            opacity: 1,
+            y: 0,
+            duration: 1.5,
+        });
+    });
+
+    ScrollTrigger.create({
+        trigger: screens[2],
+        start: 'top top+300',
+        end: '+=600',
+        scrub: true,
+        animation: tline3,
+    });
 }
 
 export default gsapAnimate;

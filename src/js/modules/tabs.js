@@ -1,13 +1,13 @@
 const tabs = () => {
 
-    const tabsBinder = (tabSelector, contentSelector, active, displayProperty) => {
+    const tabsBinder = (tabSelector, contentSelector, activeClass, activeContent, displayProperty) => {
         let tabs = document.querySelectorAll(tabSelector),
             content = document.querySelectorAll(contentSelector),
-            activeTab = active - 1;
+            activeTab = activeContent - 1;
 
         function removeActiveTabClass() {
             tabs.forEach(tab => {
-                tab.classList.remove('rent-content__tab--active');
+                tab.classList.remove(activeClass);
             });
         }
 
@@ -17,7 +17,7 @@ const tabs = () => {
             });
         }
 
-        tabs[activeTab].classList.add('rent-content__tab--active');
+        tabs[activeTab].classList.add(activeClass);
         hideContent();
         content[activeTab].style.display = displayProperty;
 
@@ -26,13 +26,15 @@ const tabs = () => {
             tab.addEventListener('click', () => {
                 removeActiveTabClass();
                 hideContent();
-                tab.classList.add('rent-content__tab--active');
+                tab.classList.add(activeClass);
                 content[tabIndex].style.display = displayProperty
             });
         });
     }
 
-    tabsBinder('.rent-content__tab', '.rent-content__tab-content', 1, 'flex');
+    tabsBinder('.rent-content__tab', '.rent-content__tab-content', 'rent-content__tab--active', 1, 'flex');
+    tabsBinder('.four-screen__button', '.four-screen__rama-item', 'four-screen__button--active', 1, 'block');
+    tabsBinder('.dop-screen2__tab', '.dop-screen2__tab-content', 'rent-content__tab--active', 1, 'block');
 
 }
 

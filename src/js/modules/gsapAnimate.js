@@ -587,29 +587,37 @@ const gsapAnimate = () => {
     const firstScreenText = screens[0].querySelectorAll('.first-screen__first-title');
     console.log(firstScreenText)
 
-    // Элементы со второго экрана
+    // Элементы со третьего экрана
 
-    const secondScreenElements = screens[1].querySelectorAll('.animate-element');
+    const secondScreenElements = screens[2].querySelectorAll('.animate-element');
     // secondScreenElements[0].style.visibility = 'hidden';
 
-    // Элементы с третьего экрана
+    // Элементы с четвертого экрана
 
-    const thirdScreenElements = screens[2].querySelectorAll('.animate-element');
+    const thirdScreenTextBlocks = screens[3].querySelectorAll('.third-screen__text-block');
+    const thirdScreenText1 = thirdScreenTextBlocks[0].querySelectorAll('.animate-element');
+    const thirdScreenText2 = thirdScreenTextBlocks[1].querySelectorAll('.animate-element');
+    const thirdScreenText3 = thirdScreenTextBlocks[2].querySelectorAll('.animate-element');
 
     // Элементы с пятого экрана
 
-    const fifthScreenElements = screens[4].querySelector('.animate-element');
-    const fifthScreenText = screens[4].querySelector('.fifth-screen__text');
-    let textHeightStep = fifthScreenText.offsetHeight / 4;
+    const fourRamaItems = screens[4].querySelectorAll('.four-screen__rama-item');
+    const fourRamaBlur = screens[4].querySelector('.four-screen__rama-blur');
 
     // Элементы с шестого экрана
 
-    const sixthScreenElements = screens[5].querySelectorAll('.animate-element');
-    const forSixthScreenAnimations = sixthScreenElements[1].querySelectorAll('.six-screen-anim');
+    const fifthScreenElements = screens[5].querySelector('.animate-element');
+    const fifthScreenText = screens[5].querySelector('.fifth-screen__text');
+    let textHeightStep = fifthScreenText.offsetHeight / 4;
 
     // Элементы с седьмого экрана
 
-    const seventhScreenElements = screens[6].querySelector('.animate-element');
+    const sixthScreenElements = screens[6].querySelectorAll('.animate-element');
+    const forSixthScreenAnimations = sixthScreenElements[1].querySelectorAll('.six-screen-anim');
+
+    // Элементы с восьмого экрана
+
+    const seventhScreenElements = screens[7].querySelector('.animate-element');
 
 
     // Фиксируем первый экран на время выполнения анимаций.
@@ -625,13 +633,17 @@ const gsapAnimate = () => {
         });
     }
 
+
+
+
     fixScreen(screens[0], 2200);
-    fixScreen(screens[1], 1200);
-    fixScreen(screens[2], 1200);
-    fixScreen(screens[3], 1200);
+    fixScreen(screens[1], 2200); /*  - доп-скрин */
+    fixScreen(screens[2], 1400);
+    fixScreen(screens[3], 2400);
     fixScreen(screens[4], 1200);
-    fixScreen(screens[5], 1200);
+    fixScreen(screens[5], 3000);
     fixScreen(screens[6], 1200);
+    fixScreen(screens[7], 1200);
 
     // Анимация первого текста.
 
@@ -744,7 +756,51 @@ const gsapAnimate = () => {
                 opacity: 1,
             })
         }
-    })
+    });
+
+    const tlineDopScreen = gsap.timeline();
+
+    const dopScreenItems = document.querySelectorAll('.dop-screen__item');
+
+    // Преобразуем NodeList в массив и скрываем последние два элемента
+    const dopScreenArray = Array.from(dopScreenItems);
+    dopScreenArray.slice(-2).forEach(item => {
+        gsap.set(item, { display: 'none' });
+    });
+
+    // Проходим по всем элементам и добавляем анимации
+    dopScreenArray.forEach((item, index) => {
+        if (index < 2) {
+            tlineDopScreen.to(item, {
+                opacity: 0,
+                y: -50,
+                duration: 0.5,
+                display: 'none'
+            });
+        }
+
+        if (index >= 2 && index < 4) {
+            tlineDopScreen.to(item, {
+                opacity: 1,
+                y: 0,
+                duration: 0.5,
+                display: 'block'
+            });
+        }
+    });
+
+    ScrollTrigger.create({
+        trigger: screens[1],
+        start: 'top top',
+        end: '+=1000',
+        scrub: true,
+        animation: tlineDopScreen,
+        // onEnter: () => {
+        //     tlineDopScreen.restart();
+        // }
+    });
+
+
 
 
     const tline2 = gsap.timeline({ paused: true }); // Создаем таймлайн, но не запускаем его сразу
@@ -756,53 +812,7 @@ const gsapAnimate = () => {
         }, {
             opacity: 1,
             y: 0,
-            duration: 1.5,
-        });
-    });
-
-    const scrollDuration = 600; // Время, которое вы хотите потратить на скролл (в миллисекундах)
-    const maxScroll = 800; // Максимальное количество пикселей, которые вы скроллите
-
-    // Рассчитываем значение timeScale на основе скорости скролла
-    const timeScaleValue = scrollDuration / maxScroll;
-
-    ScrollTrigger.create({
-        trigger: screens[1],
-        start: 'top top+300',
-        end: '+=600',
-        scrub: true,
-        animation: tline2,
-        onUpdate: self => {
-            // Обновляем timeScale в соответствии со скоростью скролла
-            if(self.getVelocity()>=2500) {
-                tline2.pause()
-                
-            }
-            
-            //tline2.timeScale(timeScaleValue * self.progress);
-        },
-    });
-
-
-    const tline3 = gsap.timeline();
-
-    tline3.to( screens[2], {
-        delay: 1,
-        onStart: function() {
-            screens[2].classList.add('third-screen--filter');
-        },
-        onReverseComplete: function() {
-            screens[2].classList.remove('third-screen--filter');
-        }
-    });
-    thirdScreenElements.forEach((element, index) => {
-        tline3.fromTo(element, {
-            opacity: 0,
-            y: 50,
-        }, {
-            opacity: 1,
-            y: 0,
-            duration: 1.5,
+            transition: 1
         });
     });
 
@@ -811,8 +821,98 @@ const gsapAnimate = () => {
         start: 'top top+300',
         end: '+=600',
         scrub: true,
+        animation: tline2,
+    });
+
+
+    const tline3 = gsap.timeline();
+
+    tline3.to(screens[3], {
+        delay: 1,
+        onStart: function () {
+            screens[3].classList.add('third-screen--filter');
+        },
+        onReverseComplete: function () {
+            screens[3].classList.remove('third-screen--filter');
+        }
+    });
+    thirdScreenTextBlocks.forEach((element, index) => {
+        tline3.fromTo(element, {
+            opacity: 0,
+            y: 50,
+            duration: 5
+        }, {
+            opacity: 1,
+            y: 0,
+            delay: 1 + index,
+            // duration: 5,
+            transition: 1,
+
+
+        });
+        tline3.to(element, {
+            delay: 3 + index,
+            opacity: 0,
+            y: 50,
+        });
+    });
+
+    tline3.to(screens[3], {
+        delay: 1,
+        onStart: function () {
+            screens[2].classList.remove('third-screen--filter');
+        }
+    });
+
+    ScrollTrigger.create({
+        trigger: screens[3],
+        start: 'top top+500',
+        end: '+=2000',
+        scrub: true,
         animation: tline3,
     });
+
+
+    const tline4 = gsap.timeline();
+
+    tline4.to(screens[4], {
+        delay: 1,
+        onStart: function () {
+            fourRamaBlur.classList.add('four-screen__rama-blur--full-blur');
+        },
+        onReverseComplete: function () {
+            fourRamaBlur.classList.remove('four-screen__rama-blur--full-blur');
+        }
+    });
+
+    ScrollTrigger.create({
+        trigger: screens[4],
+        start: 'top top+500',
+        end: '+=500',
+        scrub: true,
+        animation: tline4,
+    });
+
+
+    const tline5 = gsap.timeline({
+        onUpdate: ScrollTrigger.update // Это для обновления ScrollTrigger при обновлении временной линии
+    });
+
+    // Добавляем анимацию перемещения элемента по оси Y (top)
+    tline5.to(fifthScreenElements, {
+        top: "-100%", // Конечное состояние: перемещение на минус 100%
+        ease: "none" // Эффект анимации (можете выбрать другой, если нужно)
+    });
+
+    // Создаем ScrollTrigger для триггера
+    ScrollTrigger.create({
+        trigger: screens[5], // Триггер (можете использовать свой)
+        start: 'top top',
+        end: '+=3000',
+        scrub: true,
+        animation: tline5 // Привязываем временную линию анимации
+    });
+
 }
 
 export default gsapAnimate;

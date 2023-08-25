@@ -477,6 +477,11 @@ img {
   .margin-100pr {
     margin-bottom: -100%;
   }
+  .transition {
+    -webkit-transition: 1s all;
+    -o-transition: 1s all;
+    transition: 1s all;
+  }
 }
 .menu-items-txt {
   white-space: nowrap;
@@ -1053,6 +1058,7 @@ img {
       -ms-flex-align: center;
           align-items: center;
   gap: calc((1vw + 1vh) * 1.5);
+  position: absolute;
   max-width: 1072px;
 }
 .third-screen__text-block h2 {
@@ -1152,6 +1158,11 @@ img {
           backdrop-filter: blur(2.5px);
   background-color: rgba(113, 99, 77, 0.35);
   z-index: -1;
+  -webkit-transition: -webkit-backdrop-filter 0.5s ease-in-out;
+  transition: -webkit-backdrop-filter 0.5s ease-in-out;
+  -o-transition: backdrop-filter 0.5s ease-in-out;
+  transition: backdrop-filter 0.5s ease-in-out;
+  transition: backdrop-filter 0.5s ease-in-out, -webkit-backdrop-filter 0.5s ease-in-out;
 }
 .four-screen__rama-blur--full-blur {
   -webkit-backdrop-filter: blur(18px);
@@ -1159,6 +1170,15 @@ img {
 }
 .four-screen__rama img {
   height: 100%;
+}
+.four-screen__rama-item {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-45%, -45%);
+      -ms-transform: translate(-45%, -45%);
+          transform: translate(-45%, -45%);
+  width: 23%;
 }
 .four-screen__buttons {
   position: absolute;
@@ -1187,6 +1207,15 @@ img {
   text-transform: none;
   -webkit-box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.2);
+}
+.four-screen__button--active {
+  border-radius: 20px;
+  background: -webkit-gradient(linear, left top, right top, from(#3926AD), to(#C367D6)) !important;
+  background: -o-linear-gradient(left, #3926AD 0%, #C367D6 100%) !important;
+  background: linear-gradient(90deg, #3926AD 0%, #C367D6 100%) !important;
+  /* нажатая кнопка */
+  -webkit-box-shadow: 0px 3px 7px 4px rgba(23, 4, 47, 0.25), 0px -3px 4px 0px rgba(239, 175, 255, 0.19);
+          box-shadow: 0px 3px 7px 4px rgba(23, 4, 47, 0.25), 0px -3px 4px 0px rgba(239, 175, 255, 0.19);
 }
 .four-screen__button p {
   color: #fff;
@@ -1287,9 +1316,6 @@ img {
   width: 100%;
   height: 100%;
   z-index: 0;
-  -webkit-transition: 1s;
-  -o-transition: 1s;
-  transition: 1s;
 }
 .fifth-screen__text {
   width: 100%;
@@ -1320,6 +1346,49 @@ img {
     top: 0;
   }
 }
+.dop-screen2__content-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.dop-screen2__part {
+  width: calc(50% - 70px);
+  max-width: 100%;
+}
+.dop-screen2__tabs {
+  margin-top: 14px;
+}
+.dop-screen2__tab-contents {
+  margin-top: 50px;
+}
+.dop-screen2__tab-content {
+  color: rgba(29, 12, 51, 0.8);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 192.4%;
+}
+.dop-screen2__buttons {
+  margin-top: 50px;
+}
+.dop-screen2__right-part {
+  border-radius: 30px;
+  /* Большая тень */
+  -webkit-box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+.dop-screen2__img {
+  width: 100%;
+}
+
 .sixth-screen {
   background-color: #fdfdfd;
 }
@@ -1780,6 +1849,55 @@ img {
     height: calc(100vh - 36px);
   }
 }
+.dop-screen__content-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+}
+.dop-screen__item {
+  padding: 40px 3px 0 35px;
+  position: relative;
+  max-width: 100%;
+  width: calc(50% - 15px);
+  border-radius: 30px;
+  background: #FDFDFD;
+  -webkit-box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+.dop-screen__title {
+  background: -o-linear-gradient(33deg, #1D0C33 0%, #D283EA 100%);
+  background: linear-gradient(57deg, #1D0C33 0%, #D283EA 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: bold;
+  -webkit-text-fill-color: transparent;
+}
+.dop-screen__desc {
+  margin-top: 20px;
+  color: var(--base-text, rgba(29, 12, 51, 0.8));
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 167.9%;
+}
+.dop-screen__image {
+  width: 100%;
+  position: absolute;
+  bottom: -60px;
+  left: 0;
+}
+
 .contact-form {
   padding: 160px 0;
 }

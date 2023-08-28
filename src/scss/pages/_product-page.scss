@@ -45,6 +45,9 @@
         position: absolute;
         bottom: 30%;
         right: 0;
+        &:first-child {
+            opacity: 1;
+        }
 
     }
 }
@@ -543,6 +546,8 @@
     }
 
     &__button {
+        position: absolute;
+        bottom: 20%;
         padding: 10px 0;
         align-items: center;
         background-color: #fff;
@@ -618,7 +623,7 @@
         z-index: -1;
         height: 98%;
         bottom: -30px;
-
+        overflow: hidden;
         &::before {
             /* создайте псевдоэлемент ::before */
             content: "";
@@ -629,7 +634,7 @@
 
         &-blur {
             position: absolute;
-            // top: 0;
+            top: 16px;
             width: 100%;
             height: 100%;
             backdrop-filter: blur(2.5px);
@@ -845,6 +850,7 @@
 
 .dop-screen2 {
     &__content-wrapper {
+        padding-top: 70px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -1349,6 +1355,12 @@
         flex-direction: row;
         justify-content: space-between;
         height: 100%;
+        &:nth-child(2) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
     }
 
     &__item {

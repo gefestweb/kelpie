@@ -7,6 +7,7 @@ import ramaObserve from "./modules/helper.js";
 import gsapAnimate from "./modules/gsapAnimate.js";
 import test from "./modules/test.js";
 import header from "./modules/header.js";
+// import { scrollByPixels } from "./modules/scrollByPixel.js";
 mainFuncs.isWebp();
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -16,8 +17,9 @@ document.addEventListener("DOMContentLoaded", function() {
     oko();
     ramaObserve();
     header();
-    // test();
+    // scrollByPixels();
     if (window.matchMedia("(min-width: 1000px)").matches) {
         gsapAnimate();
     }
+    
 })

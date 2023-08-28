@@ -46,7 +46,7 @@ export const swiperInit = () => {
         slidesPerView: 1,
         spaceBetween: 0,
         speed: 600,
-        effect: 'cube',
+        effect: 'slide',
         navigation: {
             nextEl: '.swiper-button-next.rent-content-right.seventh-screen__right',
             prevEl: '.swiper-button-prev.rent-content-left.seventh-screen__left'

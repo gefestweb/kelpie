@@ -1,72 +1,6 @@
-<body>
-
-    <main class="main">
-        <header class="header">
-            <div class="header__desc">
-                <div class="header__wrapper for-desc-flex">
-                    <img class="header__logo logo for-desc" src="../img/ico/logo.svg" alt="">
-                    <nav class="header__nav">
-                        <ul class="header__menu menu">
-                            <li class="menu__item menu-items-txt">Kelpi3 holostand</li>
-                            <li class="menu__item menu-items-txt">Характеристики</li>
-                            <li class="menu__item menu-items-txt">интерактив</li>
-                            <li class="menu__item menu-items-txt">Сценарии использования</li>
-                            <li class="menu__item menu-items-txt">Аренда и продажа</li>
-                        </ul>
-                    </nav>
-                    <div class="header-contacts__buttons">
-                        <button class="button button_transparent">Купить</button>
-                        <button class="button button_purple-text">Обратная связь</button>
-                    </div>
-                </div>
-                <img class="header__logo--mob logo for-mob-block" src="../img/ico/logo-mob.svg" alt="">
-                <div class="burger for-mob-block">
-                    <div class="burger__center-stick"></div>
-                </div>
-            </div>
-            <div class="mob-menu for-mob-block">
-                <div class="mob-menu__container">
-                    <div class="mob-menu__header">
-                        <img class="header__logo--mob-menu logo for-mob-block" src="../img/ico/logo.svg" alt="">
-                        <img class="mob-menu__cross" src="../img/ico/cross.svg"></img>
-                    </div>
-                    <div class="mob-menu__nav">
-                        <a href="#" class="mob-menu__items">Kelpie holostand</a>
-                        <a href="#" class="mob-menu__items">Характеристики</a>
-                        <a href="#" class="mob-menu__items">интерактив</a>
-                        <a href="#" class="mob-menu__items">Использование</a>
-                        <a href="#" class="mob-menu__items">Аренда и продажа</a>
-                    </div>
-                    <div class="mob-menu__buttons">
-                        <button class="button button_transparent mob-menu__button">Купить</button>
-                        <button class="button button_purple-text mob-menu__button">Обратная связь</button>
-                    </div>
-                </div>
-            </div>
-        </header>
         <div class="content">
             <section class="screen first-screen scrolling-item">
                 <div class="container-page-margin shadow">
-                    <div class="mob-menu for-mob-block">
-                        <div class="mob-menu__container">
-                            <div class="mob-menu__header">
-                                <img class="header__logo--mob-menu logo for-mob-block" src="../img/ico/logo.svg" alt="">
-                                <img class="mob-menu__cross" src="../img/ico/cross.svg"></img>
-                            </div>
-                            <div class="mob-menu__nav">
-                                <a href="#" class="mob-menu__items">Kelpie holostand</a>
-                                <a href="#" class="mob-menu__items">Характеристики</a>
-                                <a href="#" class="mob-menu__items">интерактив</a>
-                                <a href="#" class="mob-menu__items">Использование</a>
-                                <a href="#" class="mob-menu__items">Аренда и продажа</a>
-                            </div>
-                            <div class="mob-menu__buttons">
-                                <button class="button button_transparent mob-menu__button">Купить</button>
-                                <button class="button button_purple-text mob-menu__button">Обратная связь</button>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="socials abolusteY-center for-desc-flex">
                         <div class="socials__item"><img class="socials__ico" src="../img/ico/tg-ico.svg" alt=""></div>
                         <div class="socials__item"><img class="socials__ico" src="../img/ico/youtube-ico.svg" alt="">
@@ -404,7 +338,7 @@
                 </div>
             </section>
 
-            <section class="screen sixth-screen scrolling-item">
+            <section id="rent" class="screen sixth-screen scrolling-item">
                 <div class="container-page">
                     <div class="container-content">
                         <!-- @@include('header.html') -->
@@ -458,9 +392,9 @@
                                     <p class="rent-content__title six-screen-anim">Аренда и контент</p>
                                     <div class="rent-content__content-wrapper">
                                         <div class="rent-content__tabs six-screen-anim">
-                                            <div class="rent-content__tab">Аренда</div>
-                                            <div class="rent-content__tab">Покупка</div>
-                                            <div class="rent-content__tab">Контент</div>
+                                            <div class="rent-content__tab six-screen__tab">Покупка</div>
+                                            <div class="rent-content__tab six-screen__tab">Контент</div>
+                                            <div class="rent-content__tab six-screen__tab">Аренда</div>
                                         </div>
                                         <div class="rent-content__tab-contents">
                                             <div class="rent-content__tab-content tab-content">
@@ -639,5 +573,3 @@
                 </div>
             </section>
         </div>
-    </main>
-</body>

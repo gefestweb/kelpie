@@ -143,6 +143,7 @@
 @media (max-width: 1000px) {
 
     .header {
+        padding: 0 20px;
         background-color: unset;
         border-radius: unset;
         box-shadow: unset;
@@ -150,5 +151,12 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+    }
+    .header__desc {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: unset;
     }
 }

@@ -10,8 +10,9 @@
 @media (max-width: 1000px) {
   .container-page-margin {
     max-height: unset;
-    width: calc(100% - 50px);
+    width: calc(100% - 20px);
     height: unset;
+    margin: 10px auto;
   }
 }
 
@@ -1387,6 +1388,9 @@ img {
   margin-top: 50px;
 }
 .dop-screen2__right-part {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   border-radius: 30px;
   /* Большая тень */
   -webkit-box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.2);
@@ -2192,6 +2196,7 @@ body {
 }
 @media (max-width: 1000px) {
   .header {
+    padding: 0 20px;
     background-color: unset;
     border-radius: unset;
     -webkit-box-shadow: unset;
@@ -2209,6 +2214,20 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+  .header__desc {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    background-color: unset;
   }
 }
 .switcher {

@@ -632,13 +632,13 @@ const gsapAnimate = () => {
     // Фиксируем первый экран на время выполнения анимаций.
 
     function fixScreen(screen, scroll) {
-
-        ScrollTrigger.create({
+        const trigger = ScrollTrigger.create({
             trigger: screen,
             start: "top top",
             end: "+=" + scroll,
             pin: true,
             // pinSpacing: false,
+            // once: true, // Делаем фиксацию один раз
         });
     }
 
@@ -863,8 +863,8 @@ const gsapAnimate = () => {
         scrollTrigger: {
             trigger: screens[1],
             start: 'top top',
-            end: "+=500",
-            scrub: true
+            // end: "+=500",
+            // scrub: true
         },
     });
 
@@ -902,7 +902,6 @@ const gsapAnimate = () => {
         delay: 1,
         onStart: function () {
             screens[3].classList.add('third-screen--filter');
-            console.log(thirdScreenTextBlocks)
         },
         onReverseComplete: function () {
             screens[3].classList.remove('third-screen--filter');

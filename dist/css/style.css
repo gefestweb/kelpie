@@ -604,7 +604,6 @@ img {
 }
 @media (max-width: 1000px) {
   .screen {
-    height: unset;
     width: 100%;
   }
 }
@@ -614,6 +613,7 @@ img {
   -webkit-filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.2));
           filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.2));
   border-radius: 40px;
+  overflow: hidden;
 }
 .first-screen__content {
   position: absolute;
@@ -724,8 +724,8 @@ img {
 }
 @media (max-width: 1095px) {
   .rama {
-    max-width: 320px;
-    max-height: 420px;
+    max-width: 400px;
+    max-height: 530px;
   }
   .first-screen__first-title {
     font-size: 33px;
@@ -735,21 +735,26 @@ img {
 }
 @media (max-width: 1000px) {
   .rama {
-    position: unset;
-    bottom: unset;
     left: unset;
     width: 100%;
     height: calc((1vw + 1vh) * 43);
     margin-top: 60px;
+  }
+  .rama::before {
+    content: unset;
   }
   .first-screen__first-title {
     max-width: unset;
     width: 100%;
     font-size: calc((1vw + 1vh) * 2.9);
     position: unset;
-    margin-top: calc((1vw + 1vh) * 3.55);
+    margin-top: calc((1vw + 1vh) * 7.15);
     bottom: 0;
     right: 0;
+    display: none;
+  }
+  .first-screen__first-title:first-child {
+    display: block;
   }
   .first-screen__bcg {
     border-radius: 11px;
@@ -1862,6 +1867,7 @@ img {
   }
 }
 .dop-screen__content-wrapper {
+  padding-top: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1874,14 +1880,11 @@ img {
           justify-content: space-between;
   height: 100%;
 }
-.dop-screen__content-wrapper:nth-child(2) {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
+.dop-screen__swiper-container {
+  padding: 0 10px;
 }
 .dop-screen__item {
-  padding: 40px 3px 0 35px;
+  display: none;
   position: relative;
   max-width: 100%;
   width: calc(50% - 15px);
@@ -1890,6 +1893,35 @@ img {
   -webkit-box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 20px;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+.dop-screen__item:first-child, .dop-screen__item:nth-child(2) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.dop-screen__upper-part {
+  padding: 40px 35px 0 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 .dop-screen__title {
   background: -o-linear-gradient(33deg, #1D0C33 0%, #D283EA 100%);
@@ -1909,13 +1941,41 @@ img {
   font-weight: 400;
   line-height: 167.9%;
 }
+.dop-screen__downer-part {
+  width: 100%;
+  height: 50%;
+}
 .dop-screen__image {
   width: 100%;
-  position: absolute;
-  bottom: -60px;
-  left: 0;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
+@media (max-width: 1440px) {
+  .dop-screen__title {
+    font-size: 30px;
+  }
+  .dop-screen__desc {
+    font-size: 15px;
+  }
+}
+@media (max-width: 1200px) {
+  .dop-screen__downer-part {
+    height: 40%;
+  }
+}
+@media (max-width: 1024px) {
+  .dop-screen__downer-part {
+    height: 60%;
+  }
+  .dop-screen__title {
+    font-size: 21.333px;
+  }
+  .dop-screen__desc {
+    font-size: 10.667px;
+  }
+}
 .contact-form {
   padding: 160px 0;
 }
@@ -2214,6 +2274,7 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    z-index: 2;
   }
   .header__desc {
     width: 100%;
@@ -2277,6 +2338,7 @@ body {
   .switcher {
     max-width: 150px;
     height: 53px;
+    top: 150px;
   }
   .switcher__toggler {
     width: 63px;
@@ -2565,7 +2627,7 @@ body {
 
 .mob-menu {
   position: absolute;
-  opacity: 0;
+  pointer-events: none;
   top: 0;
   left: 0;
   width: 100%;
@@ -2579,7 +2641,7 @@ body {
 }
 .mob-menu--active {
   opacity: 1;
-  z-index: 1;
+  z-index: 2;
 }
 .mob-menu__container {
   height: 100%;

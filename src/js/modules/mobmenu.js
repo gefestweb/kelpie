@@ -6,12 +6,14 @@ const mobMenu = () => {
 
     function openMenu() {
         menu.classList.add('mob-menu--active');
+        menu.style.pointerEvents = 'all';
         document.body.classList.add('overflow-hidden');
         box.classList.remove('shadow');
     }
 
     function closeMenu() {
         menu.classList.remove('mob-menu--active');
+        menu.style.pointerEvents = 'none';
         document.body.classList.remove('overflow-hidden');
         box.classList.add('shadow');
     }

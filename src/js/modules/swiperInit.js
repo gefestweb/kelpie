@@ -44,7 +44,7 @@ export const swiperInit = () => {
     const seventhScreenSwiper = new Swiper('.swiper-container.seventh-screen__swiper-container', {
 
         slidesPerView: 1,
-        spaceBetween: 0,
+        spaceBetween: 10,
         speed: 600,
         effect: 'slide',
         navigation: {
@@ -60,5 +60,13 @@ export const swiperInit = () => {
             delay: 5000,
           },
         // loop: true,
+    });
+
+    const dopScreen = new Swiper('.dop-screen__swiper-container.swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        speed: 450,
+        effect: 'slide',
+
     });
 }

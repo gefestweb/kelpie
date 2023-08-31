@@ -14,7 +14,7 @@
     height: 100vh;
 
     @media(max-width: 1000px) {
-        height: unset;
+        // height: unset;
         width: 100%;
     }
 }
@@ -26,6 +26,8 @@
         background: url(../../img/Product-page/hero-bg.png) no-repeat center center / cover;
         filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.20));
         border-radius: 40px;
+        overflow: hidden;
+
 
     }
 
@@ -161,8 +163,8 @@
 @media (max-width: 1095px) {
 
     .rama {
-        max-width: 320px;
-        max-height: 420px;
+        max-width: 400px;
+        max-height: 530px;
     }
 
     .first-screen {
@@ -180,14 +182,18 @@
 
     .rama {
 
-        position: unset;
-        bottom: unset;
+        // position: unset;
+        // bottom: unset;
         left: unset;
         width: 100%;
         height: calc($index * 43);
         margin-top: 60px;
         // max-width: 350px;
         // max-height: 440px;
+
+        &::before {
+            content: unset;
+        }
     }
 
     .first-screen {
@@ -197,18 +203,27 @@
             width: 100%;
             font-size: calc($index * 2.9);
             position: unset;
-            margin-top: calc($index * 3.55);
+            margin-top: calc((1vw + 1vh) * 7.15);
             bottom: 0;
             right: 0;
+            display: none;
+            &:first-child {
+                display: block;
+            }
         }
 
         &__bcg {
             border-radius: 11px;
+            // overflow: hidden;
 
         }
 
     }
 }
+
+// @media(max-width: 454px) {
+
+// }
 
 @media(max-width: 420px) {
 
@@ -1352,20 +1367,18 @@
 
 .dop-screen {
     &__content-wrapper {
+        padding-top: 50px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         height: 100%;
-        &:nth-child(2) {
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-        }
+    }
+    &__swiper-container {
+        padding: 0 10px;
     }
 
     &__item {
-        padding: 40px 3px 0 35px;
+        display: none;
         position: relative;
         max-width: 100%;
         width: calc(50% - 15px);
@@ -1373,16 +1386,26 @@
         background: #FDFDFD;
         box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.20);
         overflow: hidden;
-
-        // &:nth-child(3),
-        // &:nth-child(4) {
-        //     display: none;
-        // }
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+        align-items: stretch;
+        &:first-child, &:nth-child(2) {
+            display: flex;
+        }
+    }
+    &__upper-part {
+        padding: 40px 35px 0 35px;
+        // flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
     }
 
     &__title {
         background: $purple-to-pink;
         background-clip: text;
+        // @include fontSize(40, 20, 1800);
         font-size: 40px;
         font-style: normal;
         font-weight: bold;
@@ -1397,15 +1420,74 @@
         font-weight: 400;
         line-height: 167.9%;
     }
+    &__downer-part {
+        // position: absolute;
+        // bottom: -100px;
+        width: 100%;
+        height: 50%;
+        // position: absolute;
+        // bottom: 0;
+    }
 
     &__image {
         width: 100%;
-        position: absolute;
-        bottom: -60px;
-        left: 0;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+        // -o-object-position: top;
+        // object-position: top;
 
     }
 
+}
+
+@media(max-width: 1640px) {
+    .dop-screen {
+        &__downer-part {
+            // height: 50%;
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .dop-screen {
+        &__title {
+            font-size: 30px;
+        }
+        &__desc {
+            font-size: 15px;
+        }
+    }
+}
+
+@media(max-width: 1200px) {
+    .dop-screen {
+        &__downer-part {
+            height: 40%;
+        }
+    }
+}
+
+@media(max-width: 1024px) {
+    .dop-screen {
+        &__downer-part {
+            height: 60%;
+        }
+        &__title {
+            font-size: 21.333px;
+        }
+        &__desc {
+            font-size: 10.667px;
+        }
+    }
+}
+
+@media(max-width: 1000px) {
+    .dop-screen{
+        &__content-wrapper {
+            // flex-direction: column;
+        }
+    }
 }
 
 .contact-form {

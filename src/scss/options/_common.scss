@@ -60,10 +60,16 @@
             padding: 0 52px;
             padding-top: 11px;
         }
+        &--no-padding {
+            padding: unset;
+        }
     }
 
     @media (max-width: 680px) {
         padding: 11px 20px;
+        &--no-padding {
+            padding: unset;
+        }
     }
 }
 

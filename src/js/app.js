@@ -11,9 +11,9 @@ import header from "./modules/header.js";
 mainFuncs.isWebp();
 
 document.addEventListener("DOMContentLoaded", function() {
+    mobMenu();
     swiperInit();
     tabs();
-    mobMenu();
     oko();
     ramaObserve();
     header();

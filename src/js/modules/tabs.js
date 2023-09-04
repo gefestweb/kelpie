@@ -5,30 +5,36 @@ const tabs = () => {
             content = document.querySelectorAll(contentSelector),
             activeTab = activeContent - 1;
 
-        function removeActiveTabClass() {
-            tabs.forEach(tab => {
-                tab.classList.remove(activeClass);
+        if (tabs && content) {
+            console.log(tabs && content)
+
+            function removeActiveTabClass() {
+                tabs.forEach(tab => {
+                    tab.classList.remove(activeClass);
+                });
+            }
+
+            function hideContent() {
+                content.forEach(contentItem => {
+                    contentItem.style.display = 'none';
+                });
+            }
+            tabs[activeTab].classList.add(activeClass);
+            hideContent();
+            content[activeTab].style.display = displayProperty;
+            tabs.forEach((tab, tabIndex) => {
+
+                tab.addEventListener('click', () => {
+                    removeActiveTabClass();
+                    hideContent();
+                    tab.classList.add(activeClass);
+                    content[tabIndex].style.display = displayProperty;
+                });
             });
+        } else {
         }
 
-        function hideContent() {
-            content.forEach(contentItem => {
-                contentItem.style.display = 'none';
-            });
-        }
-        tabs[activeTab].classList.add(activeClass);
-        hideContent();
-        content[activeTab].style.display = displayProperty;
 
-        tabs.forEach((tab, tabIndex) => {
-
-            tab.addEventListener('click', () => {
-                removeActiveTabClass();
-                hideContent();
-                tab.classList.add(activeClass);
-                content[tabIndex].style.display = displayProperty;
-            });
-        });
     }
 
     tabsBinder('.six-screen__tab', '.rent-content__tab-content', 'rent-content__tab--active', 1, 'flex');

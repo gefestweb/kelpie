@@ -14,12 +14,12 @@ document.addEventListener("DOMContentLoaded", function() {
     mobMenu();
     swiperInit();
     tabs();
-    oko();
+    // oko();
     ramaObserve();
     header();
     // scrollByPixels();
-    if (window.matchMedia("(min-width: 1000px)").matches) {
-        gsapAnimate();
-    }
+    // if (window.matchMedia("(min-width: 1000px)").matches) {
+    //     gsapAnimate();
+    // }
     
 })

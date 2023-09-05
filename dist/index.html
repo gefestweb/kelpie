@@ -5,10 +5,10 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script> -->
-        <!-- <script src="js/ScrollSmoother.min.js"></script> -->
-        <link rel="stylesheet" href="css/style.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js?_v=20230905162329"></script> -->
+        <!-- <script src="js/ScrollSmoother.min.js?_v=20230905162329"></script> -->
+        <link rel="stylesheet" href="css/style.min.css?_v=20230905162329">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css?_v=20230905162329">
 
 
         <title>Kelpie</title>
@@ -36,7 +36,7 @@
                 <button class="button button_purple-text">Обратная связь</button>
             </div>
         </div>
-        <img class="header__logo--mob logo for-mob-block" src="../img/ico/logo-mob.svg" alt="">
+        <img class="header__logo--mob-top logo for-mob-block" src="../img/ico/logo-mob-new.svg" alt="">
         <div class="burger for-mob-block">
             <div class="burger__center-stick"></div>
         </div>
@@ -63,594 +63,804 @@
 </div>
 
 <div class="content">
-    <section class="screen first-screen scrolling-item">
-        <div class="container-page-margin shadow">
-            <div class="socials abolusteY-center for-desc-flex">
-                <div class="socials__item"><img class="socials__ico" src="../img/ico/tg-ico.svg" alt=""></div>
-                <div class="socials__item"><img class="socials__ico" src="../img/ico/youtube-ico.svg" alt="">
-                </div>
-                <div class="socials__item"><img class="socials__ico" src="../img/ico/inst-ico.svg" alt=""></div>
-            </div>
-            <div class="scroll-ico absolutX-center for-desc-block"><img src="../img/ico/scroll-ico.svg" alt="">
-            </div>
+	<section class="screen first-screen scrolling-item">
+		<div class="container-page-margin shadow">
+			<div class="socials abolusteY-center for-desc-flex">
+				<div class="socials__item">
+					<img class="socials__ico" src="../img/ico/tg-ico.svg" alt="" />
+				</div>
+				<div class="socials__item">
+					<img class="socials__ico" src="../img/ico/youtube-ico.svg" alt="" />
+				</div>
+				<div class="socials__item">
+					<img class="socials__ico" src="../img/ico/inst-ico.svg" alt="" />
+				</div>
+			</div>
+			<div class="scroll-ico absolutX-center for-desc-block">
+				<img src="../img/ico/scroll-ico.svg" alt="" />
+			</div>
 
-            <div class="first-screen__bcg container-content container-content--no-margin">
-                <div class="container-relative">
+			<div
+				class="first-screen__bcg container-content container-content--no-margin"
+			>
+				<div class="container-relative">
+					<h1
+						class="title first-screen__first-title animate-element"
+						data-animate="firstScreenText"
+					>
+						Уникальная технология, которую легко применить уже сегодня
+					</h1>
+					<h1
+						class="title first-screen__first-title animate-element for-desc-block"
+						data-animate="firstScreen"
+					>
+						VR-эффект без дополнительного оборудования
+					</h1>
+					<h1
+						class="title first-screen__first-title animate-element for-desc-block"
+						data-animate="firstScreen"
+					>
+						OLED-transparent для реализации самых креативных рекламных решений
+					</h1>
 
+					<div class="rama rama--circle">
+						<div id="switcher" class="switcher screen__content animate-element">
+							<div class="switcher__holder">
+								<img src="../img/ico/switcher1.svg" alt="" />
+								<div class="switcher__toggler" data-animate="firstScreen"></div>
+							</div>
+						</div>
+						<div
+							class="first-screen__content animate-element for-desc-block"
+							data-firstScreen-content="2-content"
+						>
+							<img src="../img/Product-page/1-screen-2-elem.svg" alt="" />
+						</div>
+						<div
+							class="first-screen__content animate-element for-desc-block"
+							data-firstScreen-content="3-content"
+						>
+							<picture><source srcset="../img/Product-page/1-screen-3-elem.webp" type="image/webp"><img src="../img/Product-page/1-screen-3-elem.png" alt="" /></picture>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-                    <h1 class="title first-screen__first-title animate-element" data-animate="firstScreenText">
-                        Уникальная
-                        технология,
-                        которую легко применить уже сегодня
-                    </h1>
-                    <h1 class="title first-screen__first-title animate-element  for-desc-block"
-                        data-animate="firstScreen">VR-эффект без дополнительного оборудования
-                    </h1>
-                    <h1 class="title first-screen__first-title animate-element  for-desc-block"
-                        data-animate="firstScreen">OLED-transparent для реализации самых креативных рекламных
-                        решений
-                    </h1>
+	<section class="screen dop-screen">
+		<div class="container-page">
+			<div class="container-content container-content--no-padding">
+				<div class="dop-screen__swiper-container swiper-container">
+					<div class="dop-screen__content-wrapper swiper-wrapper">
+						<div class="dop-screen__item swiper-slide">
+							<div class="dop-screen__upper-part">
+								<div class="dop-screen__title">Первый прозрачный дисплей</div>
+								<div class="dop-screen__desc">
+									Визуально легкий и воздушный прозрачный каркас создает ощущение полного
+									погружения, концентрирует внимание и за счет этого — показывает
+									феноменальные результаты в рекламных интеграциях.
+								</div>
+							</div>
+							<div class="dop-screen__downer-part">
+								<img
+									src="../img/Product-page/dop-screen-1.png"
+									alt=""
+									class="dop-screen__image"
+								/>
+							</div>
+						</div>
+						<div class="dop-screen__item swiper-slide">
+							<div class="dop-screen__upper-part">
+								<div class="dop-screen__title">
+									Максимум внимания, минимум пространства
+								</div>
+								<div class="dop-screen__desc">
+									Визуально легкий и воздушный каркас создает ощущение полного
+									погружения, концентрирует внимание и за счет этого — показывает
+									феноменальные результаты в рекламных интеграциях.
+								</div>
+							</div>
+							<div class="dop-screen__downer-part">
+								<img
+									src="../img/Product-page/dop-screen-2.png"
+									alt=""
+									class="dop-screen__image"
+								/>
+							</div>
+						</div>
+						<div class="dop-screen__item swiper-slide">
+							<div class="dop-screen__upper-part">
+								<div class="dop-screen__title">Комфорт и стиль</div>
+								<div class="dop-screen__desc">
+									Прозрачный OLED дисплей дает потрясающе четкое изображение с
+									оптимальными для восприятия параметрами: цветопередача, глубина,
+									яркость, контрастность, плотность пикселей. Взаимодействие с таким
+									дисплеем— это приятный и простой процесс.
+								</div>
+							</div>
+							<div class="dop-screen__downer-part">
+								<img
+									src="../img/Product-page/dop-screen-3.png"
+									alt=""
+									class="dop-screen__image"
+								/>
+							</div>
+						</div>
+						<div class="dop-screen__item swiper-slide">
+							<div class="dop-screen__upper-part">
+								<div class="dop-screen__title">Дополняя реальность</div>
+								<div class="dop-screen__desc">
+									Создаем новые грани видимых объектов, соединяем и экспериментируем. В
+									считанные секунды меняем оттенок нового презентационного автомобиля,
+									рассматриваем виртуальные детали мраморной скульптуры, узнаем
+									информацию о её авторе и устанавливаем декорации-голограммы для
+									предстоящего перфоманса.
+								</div>
+							</div>
+							<div class="dop-screen__downer-part">
+								<img
+									src="../img/Product-page/dop-screen-4.png"
+									alt=""
+									class="dop-screen__image"
+								/>
+							</div>
+						</div>
+					</div>
 
-                    <div class="rama rama--circle">
-                        <div id="switcher" class="switcher screen__content animate-element">
-                            <div class="switcher__holder">
-                                <img src="../img/ico/switcher1.svg" alt="">
-                                <div class="switcher__toggler" data-animate="firstScreen"></div>
-                            </div>
-                        </div>
-                        <div class="first-screen__content animate-element for-desc-block"
-                            data-firstScreen-content="2-content"><img src="../img/Product-page/1-screen-2-elem.svg"
-                                alt="">
-                        </div>
-                        <div class="first-screen__content animate-element for-desc-block"
-                            data-firstScreen-content="3-content"><img src="../img/Product-page/1-screen-3-elem.png"
-                                alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
+					<!-- <div class="dop-screen__content-wrapper"> -->
 
-        </div>
-    </section>
+					<!-- </div> -->
+				</div>
+			</div>
+		</div>
+	</section>
 
-    <section class="screen dop-screen">
-        <div class="container-page">
-            <div class="container-content container-content--no-padding">
-                <div class="dop-screen__swiper-container swiper-container">
-                    <div class="dop-screen__content-wrapper swiper-wrapper">
-                        <div class="dop-screen__item swiper-slide">
-                            <div class="dop-screen__upper-part">
-                                <div class="dop-screen__title">Первый прозрачный дисплей</div>
-                                <div class="dop-screen__desc">Визуально легкий и воздушный прозрачный каркас создает
-                                    ощущение полного погружения, концентрирует внимание и за счет этого — показывает
-                                    феноменальные результаты в рекламных интеграциях.</div>
-                            </div>
-                            <div class="dop-screen__downer-part">
-                                <img src="../img/Product-page/dop-screen-1.png" alt="" class="dop-screen__image">
-                            </div>
-                        </div>
-                        <div class="dop-screen__item swiper-slide">
-                            <div class="dop-screen__upper-part">
-                                <div class="dop-screen__title">Максимум внимания, минимум пространства</div>
-                                <div class="dop-screen__desc">Визуально легкий и воздушный каркас создает ощущение
-                                    полного погружения, концентрирует внимание и за счет этого — показывает
-                                    феноменальные результаты в рекламных интеграциях.</div>
-                            </div>
-                            <div class="dop-screen__downer-part">
-                                <img src="../img/Product-page/dop-screen-2.png" alt="" class="dop-screen__image">
-                            </div>
-                        </div>
-                        <div class="dop-screen__item swiper-slide">
-                            <div class="dop-screen__upper-part">
-                                <div class="dop-screen__title">Комфорт и стиль</div>
-                                <div class="dop-screen__desc">Прозрачный OLED дисплей дает потрясающе четкое
-                                    изображение
-                                    с оптимальными для восприятия параметрами: цветопередача, глубина, яркость,
-                                    контрастность, плотность пикселей. Взаимодействие с таким дисплеем— это приятный
-                                    и
-                                    простой процесс.</div>
-                            </div>
-                            <div class="dop-screen__downer-part">
-                                <img src="../img/Product-page/dop-screen-3.png" alt="" class="dop-screen__image">
-                            </div>
-                        </div>
-                        <div class="dop-screen__item swiper-slide">
-                            <div class="dop-screen__upper-part">
-                                <div class="dop-screen__title">Дополняя реальность</div>
-                                <div class="dop-screen__desc">Создаем новые грани видимых объектов, соединяем и
-                                    экспериментируем. В считанные секунды меняем оттенок нового презентационного
-                                    автомобиля, рассматриваем виртуальные детали мраморной скульптуры, узнаем
-                                    информацию
-                                    о её авторе и устанавливаем декорации-голограммы для предстоящего перфоманса.
-                                </div>
-                            </div>
-                            <div class="dop-screen__downer-part">
-                                <img src="../img/Product-page/dop-screen-4.png" alt="" class="dop-screen__image">
-                            </div>
-                        </div>
-                    </div>
+	<section class="screen second-screen scrolling-item">
+		<div class="container-page">
+			<div class="container-content">
+				<div class="second-screen__content-wrapper">
+					<div class="second-screen__content">
+						<div class="second-screen__left-part">
+							<picture><source srcset="../img/Product-page/2-screen-1.webp" type="image/webp"><img src="../img/Product-page/2-screen-1.png" alt="" /></picture>
+						</div>
+						<div class="second-screen__right-part">
+							<div class="second-screen__text">
+								<h2 class="animate-element title-section">
+									Буквально прозрачная технология
+								</h2>
+								<p class="animate-element desc-section">
+									Простой и интуитивно понятный функционал в сочетании с лаконичным
+									кристально чистым дизайном: прозрачный дисплей и безграничные
+									возможности демонстрации контента
+								</p>
+							</div>
+							<div class="second-screen__tabs">
+								<div class="second-screen__tab tab animate-element">
+									<div class="tab__dot"></div>
+									<div class="tab__key">диагональ экрана</div>
+									<div class="tab__value">55`</div>
+								</div>
+								<div class="second-screen__tab tab animate-element">
+									<div class="tab__dot"></div>
+									<div class="tab__key">Шаг пикселя</div>
+									<div class="tab__value">0.630mm x 0.630mm</div>
+								</div>
+								<div class="second-screen__tab tab animate-element">
+									<div class="tab__dot"></div>
+									<div class="tab__key">Время отклика</div>
+									<div class="tab__value">8ms (typ.)</div>
+								</div>
+								<div class="second-screen__tab tab animate-element">
+									<div class="tab__dot"></div>
+									<div class="tab__key">Прозрачность</div>
+									<div class="tab__value">40%</div>
+								</div>
+								<div class="second-screen__tab tab animate-element">
+									<div class="tab__dot"></div>
+									<div class="tab__key">Разрешение</div>
+									<div class="tab__value">1920*1080 px</div>
+								</div>
+								<div class="second-screen__tab tab animate-element">
+									<div class="tab__dot"></div>
+									<div class="tab__key">Частота обновления</div>
+									<div class="tab__value">60Hz</div>
+								</div>
+								<div class="second-screen__tab tab animate-element">
+									<div class="tab__dot"></div>
+									<div class="tab__key">Материал корпуса</div>
+									<div class="tab__value">металл</div>
+								</div>
+								<div class="second-screen__tab tab animate-element">
+									<div class="tab__dot"></div>
+									<div class="tab__key">Размер дисплея</div>
+									<div class="tab__value">681(W)x1210(H) мм</div>
+								</div>
+								<div class="second-screen__tab tab animate-element">
+									<div class="tab__dot"></div>
+									<div class="tab__key">Тип подсветки</div>
+									<div class="tab__value">OLED</div>
+								</div>
+							</div>
+							<div class="second-screen__buttons animate-element">
+								<div class="button button_purple-text second-screen__button">
+									<p>Заказать</p>
+									<img src="../img/ico/percent-ico.svg" alt="" />
+								</div>
+								<div class="button button_purple-text second-screen__button">
+									<p>Характеристики</p>
+									<img src="../img/ico/characteristic-ico.svg" alt="" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="screen third-screen scrolling-item">
+		<div class="container-page">
+			<div class="container-content">
+				<div class="third-screen__content">
+					<div class="third-screen__text-block">
+						<h2 class="animate-element transition">
+							OLED — это высокотехнологичное актуальное решение для создания дисплеев.
+						</h2>
+						<p class="animate-element transition">
+							Его главные преимущества: дисплею не нужен каркас и внешняя подсветка!
+							Потому что он основан на технологии органических светодиодов, которые
+							излучают свет самостоятельно, когда через них проходит электрический ток.
+						</p>
+						<button
+							class="button second-screen__button third-screen__button for-mob-flex"
+						>
+							<p>Смотреть видео</p>
+							<img src="../img/ico/Forward.svg" alt="" />
+						</button>
+					</div>
+					<div class="third-screen__text-block">
+						<h2 class="animate-element transition">
+							Применяйте OLED-дисплей в максимально широком спектре задач.
+						</h2>
+						<p class="animate-element transition">
+							За дисплеем можно поместить любой объект и раскрыть его с совершенно
+							новой стороны: рассказать на прозрачном экране историю его создания,
+							поместить инструкцию по применению, дополнить объект фото/видео его
+							внутреннего устройства или показать, как объект вписывается в разные
+							сценарии жизни пользователей. Нет никаких пределов!
+						</p>
+					</div>
+					<div class="third-screen__text-block">
+						<h2 class="animate-element transition">
+							Интегрируйте любые рекламные инструменты на OLED-дисплей, чтобы
+							рассмотреть их новые удивительные ракурсы
+						</h2>
+						<p class="animate-element transition">
+							В магазине, автосалоне, ресторане, на ресепшен, в качестве витрины и
+							презентационной стойки. Транслируйте любой контент (фото, видео, текст,
+							графика, логотипы, голограммы, видео-мосты) в новом формате и собирайте
+							восторженные отзывы, налаживайте коммуникацию с аудиторией,
+							взаимодействуйте качественно и на перспективу.
+						</p>
+					</div>
+					<button
+						class="button second-screen__button third-screen__button for-desc-flex"
+					>
+						<p>Смотреть видео</p>
+						<img src="../img/ico/Forward.svg" alt="" />
+					</button>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="screen four-screen scrolling-item">
+		<div class="container-page-margin">
+			<div class="socials abolusteY-center for-desc-flex">
+				<div class="socials__item">
+					<img class="socials__ico" src="../img/ico/tg-ico.svg" alt="" />
+				</div>
+				<div class="socials__item">
+					<img class="socials__ico" src="../img/ico/youtube-ico.svg" alt="" />
+				</div>
+				<div class="socials__item">
+					<img class="socials__ico" src="../img/ico/inst-ico.svg" alt="" />
+				</div>
+			</div>
+			<div class="scroll-ico absolutX-center for-desc-block">
+				<img src="../img/ico/scroll-ico.svg" alt="" />
+			</div>
 
-                    <!-- <div class="dop-screen__content-wrapper"> -->
+			<div class="four-screen__bcg container-content container-content--no-margin">
+				<div class="container-relative">
+					<img
+						class="four-screen__rama-item"
+						src="../img/Product-page/4-screen-1-item.png"
+						alt=""
+					/>
+					<img
+						class="four-screen__rama-item"
+						src="../img/Product-page/4-screen-3-item.png"
+						alt=""
+					/>
+					<img
+						class="four-screen__rama-item"
+						src="../img/Product-page/4-screen-2-item.png"
+						alt=""
+					/>
+					<div class="four-screen__rama">
+						<div class="four-screen__rama-blur"></div>
+						<img
+							class="four-screen__rama-img"
+							src="../img/Product-page/4-screen-rama.png"
+							alt=""
+						/>
+					</div>
+					<div class="four-screen__buttons for-desc-flex">
+						<button class="button second-screen__button four-screen__button">
+							<img src="../img/ico/infographics.svg" alt="" />
+							<p>Инфографика</p>
+						</button>
+						<button class="button second-screen__button four-screen__button">
+							<img src="../img/ico/vr.svg" alt="" />
+							<p>VR</p>
+						</button>
+						<button class="button second-screen__button four-screen__button">
+							<img src="../img/ico/photo.svg" alt="" />
+							<p>Фото</p>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="screen fifth-screen scrolling-item">
+		<div class="container-page">
+			<div class="container-content">
+				<div class="fifth-screen__content">
+					<div class="fifth-screen__text-block">
+						<img
+							class="fifth-screen__bcg animate-element"
+							src="../img/Product-page/hero-bg.png"
+							alt=""
+						/>
+						<h3 class="fifth-screen__text">
+							Всё, что нужно —
+							<br />
+							прозрачный OLED-дисплей
+							<br />
+							от Гефест Капитал и
+							<br />
+							немного креативности!
+						</h3>
+					</div>
+					<div
+						class="button button_purple-text second-screen__button fifth-screen__button"
+					>
+						<p>Заказать</p>
+						<img src="../img/ico/percent-ico.svg" alt="" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="screen dop-screen2">
+		<div class="container-page">
+			<div class="container-content">
+				<div class="dop-screen2__content-wrapper">
+					<div class="dop-screen2__left-part dop-screen2__part">
+						<p
+							class="rent-content__title six-screen-anim dop-screen2__title animate-element"
+						>
+							Аренда и контент
+						</p>
+						<div class="rent-content__tabs six-screen-anim dop-screen2__tabs">
+							<div class="rent-content__tab dop-screen2__tab animate-element">
+								Выставки
+							</div>
+							<div class="rent-content__tab dop-screen2__tab animate-element">
+								Музеи
+							</div>
+							<div class="rent-content__tab dop-screen2__tab animate-element">
+								Школы и вузы
+							</div>
+							<div class="rent-content__tab dop-screen2__tab animate-element">
+								Реклама
+							</div>
+						</div>
+						<div class="dop-screen2__tab-contents animate-element">
+							<p class="dop-screen2__tab-content">
+								Для выставок. OLED панель может использоваться для визуализации 3D
+								моделей выставочных образцов, элементов различных механизмов, трансляции
+								логотипов. Также, за счет прозрачности можно создать эффект рентгена,
+								дополненной реальности, расположив реальный объект позади.
+							</p>
+							<p class="dop-screen2__tab-content">
+								Прозрачный экран позволит показать экспонаты в 3D с эффектом зависания в
+								воздухе, голограммы людей и многое другое. Также, с помощью OLED панели
+								можно реализовать виртуального гида или администратора. Также, с помощью
+								контента можно добиться эффекта рентгена или виртуальной реставрации
+								экспонатов, достраивания из имеющихся частей полной картины.
+							</p>
+							<p class="dop-screen2__tab-content">
+								С помощью прозрачного экрана можно реализовать конференц-связь, при
+								которой пользователи будут общаться в виде голографических изображений.
+							</p>
+							<p class="dop-screen2__tab-content">
+								На экран можно транслировать контент как с эффектом прозрачности, так и
+								без него, что делает OLED панель универсальным рекламным инструментом.
+								Особенность технологии – более насыщенные цвета, чем у обычных экранов,
+								что сделает вашу рекламу более заметной и привлекательной.
+							</p>
+						</div>
+						<div class="second-screen__buttons dop-screen2__buttons">
+							<div
+								class="button button_purple-text second-screen__button dop-screen2__button animate-element"
+							>
+								<p>Заказать</p>
+								<img src="../img/ico/percent-ico.svg" alt="" />
+							</div>
+							<div
+								class="button button_purple-text second-screen__button dop-screen2__button animate-element"
+							>
+								<p>Характеристики</p>
+								<img src="../img/ico/characteristic-ico.svg" alt="" />
+							</div>
+						</div>
+					</div>
+					<div class="dop-screen2__right-part dop-screen2__part animate-element">
+						<img
+							src="../img/Product-page/6-slider-1.png"
+							alt=""
+							class="dop-screen2__img"
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-                    <!-- </div> -->
-                </div>
-            </div>
-        </div>
+	<section id="rent" class="screen sixth-screen scrolling-item">
+		<div class="container-page">
+			<div class="container-content">
+				<div class="sixth-screen__content-wrapper">
+					<div class="sixth-screen__parts">
+						<div class="sixth-screen__left-part">
+							<div class="sixth-screen__content">
+								<div
+									id="rent-content-swiper"
+									class="swiper-container rent-content-swiper animate-element"
+								>
+									<div class="swiper-wrapper">
+										<div class="swiper-slide rent-content-slide">
+											<picture><source srcset="../img/Product-page/6-slider-1.webp" type="image/webp"><img src="../img/Product-page/6-slider-1.png" /></picture>
+										</div>
+										<div class="swiper-slide rent-content-slide">
+											<picture><source srcset="../img/Product-page/6-slider-1.webp" type="image/webp"><img src="../img/Product-page/6-slider-1.png" /></picture>
+										</div>
+										<div class="swiper-slide rent-content-slide">
+											<picture><source srcset="../img/Product-page/6-slider-1.webp" type="image/webp"><img src="../img/Product-page/6-slider-1.png" /></picture>
+										</div>
+									</div>
+									<div class="rent-content-swiper__nav">
+										<div class="swiper-button-prev rent-content-left"></div>
+										<div id="counter" class="counterMain">1/3</div>
+										<div class="swiper-button-next rent-content-right"></div>
+									</div>
+								</div>
+							</div>
+							<div class="width-1000-1300">
+								<div class="list-wrapper">
+									<div class="list-item">
+										первая аренда
+										<span>со скидкой 20%</span>
+									</div>
+									<div class="list-item">
+										третий день аренды
+										<span>бесплатно</span>
+									</div>
+								</div>
+							</div>
+						</div>
 
-    </section>
+						<div
+							class="sixth-screen__right-part sixth-screen__content animate-element"
+						>
+							<div class="rent-content__container">
+								<p class="rent-content__title six-screen-anim">Аренда и контент</p>
+								<div class="rent-content__content-wrapper">
+									<div class="rent-content__tabs six-screen-anim">
+										<div class="rent-content__tab six-screen__tab">Покупка</div>
+										<div class="rent-content__tab six-screen__tab">Контент</div>
+										<div class="rent-content__tab six-screen__tab">Аренда</div>
+									</div>
+									<div class="rent-content__tab-contents">
+										<div class="rent-content__tab-content tab-content">
+											<div class="tab-content__item six-screen-anim">
+												<div class="tab-content__key">1 день</div>
+												<div class="tab-content__value">60 000 р</div>
+											</div>
+											<div class="tab-content__item six-screen-anim">
+												<div class="tab-content__key">2 дня</div>
+												<div class="tab-content__value">90 000 р</div>
+											</div>
+											<div class="tab-content__item six-screen-anim">
+												<div class="tab-content__key">выставка</div>
+												<div class="tab-content__value">120 000 р</div>
+											</div>
+										</div>
+										<div class="rent-content__tab-content tab-content">
+											<div class="tab-content__item">
+												<div class="tab-content__key">сенсорный</div>
+												<div class="tab-content__value">1 500 000 р</div>
+											</div>
+											<div class="tab-content__item">
+												<div class="tab-content__key">не сенсорный</div>
+												<div class="tab-content__value">1 000 000 р</div>
+											</div>
+										</div>
+										<div class="rent-content__tab-content tab-content">
+											<div class="tab-content__item">
+												<div class="tab-content__key">3д модели</div>
+												<div class="tab-content__value">по запросу</div>
+											</div>
+											<div class="tab-content__item">
+												<div class="tab-content__key">Инфографика</div>
+												<div class="tab-content__value">по запросу</div>
+											</div>
+											<div class="tab-content__item">
+												<div class="tab-content__key">видеоконтент</div>
+												<div class="tab-content__value">по запросу</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<form id="rent-content-form" class="rent-content-form">
+									<div class="rent-content-form__row six-screen-anim">
+										<div class="form-item">
+											<label for="name"></label>
+											<input type="text" id="name" name="name" placeholder="ваше имя" />
+										</div>
+										<div class="form-item">
+											<label for="phone"></label>
+											<input
+												type="number"
+												id="phone"
+												name="phone"
+												placeholder="+7 _ _ _   _ _ _   _ _   _ _"
+											/>
+										</div>
+										<div class="form-item">
+											<label for="email"></label>
+											<input
+												type="email"
+												id="email"
+												name="email"
+												placeholder="Ваш email"
+											/>
+										</div>
+									</div>
+									<div class="rent-content-form__row six-screen-anim">
+										<p>
+											Нажимая на кнопку, вы
+											<a href="#">соглашаетесь</a>
+											на обработку персональных данных
+										</p>
+										<button
+											class="rent-content-form__submit button button_purple-text button_purple-text--submit"
+											type="submit"
+										>
+											Отправить
+										</button>
+									</div>
+								</form>
+								<script
+									async
+									src="https://okocrm.ru/static/oko-static/js/form.js?token=DGklp8IO7_iwlJgAzOp8Cw65VsZDw27EwagtkfzAb4A0LeP3klBWcCB2r-QFx-NS7vSntheO1Pe5hx7rn_Etc_IY8p2HQnscsHo4xRZRWU084a3wSrZemcC95ymMjfwcnNaaMrQB2PStjLzA4Gq4C1OvT7IME36xium5xPZdX2UNFLo3cXDhC107aPHdlHAMa4wy9HegDfL5zk70zqFX4lUYh86hYTNAQkWXhmOl0GSLkpKPcbywk9y3Koj9xR0VxCGUrOJ1GXiBSwHwczBqdX050pGQIFI8sFG2U4Es5bMdRTo4VLEmm2plF2iZ7QIg9j0qgLRP_4Pi4JTJ6nbMuw%3D%3D"
+								></script>
+								<div class="width-900-1600">
+									<div class="list-wrapper six-screen-anim">
+										<div class="list-item">
+											первая аренда
+											<span>со скидкой 20%</span>
+										</div>
+										<div class="list-item">
+											третий день аренды
+											<span>бесплатно</span>
+										</div>
+									</div>
+									<div class="rent-content__conditionals">
+										<p class="six-screen-anim">Условия размещения</p>
+										<div class="rent-content__conditionals-items six-screen-anim">
+											<div class="second-screen__tab tab rent-content__conditionals-tab">
+												<div class="tab__dot"></div>
+												<div class="tab__key">свободное пространство</div>
+												<div class="">
+													1 м
+													<sup>2</sup>
+												</div>
+											</div>
+											<div class="second-screen__tab tab rent-content__conditionals-tab">
+												<div class="tab__dot"></div>
+												<div class="tab__key">питание</div>
+												<div class="">220В</div>
+											</div>
+											<div class="second-screen__tab tab rent-content__conditionals-tab">
+												<div class="tab__dot"></div>
+												<div class="tab__key">
+													наличие свободного пространства позади для эффекта прозрачности
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="" style="display: none">
+							<div class="list-wrapper six-screen-anim">
+								<div class="list-item">
+									первая аренда
+									<span>со скидкой 20%</span>
+								</div>
+								<div class="list-item">
+									третий день аренды
+									<span>бесплатно</span>
+								</div>
+							</div>
+							<div class="rent-content__conditionals">
+								<p class="six-screen-anim">Условия размещения</p>
+								<div class="rent-content__conditionals-items six-screen-anim">
+									<div class="second-screen__tab tab rent-content__conditionals-tab">
+										<div class="tab__dot"></div>
+										<div class="tab__key">свободное пространство</div>
+										<div class="">
+											1 м
+											<sup>2</sup>
+										</div>
+									</div>
+									<div class="second-screen__tab tab rent-content__conditionals-tab">
+										<div class="tab__dot"></div>
+										<div class="tab__key">питание</div>
+										<div class="">220В</div>
+									</div>
+									<div class="second-screen__tab tab rent-content__conditionals-tab">
+										<div class="tab__dot"></div>
+										<div class="tab__key">
+											наличие свободного пространства позади для эффекта прозрачности
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="sixth-screen__left-part-downer">
+						<div class="rent-content__conditionals width-1000-1600">
+							<p class="six-screen-anim">Условия размещения</p>
+							<div class="rent-content__conditionals-items six-screen-anim">
+								<div class="second-screen__tab tab rent-content__conditionals-tab">
+									<div class="tab__dot"></div>
+									<div class="tab__key">свободное пространство</div>
+									<div class="">
+										1 м
+										<sup>2</sup>
+									</div>
+								</div>
+								<div class="second-screen__tab tab rent-content__conditionals-tab">
+									<div class="tab__dot"></div>
+									<div class="tab__key">питание</div>
+									<div class="">220В</div>
+								</div>
+								<div class="second-screen__tab tab rent-content__conditionals-tab">
+									<div class="tab__dot"></div>
+									<div class="tab__key">
+										наличие свободного пространства позади для эффекта прозрачности
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="screen seventh-screen scrolling-item">
+		<div class="container-page-margin">
+			<div class="scroll-ico absolutX-center for-desc-block">
+				<img src="../img/ico/scroll-ico.svg" alt="" />
+			</div>
 
-    <section class="screen second-screen scrolling-item">
-        <div class="container-page">
-            <div class="container-content">
-                <div class="second-screen__content-wrapper">
-                    <div class="second-screen__content">
-                        <div class="second-screen__left-part">
-                            <img src="../img/Product-page/2-screen-1.png" alt="">
-                        </div>
-                        <div class="second-screen__right-part">
-                            <div class="second-screen__text">
-                                <h2 class="animate-element title-section">Буквально прозрачная технология</h2>
-                                <p class="animate-element desc-section">Простой и интуитивно понятный функционал в
-                                    сочетании
-                                    с лаконичным кристально
-                                    чистым
-                                    дизайном: прозрачный дисплей и безграничные возможности демонстрации
-                                    контента
-                                </p>
-                            </div>
-                            <div class="second-screen__tabs">
-                                <div class="second-screen__tab tab animate-element">
-                                    <div class="tab__dot"></div>
-                                    <div class="tab__key">диагональ экрана</div>
-                                    <div class="tab__value">55`</div>
-                                </div>
-                                <div class="second-screen__tab tab animate-element">
-                                    <div class="tab__dot"></div>
-                                    <div class="tab__key">Шаг пикселя</div>
-                                    <div class="tab__value">0.630mm x 0.630mm</div>
-                                </div>
-                                <div class="second-screen__tab tab animate-element">
-                                    <div class="tab__dot"></div>
-                                    <div class="tab__key">Время отклика</div>
-                                    <div class="tab__value">8ms (typ.)</div>
-                                </div>
-                                <div class="second-screen__tab tab animate-element">
-                                    <div class="tab__dot"></div>
-                                    <div class="tab__key">Прозрачность</div>
-                                    <div class="tab__value">40%</div>
-                                </div>
-                                <div class="second-screen__tab tab animate-element">
-                                    <div class="tab__dot"></div>
-                                    <div class="tab__key">Разрешение</div>
-                                    <div class="tab__value">1920*1080 px</div>
-                                </div>
-                                <div class="second-screen__tab tab animate-element">
-                                    <div class="tab__dot"></div>
-                                    <div class="tab__key">Частота обновления</div>
-                                    <div class="tab__value">60Hz</div>
-                                </div>
-                                <div class="second-screen__tab tab animate-element">
-                                    <div class="tab__dot"></div>
-                                    <div class="tab__key">Материал корпуса</div>
-                                    <div class="tab__value">металл</div>
-                                </div>
-                                <div class="second-screen__tab tab animate-element">
-                                    <div class="tab__dot"></div>
-                                    <div class="tab__key">Размер дисплея</div>
-                                    <div class="tab__value">681(W)x1210(H) мм</div>
-                                </div>
-                                <div class="second-screen__tab tab animate-element">
-                                    <div class="tab__dot"></div>
-                                    <div class="tab__key">Тип подсветки</div>
-                                    <div class="tab__value">OLED</div>
-                                </div>
-                            </div>
-                            <div class="second-screen__buttons animate-element">
-                                <div class="button button_purple-text second-screen__button">
-                                    <p>Заказать</p>
-                                    <img src="../img/ico/percent-ico.svg" alt="">
-                                </div>
-                                <div class="button button_purple-text second-screen__button">
-                                    <p>Характеристики</p>
-                                    <img src="../img/ico/characteristic-ico.svg" alt="">
-                                </div>
-                            </div>
+			<div class="seventh-screen__bcg container-content">
+				<div class="container-relative container-relative--z-index">
+					<div class="rent-content-swiper__nav seventh-screen__swiper-nav">
+						<div
+							class="swiper-button-prev rent-content-left seventh-screen__left"
+						></div>
+						<div class="counterMain seventh-screen__counter">1/3</div>
+						<div
+							class="swiper-button-next rent-content-right seventh-screen__right"
+						></div>
+					</div>
+				</div>
+				<div class="swiper-container seventh-screen__swiper-container">
+					<div class="swiper-wrapper seventh-screen__swiper-wrapper">
+						<div class="swiper-slide seventh-screen__swiper-slide">
+							<img
+								src="../img/Product-page/7-screen-bg1.png"
+								alt=""
+								class="seventh-screen__slide-img"
+							/>
+						</div>
+						<div class="swiper-slide seventh-screen__swiper-slide">
+							<img
+								src="../img/Product-page/hero-bg.png"
+								alt=""
+								class="seventh-screen__slide-img"
+							/>
+						</div>
+						<div class="swiper-slide seventh-screen__swiper-slide">
+							<img
+								src="../img/Product-page/4-screen-bg1.png"
+								alt=""
+								class="seventh-screen__slide-img"
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-    <section class="screen third-screen scrolling-item">
-        <div class="container-page">
-            <div class="container-content">
-                <div class="third-screen__content">
-                    <div class="third-screen__text-block">
-                        <h2 class="animate-element transition">OLED — это высокотехнологичное актуальное решение
-                            для
-                            создания дисплеев.</h2>
-                        <p class="animate-element transition">Его главные преимущества: дисплею не нужен каркас
-                            и внешняя
-                            подсветка! Потому что он
-                            основан на технологии органических светодиодов, которые излучают свет
-                            самостоятельно,
-                            когда через них проходит электрический ток.</p>
-                        <button class="button second-screen__button third-screen__button for-mob-flex">
-                            <p>Смотреть видео</p>
-                            <img src="../img/ico/Forward.svg" alt="">
-                        </button>
-                    </div>
-                    <div class="third-screen__text-block">
-                        <h2 class="animate-element transition">Применяйте OLED-дисплей в максимально широком
-                            спектре задач.</h2>
-                        <p class="animate-element transition">За дисплеем можно поместить любой объект и
-                            раскрыть его с совершенно новой стороны: рассказать на прозрачном экране историю его
-                            создания, поместить инструкцию по применению, дополнить объект фото/видео его
-                            внутреннего устройства или показать, как объект вписывается в разные сценарии жизни
-                            пользователей. Нет никаких пределов!</p>
-                    </div>
-                    <div class="third-screen__text-block">
-                        <h2 class="animate-element transition">Интегрируйте любые рекламные инструменты на
-                            OLED-дисплей, чтобы рассмотреть их новые удивительные ракурсы</h2>
-                        <p class="animate-element transition">В магазине, автосалоне, ресторане, на ресепшен, в
-                            качестве витрины и презентационной стойки. Транслируйте любой контент (фото, видео,
-                            текст, графика, логотипы, голограммы, видео-мосты) в новом формате и собирайте
-                            восторженные отзывы, налаживайте коммуникацию с аудиторией, взаимодействуйте
-                            качественно и на перспективу.</p>
-                    </div>
-                    <button class="button second-screen__button third-screen__button for-desc-flex">
-                        <p>Смотреть видео</p>
-                        <img src="../img/ico/Forward.svg" alt="">
-                    </button>
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="screen four-screen scrolling-item">
-        <div class="container-page-margin">
-
-            <div class="socials abolusteY-center for-desc-flex">
-                <div class="socials__item"><img class="socials__ico" src="../img/ico/tg-ico.svg" alt=""></div>
-                <div class="socials__item"><img class="socials__ico" src="../img/ico/youtube-ico.svg" alt="">
-                </div>
-                <div class="socials__item"><img class="socials__ico" src="../img/ico/inst-ico.svg" alt=""></div>
-            </div>
-            <div class="scroll-ico absolutX-center for-desc-block"><img src="../img/ico/scroll-ico.svg" alt="">
-            </div>
-
-            <div class="four-screen__bcg  container-content container-content--no-margin">
-                <div class="container-relative">
-                    <img class="four-screen__rama-item" src="../img/Product-page/4-screen-1-item.png" alt="">
-                    <img class="four-screen__rama-item" src="../img/Product-page/4-screen-3-item.png" alt="">
-                    <img class="four-screen__rama-item" src="../img/Product-page/4-screen-2-item.png" alt="">
-                    <div class="four-screen__rama">
-                        <div class="four-screen__rama-blur"></div>
-                        <img class="four-screen__rama-img" src="../img/Product-page/4-screen-rama.png" alt="">
-                    </div>
-                    <div class="four-screen__buttons for-desc-flex">
-                        <button class="button second-screen__button four-screen__button">
-                            <img src="../img/ico/infographics.svg" alt="">
-                            <p>Инфографика</p>
-                        </button>
-                        <button class="button second-screen__button four-screen__button">
-                            <img src="../img/ico/vr.svg" alt="">
-                            <p>VR</p>
-                        </button>
-                        <button class="button second-screen__button four-screen__button">
-                            <img src="../img/ico/photo.svg" alt="">
-                            <p>Фото</p>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="screen fifth-screen scrolling-item">
-        <div class="container-page">
-            <div class="container-content">
-                <div class="fifth-screen__content">
-                    <div class="fifth-screen__text-block">
-                        <img class="fifth-screen__bcg animate-element" src="../img/Product-page/hero-bg.png" alt="">
-                        <h3 class="fifth-screen__text">Всё, что нужно —<br>прозрачный OLED-дисплей<br>от Гефест
-                            Капитал и<br>
-                            немного креативности!</h3>
-                    </div>
-                    <div class="button button_purple-text second-screen__button fifth-screen__button">
-                        <p>Заказать</p>
-                        <img src="../img/ico/percent-ico.svg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="screen dop-screen2">
-        <div class="container-page">
-            <div class="container-content">
-                <div class="dop-screen2__content-wrapper">
-                    <div class="dop-screen2__left-part dop-screen2__part">
-                        <p class="rent-content__title six-screen-anim dop-screen2__title animate-element">Аренда
-                            и контент</p>
-                        <div class="rent-content__tabs six-screen-anim dop-screen2__tabs">
-                            <div class="rent-content__tab dop-screen2__tab animate-element">Выставки</div>
-                            <div class="rent-content__tab dop-screen2__tab animate-element">Музеи</div>
-                            <div class="rent-content__tab dop-screen2__tab animate-element">Школы и вузы</div>
-                            <div class="rent-content__tab dop-screen2__tab animate-element">Реклама</div>
-                        </div>
-                        <div class="dop-screen2__tab-contents animate-element">
-                            <p class="dop-screen2__tab-content">Для выставок. OLED панель может использоваться
-                                для визуализации 3D моделей выставочных образцов, элементов различных
-                                механизмов, трансляции логотипов. Также, за счет прозрачности можно создать
-                                эффект рентгена, дополненной реальности, расположив реальный объект позади.</p>
-                            <p class="dop-screen2__tab-content">Прозрачный экран позволит показать экспонаты в
-                                3D с эффектом зависания в воздухе, голограммы людей и многое другое. Также, с
-                                помощью OLED панели можно реализовать виртуального гида или администратора.
-                                Также, с помощью контента можно добиться эффекта рентгена или виртуальной
-                                реставрации экспонатов, достраивания из имеющихся частей полной картины.</p>
-                            <p class="dop-screen2__tab-content">С помощью прозрачного экрана можно реализовать
-                                конференц-связь, при которой пользователи будут общаться в виде голографических
-                                изображений.</p>
-                            <p class="dop-screen2__tab-content">На экран можно транслировать контент как с
-                                эффектом прозрачности, так и без него, что делает OLED панель универсальным
-                                рекламным инструментом. Особенность технологии – более насыщенные цвета, чем у
-                                обычных экранов, что сделает вашу рекламу более заметной и привлекательной.</p>
-                        </div>
-                        <div class="second-screen__buttons dop-screen2__buttons">
-                            <div
-                                class="button button_purple-text second-screen__button dop-screen2__button animate-element">
-                                <p>Заказать</p>
-                                <img src="../img/ico/percent-ico.svg" alt="">
-                            </div>
-                            <div
-                                class="button button_purple-text second-screen__button dop-screen2__button animate-element">
-                                <p>Характеристики</p>
-                                <img src="../img/ico/characteristic-ico.svg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="dop-screen2__right-part dop-screen2__part animate-element">
-                        <img src="../img/Product-page/6-slider-1.png" alt="" class="dop-screen2__img">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="rent" class="screen sixth-screen scrolling-item">
-                <div class="container-page">
-                    <div class="container-content">
-                        <div class="sixth-screen__content-wrapper">
-                            <div class="sixth-screen__left-part sixth-screen__content">
-                                <div id="rent-content-swiper"
-                                    class="swiper-container rent-content-swiper animate-element">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide rent-content-slide"><img
-                                                src="../img/Product-page/6-slider-1.png"></div>
-                                        <div class="swiper-slide rent-content-slide"><img
-                                                src="../img/Product-page/6-slider-1.png"></div>
-                                        <div class="swiper-slide rent-content-slide"><img
-                                                src="../img/Product-page/6-slider-1.png"></div>
-                                    </div>
-                                    <div class="rent-content-swiper__nav">
-                                        <div class="swiper-button-prev rent-content-left"></div>
-                                        <div id="counter" class="counterMain">1/3</div>
-                                        <div class="swiper-button-next rent-content-right"></div>
-                                    </div>
-                                </div>
-                                <div class="width-1000-1300">
-                                    <div class="list-wrapper">
-                                        <div class="list-item">первая аренда <span>со скидкой 20%</span></div>
-                                        <div class="list-item">третий день аренды <span>бесплатно</span></div>
-                                    </div>
-                                    <div class="rent-content__conditionals">
-                                        <p>Условия размещения</p>
-                                        <div class="rent-content__conditionals-items">
-                                            <div class="second-screen__tab tab rent-content__conditionals-tab">
-                                                <div class="tab__dot"></div>
-                                                <div class="tab__key">свободное пространство</div>
-                                                <div class="">1 м<sup>2</sup></div>
-                                            </div>
-                                            <div class="second-screen__tab tab rent-content__conditionals-tab">
-                                                <div class="tab__dot"></div>
-                                                <div class="tab__key">питание</div>
-                                                <div class="">220В</div>
-                                            </div>
-                                            <div class="second-screen__tab tab rent-content__conditionals-tab">
-                                                <div class="tab__dot"></div>
-                                                <div class="tab__key">наличие свободного пространства позади для эффекта
-                                                    прозрачности</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="sixth-screen__right-part sixth-screen__content animate-element">
-                                <div class="rent-content__container">
-                                    <p class="rent-content__title six-screen-anim">Аренда и контент</p>
-                                    <div class="rent-content__content-wrapper">
-                                        <div class="rent-content__tabs six-screen-anim">
-                                            <div class="rent-content__tab six-screen__tab">Покупка</div>
-                                            <div class="rent-content__tab six-screen__tab">Контент</div>
-                                            <div class="rent-content__tab six-screen__tab">Аренда</div>
-                                        </div>
-                                        <div class="rent-content__tab-contents">
-                                            <div class="rent-content__tab-content tab-content">
-                                                <div class="tab-content__item six-screen-anim">
-                                                    <div class="tab-content__key">1 день</div>
-                                                    <div class="tab-content__value">60 000 р</div>
-                                                </div>
-                                                <div class="tab-content__item six-screen-anim">
-                                                    <div class="tab-content__key">2 дня</div>
-                                                    <div class="tab-content__value">90 000 р</div>
-                                                </div>
-                                                <div class="tab-content__item six-screen-anim">
-                                                    <div class="tab-content__key">выставка</div>
-                                                    <div class="tab-content__value">120 000 р</div>
-                                                </div>
-                                            </div>
-                                            <div class="rent-content__tab-content tab-content">
-                                                <div class="tab-content__item">
-                                                    <div class="tab-content__key">сенсорный</div>
-                                                    <div class="tab-content__value">1 500 000 р</div>
-                                                </div>
-                                                <div class="tab-content__item">
-                                                    <div class="tab-content__key">не сенсорный</div>
-                                                    <div class="tab-content__value">1 000 000 р</div>
-                                                </div>
-                                            </div>
-                                            <div class="rent-content__tab-content tab-content">
-                                                <div class="tab-content__item">
-                                                    <div class="tab-content__key">3д модели</div>
-                                                    <div class="tab-content__value">по запросу</div>
-                                                </div>
-                                                <div class="tab-content__item">
-                                                    <div class="tab-content__key">Инфографика</div>
-                                                    <div class="tab-content__value">по запросу</div>
-                                                </div>
-                                                <div class="tab-content__item">
-                                                    <div class="tab-content__key">видеоконтент</div>
-                                                    <div class="tab-content__value">по запросу</div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <form id="rent-content-form" class="rent-content-form">
-                                        <div class="rent-content-form__row six-screen-anim">
-                                            <div class="form-item">
-                                                <label for="name"></label>
-                                                <input type="text" id="name" name="name" placeholder="ваше имя">
-                                            </div>
-                                            <div class="form-item">
-                                                <label for="phone"></label>
-                                                <input type="number" id="phone" name="phone"
-                                                    placeholder="+7 _ _ _   _ _ _   _ _   _ _">
-                                            </div>
-                                            <div class="form-item">
-                                                <label for="email"></label>
-                                                <input type="email" id="email" name="email" placeholder="Ваш email">
-                                            </div>
-                                        </div>
-                                        <div class="rent-content-form__row six-screen-anim">
-                                            <p>Нажимая на кнопку, вы <a href="#">соглашаетесь</a> на обработку
-                                                персональных
-                                                данных</p>
-                                            <button
-                                                class="rent-content-form__submit button button_purple-text button_purple-text--submit"
-                                                type="submit">Отправить</button>
-                                        </div>
-                                    </form>
-                                    <script async
-                                        src="https://okocrm.ru/static/oko-static/js/form.js?token=DGklp8IO7_iwlJgAzOp8Cw65VsZDw27EwagtkfzAb4A0LeP3klBWcCB2r-QFx-NS7vSntheO1Pe5hx7rn_Etc_IY8p2HQnscsHo4xRZRWU084a3wSrZemcC95ymMjfwcnNaaMrQB2PStjLzA4Gq4C1OvT7IME36xium5xPZdX2UNFLo3cXDhC107aPHdlHAMa4wy9HegDfL5zk70zqFX4lUYh86hYTNAQkWXhmOl0GSLkpKPcbywk9y3Koj9xR0VxCGUrOJ1GXiBSwHwczBqdX050pGQIFI8sFG2U4Es5bMdRTo4VLEmm2plF2iZ7QIg9j0qgLRP_4Pi4JTJ6nbMuw%3D%3D"></script>
-                                    <div class="width-1300-more">
-                                        <div class="list-wrapper six-screen-anim">
-                                            <div class="list-item">первая аренда <span>со скидкой 20%</span></div>
-                                            <div class="list-item">третий день аренды <span>бесплатно</span></div>
-                                        </div>
-                                        <div class="rent-content__conditionals">
-                                            <p class="six-screen-anim">Условия размещения</p>
-                                            <div class="rent-content__conditionals-items six-screen-anim">
-                                                <div class="second-screen__tab tab rent-content__conditionals-tab">
-                                                    <div class="tab__dot"></div>
-                                                    <div class="tab__key">свободное пространство</div>
-                                                    <div class="">1 м<sup>2</sup></div>
-                                                </div>
-                                                <div class="second-screen__tab tab rent-content__conditionals-tab">
-                                                    <div class="tab__dot"></div>
-                                                    <div class="tab__key">питание</div>
-                                                    <div class="">220В</div>
-                                                </div>
-                                                <div class="second-screen__tab tab rent-content__conditionals-tab">
-                                                    <div class="tab__dot"></div>
-                                                    <div class="tab__key">наличие свободного пространства позади для
-                                                        эффекта
-                                                        прозрачности</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="screen seventh-screen scrolling-item">
-                <div class="container-page-margin">
-
-                    <div class="scroll-ico absolutX-center for-desc-block"><img src="../img/ico/scroll-ico.svg" alt="">
-                    </div>
-
-                    <div class="seventh-screen__bcg container-content">
-                        <div class="container-relative container-relative--z-index">
-                            <div class="rent-content-swiper__nav seventh-screen__swiper-nav">
-                                <div class="swiper-button-prev rent-content-left seventh-screen__left"></div>
-                                <div class="counterMain seventh-screen__counter">1/3</div>
-                                <div class="swiper-button-next rent-content-right seventh-screen__right"></div>
-                            </div>
-                        </div>
-                        <div class="swiper-container seventh-screen__swiper-container">
-                            <div class="swiper-wrapper seventh-screen__swiper-wrapper">
-                                <div class="swiper-slide seventh-screen__swiper-slide"><img
-                                        src="../img/Product-page/7-screen-bg1.png" alt=""
-                                        class="seventh-screen__slide-img">
-                                </div>
-                                <div class="swiper-slide seventh-screen__swiper-slide"><img
-                                        src="../img/Product-page/hero-bg.png" alt="" class="seventh-screen__slide-img">
-                                </div>
-                                <div class="swiper-slide seventh-screen__swiper-slide"><img
-                                        src="../img/Product-page/4-screen-bg1.png" alt=""
-                                        class="seventh-screen__slide-img">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="contact-form">
-                <div class="container-content">
-                    <div class="contact-form__content">
-                        <div class="contact-form__part">
-                            <h2 class="contact-form__title">Остались вопросы?</h2>
-                            <p class="contact-form__descr">Оставьте свои контактные данные, и мы свяжемся с вами в
-                                ближайшее
-                                время</p>
-                        </div>
-                        <div class="contact-form__part">
-                            <form id="contact-form" class="rent-content-form contact-form__form">
-                                <div class="rent-content-form__row">
-                                    <div class="form-item">
-                                        <label for="name"></label>
-                                        <input type="text" id="name" name="name" placeholder="ваше имя">
-                                    </div>
-                                    <div class="form-item">
-                                        <label for="phone"></label>
-                                        <input type="number" id="phone" name="phone"
-                                            placeholder="+7 _ _ _   _ _ _   _ _   _ _">
-                                    </div>
-                                </div>
-                                <div class="rent-content-form__row">
-                                    <div class="form-item">
-                                        <label for="email"></label>
-                                        <input type="email" id="email" name="email" placeholder="Ваш email">
-                                    </div>
-                                </div>
-                                <div class="rent-content-form__row">
-                                    <p>Нажимая на кнопку, вы <a href="#">соглашаетесь</a> на обработку персональных
-                                        данных</p>
-                                    <button
-                                        class="rent-content-form__submit button button_purple-text button_purple-text--submit"
-                                        type="submit">Отправить</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </section>
+	<section class="contact-form">
+		<div class="container-content">
+			<div class="contact-form__content">
+				<div class="contact-form__part">
+					<h2 class="contact-form__title">Остались вопросы?</h2>
+					<p class="contact-form__descr">
+						Оставьте свои контактные данные, и мы свяжемся с вами в ближайшее время
+					</p>
+				</div>
+				<div class="contact-form__part">
+					<form id="contact-form" class="rent-content-form contact-form__form">
+						<div class="rent-content-form__row">
+							<div class="form-item">
+								<label for="name"></label>
+								<input type="text" id="name" name="name" placeholder="ваше имя" />
+							</div>
+							<div class="form-item">
+								<label for="phone"></label>
+								<input
+									type="number"
+									id="phone"
+									name="phone"
+									placeholder="+7 _ _ _   _ _ _   _ _   _ _"
+								/>
+							</div>
+						</div>
+						<div class="rent-content-form__row">
+							<div class="form-item">
+								<label for="email"></label>
+								<input type="email" id="email" name="email" placeholder="Ваш email" />
+							</div>
+						</div>
+						<div class="rent-content-form__row">
+							<p>
+								Нажимая на кнопку, вы
+								<a href="#">соглашаетесь</a>
+								на обработку персональных данных
+							</p>
+							<button
+								class="rent-content-form__submit button button_purple-text button_purple-text--submit"
+								type="submit"
+							>
+								Отправить
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
 </div>
+
 
 </main>
 <footer class="footer">
@@ -699,7 +909,7 @@
         </div>
     </div>
 </footer>
-<script src="js/app.min.js"></script>
+<script src="js/app.min.js?_v=20230905162329"></script>
 </body>
 
 </html>

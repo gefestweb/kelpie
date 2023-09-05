@@ -1,5 +1,5 @@
 import * as mainFuncs from "./modules/functions.js";
-import {swiperInit} from "./modules/swiperInit.js";
+import { swiperInit } from "./modules/swiperInit.js";
 import tabs from "./modules/tabs.js";
 import oko from "./modules/oko.js";
 import mobMenu from "./modules/mobmenu.js";
@@ -10,16 +10,15 @@ import header from "./modules/header.js";
 // import { scrollByPixels } from "./modules/scrollByPixel.js";
 mainFuncs.isWebp();
 
-document.addEventListener("DOMContentLoaded", function() {
-    mobMenu();
-    swiperInit();
-    tabs();
-    // oko();
-    ramaObserve();
-    header();
-    // scrollByPixels();
-    // if (window.matchMedia("(min-width: 1000px)").matches) {
-    //     gsapAnimate();
-    // }
-    
-})
+document.addEventListener("DOMContentLoaded", function () {
+	mobMenu();
+	swiperInit();
+	tabs();
+	oko();
+	ramaObserve();
+	header();
+	// scrollByPixels();
+	if (window.matchMedia("(min-width: 1000px)").matches) {
+		gsapAnimate();
+	}
+});

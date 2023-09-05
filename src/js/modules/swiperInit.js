@@ -67,6 +67,7 @@ export const swiperInit = () => {
         spaceBetween: 20,
         speed: 450,
         effect: 'slide',
+        autoplay: true,
         breakpoints: {
             1000: {
                 slidesPerView: 2,

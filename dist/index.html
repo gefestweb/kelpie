@@ -5,10 +5,10 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js?_v=20230905162329"></script> -->
-        <!-- <script src="js/ScrollSmoother.min.js?_v=20230905162329"></script> -->
-        <link rel="stylesheet" href="css/style.min.css?_v=20230905162329">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css?_v=20230905162329">
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script> -->
+        <!-- <script src="js/ScrollSmoother.min.js"></script> -->
+        <link rel="stylesheet" href="css/style.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
 
 
         <title>Kelpie</title>
@@ -24,11 +24,21 @@
             <img class="header__logo logo for-desc" src="../img/ico/logo.svg" alt="">
             <nav class="header__nav">
                 <ul class="header__menu menu">
-                    <li class="menu__item menu-items-txt">Kelpi3 holostand</li>
-                    <li class="menu__item menu-items-txt">Характеристики</li>
-                    <li class="menu__item menu-items-txt">интерактив</li>
-                    <li class="menu__item menu-items-txt">Сценарии использования</li>
-                    <a href="#rent"><li class="menu__item menu-items-txt">Аренда и продажа</li></a>
+                    <a href="#holostand">
+                        <li class="menu__item menu-items-txt">Kelpi3 holostand</li>
+                    </a>
+                    <a href="#characteristics">
+                        <li class="menu__item menu-items-txt">Характеристики</li>
+                    </a>
+                    <a href="#interactive">
+                        <li class="menu__item menu-items-txt">Интерактив</li>
+                    </a>
+                    <a href="#using">
+                        <li class="menu__item menu-items-txt">Сценарии использования</li>
+                    </a>
+                    <a href="#rent">
+                        <li class="menu__item menu-items-txt">Аренда и продажа</li>
+                    </a>
                 </ul>
             </nav>
             <div class="header-contacts__buttons">
@@ -49,11 +59,21 @@
             <img class="mob-menu__cross" src="../img/ico/cross.svg"></img>
         </div>
         <div class="mob-menu__nav">
-            <a href="#" class="mob-menu__items">Kelpie holostand</a>
-            <a href="#" class="mob-menu__items">Характеристики</a>
-            <a href="#" class="mob-menu__items">интерактив</a>
-            <a href="#" class="mob-menu__items">Использование</a>
-            <a href="#" class="mob-menu__items">Аренда и продажа</a>
+            <a href="#holostand">
+                <li class="mob-menu__items">Kelpi3 holostand</li>
+            </a>
+            <a href="#characteristics">
+                <li class="mob-menu__items">Характеристики</li>
+            </a>
+            <a href="#interactive">
+                <li class="mob-menu__items">Интерактив</li>
+            </a>
+            <a href="#using">
+                <li class="mob-menu__items">Сценарии использования</li>
+            </a>
+            <a href="#rent">
+                <li class="mob-menu__items">Аренда и продажа</li>
+            </a>
         </div>
         <div class="mob-menu__buttons">
             <button class="button button_transparent mob-menu__button">Купить</button>
@@ -120,7 +140,7 @@
 							class="first-screen__content animate-element for-desc-block"
 							data-firstScreen-content="3-content"
 						>
-							<picture><source srcset="../img/Product-page/1-screen-3-elem.webp" type="image/webp"><img src="../img/Product-page/1-screen-3-elem.png" alt="" /></picture>
+							<img src="../img/Product-page/1-screen-3-elem.png" alt="" />
 						</div>
 					</div>
 				</div>
@@ -216,13 +236,13 @@
 		</div>
 	</section>
 
-	<section class="screen second-screen scrolling-item">
+	<section id="characteristics" class="screen second-screen scrolling-item">
 		<div class="container-page">
 			<div class="container-content">
 				<div class="second-screen__content-wrapper">
 					<div class="second-screen__content">
 						<div class="second-screen__left-part">
-							<picture><source srcset="../img/Product-page/2-screen-1.webp" type="image/webp"><img src="../img/Product-page/2-screen-1.png" alt="" /></picture>
+							<img src="../img/Product-page/2-screen-1.png" alt="" />
 						</div>
 						<div class="second-screen__right-part">
 							<div class="second-screen__text">
@@ -443,7 +463,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="screen dop-screen2">
+	<section id="rent" class="screen dop-screen2">
 		<div class="container-page">
 			<div class="container-content">
 				<div class="dop-screen2__content-wrapper">
@@ -519,7 +539,7 @@
 		</div>
 	</section>
 
-	<section id="rent" class="screen sixth-screen scrolling-item">
+	<section id="purchase" class="screen sixth-screen scrolling-item">
 		<div class="container-page">
 			<div class="container-content">
 				<div class="sixth-screen__content-wrapper">
@@ -532,13 +552,13 @@
 								>
 									<div class="swiper-wrapper">
 										<div class="swiper-slide rent-content-slide">
-											<picture><source srcset="../img/Product-page/6-slider-1.webp" type="image/webp"><img src="../img/Product-page/6-slider-1.png" /></picture>
+											<img src="../img/Product-page/6-slider-1.png" />
 										</div>
 										<div class="swiper-slide rent-content-slide">
-											<picture><source srcset="../img/Product-page/6-slider-1.webp" type="image/webp"><img src="../img/Product-page/6-slider-1.png" /></picture>
+											<img src="../img/Product-page/6-slider-1.png" />
 										</div>
 										<div class="swiper-slide rent-content-slide">
-											<picture><source srcset="../img/Product-page/6-slider-1.webp" type="image/webp"><img src="../img/Product-page/6-slider-1.png" /></picture>
+											<img src="../img/Product-page/6-slider-1.png" />
 										</div>
 									</div>
 									<div class="rent-content-swiper__nav">
@@ -809,7 +829,7 @@
 		</div>
 	</section>
 
-	<section class="contact-form">
+	<section id="feedback" class="contact-form">
 		<div class="container-content">
 			<div class="contact-form__content">
 				<div class="contact-form__part">
@@ -909,7 +929,7 @@
         </div>
     </div>
 </footer>
-<script src="js/app.min.js?_v=20230905162329"></script>
+<script src="js/app.min.js"></script>
 </body>
 
 </html>

@@ -21,9 +21,16 @@ const mobMenu = () => {
     burger.addEventListener('click', () => {
         openMenu();
     });
-    
+
     cross.addEventListener('click', () => {
         closeMenu();
+    });
+
+    menu.addEventListener('click', (event) => {
+        console.log(event.target.tagName)
+        if (event.target.tagName == 'LI' || event.target.tagName == 'BUTTON' || event.target.tagName == 'IMG') {
+            closeMenu();
+        }
     });
 }
 

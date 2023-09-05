@@ -6,7 +6,6 @@ const tabs = () => {
             activeTab = activeContent - 1;
 
         if (tabs && content) {
-            console.log(tabs && content)
 
             function removeActiveTabClass() {
                 tabs.forEach(tab => {

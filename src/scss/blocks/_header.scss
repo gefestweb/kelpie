@@ -76,6 +76,7 @@
 .header.active {
 	padding: 0px;
 	top: 0;
+	z-index: 2;
 
 	.header__desc {
 		border-radius: 0;

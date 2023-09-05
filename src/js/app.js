@@ -5,9 +5,10 @@ import oko from "./modules/oko.js";
 import mobMenu from "./modules/mobmenu.js";
 import ramaObserve from "./modules/helper.js";
 import gsapAnimate from "./modules/gsapAnimate.js";
-import test from "./modules/test.js";
+// import test from "./modules/test.js";
 import header from "./modules/header.js";
-// import { scrollByPixels } from "./modules/scrollByPixel.js";
+import navigation from "./modules/navigation.js";
+
 mainFuncs.isWebp();
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -17,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	oko();
 	ramaObserve();
 	header();
+	navigation();
 	// scrollByPixels();
 	if (window.matchMedia("(min-width: 1000px)").matches) {
 		gsapAnimate();

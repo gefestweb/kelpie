@@ -42,8 +42,8 @@
                 </ul>
             </nav>
             <div class="header-contacts__buttons">
-                <button class="button button_transparent">Купить</button>
-                <button class="button button_purple-text">Обратная связь</button>
+                <button class="button button_transparent" data-href="#purchase">Купить</button>
+                <button class="button button_purple-text" data-href="#feedback">Обратная связь</button>
             </div>
         </div>
         <img class="header__logo--mob-top logo for-mob-block" src="../img/ico/logo-mob-new.svg" alt="">
@@ -153,7 +153,7 @@
 			<div class="container-content container-content--no-padding">
 				<div class="dop-screen__swiper-container swiper-container">
 					<div class="dop-screen__content-wrapper swiper-wrapper">
-						<div class="dop-screen__item swiper-slide">
+						<div class="dop-screen__item swiper-slide animate-element">
 							<div class="dop-screen__upper-part">
 								<div class="dop-screen__title">Первый прозрачный дисплей</div>
 								<div class="dop-screen__desc">
@@ -170,7 +170,7 @@
 								/>
 							</div>
 						</div>
-						<div class="dop-screen__item swiper-slide">
+						<div class="dop-screen__item swiper-slide animate-element">
 							<div class="dop-screen__upper-part">
 								<div class="dop-screen__title">
 									Максимум внимания, минимум пространства
@@ -189,7 +189,7 @@
 								/>
 							</div>
 						</div>
-						<div class="dop-screen__item swiper-slide">
+						<div class="dop-screen__item swiper-slide animate-element">
 							<div class="dop-screen__upper-part">
 								<div class="dop-screen__title">Комфорт и стиль</div>
 								<div class="dop-screen__desc">
@@ -207,7 +207,7 @@
 								/>
 							</div>
 						</div>
-						<div class="dop-screen__item swiper-slide">
+						<div class="dop-screen__item swiper-slide animate-element">
 							<div class="dop-screen__upper-part">
 								<div class="dop-screen__title">Дополняя реальность</div>
 								<div class="dop-screen__desc">
@@ -303,11 +303,11 @@
 								</div>
 							</div>
 							<div class="second-screen__buttons animate-element">
-								<div class="button button_purple-text second-screen__button">
+								<div class="button button_purple-text second-screen__button" data-href="#purchase">
 									<p>Заказать</p>
 									<img src="../img/ico/percent-ico.svg" alt="" />
 								</div>
-								<div class="button button_purple-text second-screen__button">
+								<div class="button button_purple-text second-screen__button" data-href="#characteristics">
 									<p>Характеристики</p>
 									<img src="../img/ico/characteristic-ico.svg" alt="" />
 								</div>
@@ -455,6 +455,7 @@
 					</div>
 					<div
 						class="button button_purple-text second-screen__button fifth-screen__button"
+						data-href="#purchase"
 					>
 						<p>Заказать</p>
 						<img src="../img/ico/percent-ico.svg" alt="" />
@@ -515,12 +516,14 @@
 						<div class="second-screen__buttons dop-screen2__buttons">
 							<div
 								class="button button_purple-text second-screen__button dop-screen2__button animate-element"
+								data-href="#purchase"
 							>
 								<p>Заказать</p>
 								<img src="../img/ico/percent-ico.svg" alt="" />
 							</div>
 							<div
 								class="button button_purple-text second-screen__button dop-screen2__button animate-element"
+								data-href="#characteristics"
 							>
 								<p>Характеристики</p>
 								<img src="../img/ico/characteristic-ico.svg" alt="" />
@@ -927,6 +930,9 @@
         <div class="footer__politica">
             <a class="" href="#">Политика конфиденциальности</a>
         </div>
+    </div>
+    <div id="toTopBtn">
+        <img src="../img/ico/up-btn.svg" alt="">
     </div>
 </footer>
 <script src="js/app.min.js"></script>

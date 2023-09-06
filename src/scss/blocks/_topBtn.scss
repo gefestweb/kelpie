@@ -1,0 +1,13 @@
+#toTopBtn {
+    width: 69px;
+    height: 69px;
+
+    position: fixed;
+    bottom: 33px;
+    right: 53px;
+    z-index: 1;
+
+    filter: drop-shadow(1px 2px 9px rgba(30, 14, 54, 0.25));
+    opacity: 0;
+    transition: .2s;
+}

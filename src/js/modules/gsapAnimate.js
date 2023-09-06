@@ -55,13 +55,13 @@ const gsapAnimate = () => {
 
 
 
-    // function blockScroll() {
-    //     document.body.style.overflow = 'hidden';
-    // }
+    function blockScroll() {
+        document.body.style.overflow = 'hidden';
+    }
 
-    // function allowScroll() {
-    //     document.body.style.overflow = '';
-    // }
+    function allowScroll() {
+        document.body.style.overflow = '';
+    }
 
 
 
@@ -637,19 +637,22 @@ const gsapAnimate = () => {
             start: "top top",
             end: "+=" + scroll,
             pin: true,
+            // onLeaveBack: self => self.kill(),
             // pinSpacing: false,
             // once: true, // Делаем фиксацию один раз
         });
     }
 
     fixScreen(screens[0], 3000);
-    fixScreen(screens[1], 1000); /*  - доп-скрин */
-    fixScreen(screens[2], 1400);
-    fixScreen(screens[3], 2400);
-    fixScreen(screens[4], 1200);
+    // fixScreen(screens[1], 1000); /*  - доп-скрин */
+    // fixScreen(screens[2], 1400);
+    fixScreen(screens[3], 1000);
+    // fixScreen(screens[4], 1200);
     fixScreen(screens[5], 3000);
-    fixScreen(screens[6], 1200); /* - доп-скрин2 */
-    fixScreen(screens[7], 1200);
+    // fixScreen(screens[6], 1200); /* - доп-скрин2 */
+    // fixScreen(screens[7], 1200);
+
+    
 
     let canIAnimate = false;
     // Анимация первого текста.
@@ -657,216 +660,136 @@ const gsapAnimate = () => {
     // const firstScreenTline1 = gsap.timeline();
     // const firstScreenTline2 = gsap.timeline();
     // const firstScreenTline3 = gsap.timeline();
+    const testFunction = () => {
+        let currentIndex = 0;
+        let animationInProgress = false;
+        let scrollStart = false;
 
-    let currentIndex = 0;
-    let animationInProgress = false;
-    let scrollStart = false;
+        const firstScreen1Anim = function () {
+            gsap.fromTo(
+                firstScreenText[0], {
+                opacity: 1,
+                y: 0
+            }, {
+                opacity: 0, y: -300, duration: .5,
+                onStart: function () {
+                    switcherNode.classList.toggle('switcher__toggler--scroll');
+                },
+                onComplete: function () {
+                    animationInProgress = false;
+                }
+            }
+            );
+        };
 
-    const startNextAnimation = () => {
-        if (scrollStart && !animationInProgress && currentIndex < animations.length) {
-            animationInProgress = true;
-            animations[currentIndex]();
-            currentIndex++;
-        }
-    };
+        const firstScreen2Anim = function () {
+            gsap.fromTo(
+                firstScreenText[1], {
+                opacity: 0,
+                y: 300
+            }, {
+                opacity: 1, y: 0, duration: .5,
+                onStart: function () {
+                    screens[0].querySelector('.rama').classList.remove('rama--circle');
+                    gsap.to(ramaElements[1], {
+                        opacity: 1, duration: .5,
+                    });
+                    gsap.to(ramaElements[0], {
+                        opacity: 0, duration: .5,
+                    });
+                },
+                onComplete: function () {
+                    animationInProgress = false;
+                }
+            }
+            );
+        };
 
-    // Добавляем обработчик события для скролла колесика мыши
-    window.addEventListener('wheel', () => {
-        if (!scrollStart) {
-            scrollStart = true;
-        }
-        startNextAnimation();
+        const firstScreen3Anim = function () {
+            gsap.to(
+                firstScreenText[1], {
+                opacity: 0, y: -300, duration: .5,
+                onComplete: function () {
+                    animationInProgress = false;
+                }
+            }
+            );
+        };
+
+        const firstScreen4Anim = function () {
+            gsap.fromTo(
+                firstScreenText[2], {
+                opacity: 0,
+                y: 300
+            }, {
+                opacity: 1, y: 0, duration: .5,
+                onStart: function () {
+                    gsap.to(ramaElements[1], {
+                        opacity: 0, duration: .5,
+                    });
+                    gsap.to(ramaElements[2], {
+                        opacity: 1, duration: .5,
+                    });
+                },
+                onComplete: function () {
+                    animationInProgress = false;
+                    // window.removeEventListener('wheel', wheelHandler(animationsFirst));
+
+
+                }
+            }
+            );
+        };
+
+        const animationsFirst = [firstScreen1Anim, firstScreen2Anim, firstScreen3Anim, firstScreen4Anim];
+
+        const startNextAnimation = (arrayAnimFunc) => {
+            if (scrollStart && !animationInProgress && currentIndex < arrayAnimFunc.length) {
+                animationInProgress = true;
+                arrayAnimFunc[currentIndex]();
+                currentIndex++;
+            }
+        };
+
+        // Добавляем обработчик события для скролла колесика мыши
+        const wheelHandler = (e) => {
+            if (!scrollStart) {
+                scrollStart = true;
+            }
+            startNextAnimation(animationsFirst);
+        };
+
+        window.addEventListener('wheel', wheelHandler);
+
+    }
+
+    testFunction();
+
+
+
+
+   
+
+    const dopScreen1Elements = screens[1].querySelectorAll('.animate-element');
+
+    dopScreen1Elements.forEach((element, index) => {
+        gsap.fromTo(element, {
+            autoAlpha: 0,
+            y: 50
+        }, {
+            autoAlpha: 1,
+            y: 0,
+            duration: 1,
+            delay: index * 0.2,
+            scrollTrigger: {
+                trigger: screens[1],
+                start: 'top top+=400',
+            }
+        });
     });
 
-    const firstScreen1Anim = function () {
-        gsap.fromTo(
-            firstScreenText[0], {
-            opacity: 1,
-            y: 0
-        }, {
-            opacity: 0, y: -300, duration: .5,
-            onStart: function () {
-                switcherNode.classList.toggle('switcher__toggler--scroll');
-            },
-            onComplete: function () {
-                animationInProgress = false;
-            }
-        }
-        );
-    };
 
-    const firstScreen2Anim = function () {
-        gsap.fromTo(
-            firstScreenText[1], {
-            opacity: 0,
-            y: 300
-        }, {
-            opacity: 1, y: 0, duration: .5,
-            onStart: function () {
-                screens[0].querySelector('.rama').classList.remove('rama--circle');
-                gsap.to(ramaElements[1], {
-                    opacity: 1, duration: .5,
-                });
-                gsap.to(ramaElements[0], {
-                    opacity: 0, duration: .5,
-                });
-            },
-            onComplete: function () {
-                animationInProgress = false;
-            }
-        }
-        );
-    };
-
-    const firstScreen3Anim = function () {
-        gsap.to(
-            firstScreenText[1], {
-            opacity: 0, y: -300, duration: .5,
-            onComplete: function () {
-                animationInProgress = false;
-            }
-        }
-        );
-    };
-
-    const firstScreen4Anim = function () {
-        gsap.fromTo(
-            firstScreenText[2], {
-            opacity: 0,
-            y: 300
-        }, {
-            opacity: 1, y: 0, duration: .5,
-            onStart: function () {
-                gsap.to(ramaElements[1], {
-                    opacity: 0, duration: .5,
-                });
-                gsap.to(ramaElements[2], {
-                    opacity: 1, duration: .5,
-                });
-            },
-            onComplete: function () {
-                animationInProgress = false;
-            }
-        }
-        );
-    };
-
-    const animations = [firstScreen1Anim, firstScreen2Anim, firstScreen3Anim, firstScreen4Anim, ];
-
-
-
-
-
-    // Добавляем обработчик события для скролла колесика мыши
-
-
-
-    // // Анимация второго текста.
-
-    // gsap.fromTo(firstScreenText[1], {
-    //     y: 400,
-    //     opacity: 0,
-    // }, {
-    //     scrollTrigger: {
-    //         trigger: firstScreenText[0],
-    //         start: "top top",
-    //         end: "+=1000",
-    //         scrub: true,
-    //         onUpdate: self => {
-    //             if (self.progress < 0.5) {
-    //                 // Изменение прозрачности на половине анимации
-    //                 const opacity = 2 * self.progress; // Прозрачность будет увеличиваться до 1
-    //                 firstScreenText[1].style.opacity = opacity;
-    //             } else {
-    //                 // Изменение прозрачности после половины анимации
-    //                 const opacity = 2 - 2 * self.progress; // Прозрачность будет уменьшаться до 0
-    //                 firstScreenText[1].style.opacity = opacity;
-    //             }
-    //         },
-    //     },
-    //     y: -300,
-    //     opacity: 1,
-
-    //     // Анимация третьего текста
-    //     onComplete: function () {
-    //         gsap.fromTo(firstScreenText[2], {
-    //             y: 400,
-    //             opacity: 0,
-    //         }, {
-    //             scrollTrigger: {
-    //                 trigger: firstScreenText[1],
-    //                 start: "top top",
-    //                 end: "+=500",
-    //                 scrub: true,
-    //             },
-    //             y: 0,
-    //             opacity: 1
-    //         });
-    //     }
-    // });
-    // // Прячем свичер (первый элемент в раме)
-    // gsap.to(ramaElements[0], {
-    //     scrollTrigger: {
-    //         trigger: firstScreenText[0],
-    //         start: "top top",
-    //         end: "+=300",
-    //         scrub: true,
-    //     },
-    //     opacity: 0,
-    //     onComplete: function () {
-    //         screens[0].querySelector('.rama').classList.remove('rama--circle');
-    //     }
-    // })
-
-    // // Показываем и прячем второй элемент в раме
-
-    // gsap.to(ramaElements[1], {
-    //     scrollTrigger: {
-    //         trigger: firstScreenText[0],
-    //         start: "top top",
-    //         end: "+=1000",
-    //         scrub: true,
-    //         onUpdate: self => {
-    //             if (self.progress < 0.5) {
-    //                 // Изменение прозрачности на половине анимации
-    //                 const opacity = 2 * self.progress; // Прозрачность будет увеличиваться до 1
-    //                 ramaElements[1].style.opacity = opacity;
-    //             } else {
-    //                 // Изменение прозрачности после половины анимации
-    //                 const opacity = 2 - 2 * self.progress; // Прозрачность будет уменьшаться до 0
-    //                 ramaElements[1].style.opacity = opacity;
-    //             }
-    //         },
-    //     },
-    //     opacity: 1,
-
-    //     // Показываем третий элемент в раме
-    //     onComplete: function () {
-    //         gsap.to(ramaElements[2], {
-    //             scrollTrigger: {
-    //                 trigger: firstScreenText[2],
-    //                 start: "top bottom",
-    //                 end: "+=500",
-    //                 scrub: true,
-    //             },
-    //             opacity: 1,
-    //         })
-    //     }
-    // });
-
-    const tlineDopScreen = gsap.timeline();
-
-    tlineDopScreen.to(dopScreenItems[1], {
-        opacity: 1,
-        transition: .5,
-
-        scrollTrigger: {
-            trigger: screens[1],
-            start: 'top top',
-            // end: "+=500",
-            // scrub: true
-        },
-    });
+    
 
 
 
@@ -887,65 +810,178 @@ const gsapAnimate = () => {
 
     ScrollTrigger.create({
         trigger: screens[2],
-        start: 'top top+300',
+        start: 'top top+=400',
         toggleActions: "play none none none",
         // end: '+=600',
         // scrub: true,
         animation: tline2,
+        
     });
 
 
-    const tline3 = gsap.timeline();
+    // const tline3 = gsap.timeline();
     const thirdScreenButton = screens[3].querySelector('.third-screen__button');
 
-    tline3.to(screens[3], {
-        delay: 1,
-        onStart: function () {
-            screens[3].classList.add('third-screen--filter');
-        },
-        onReverseComplete: function () {
-            screens[3].classList.remove('third-screen--filter');
+    // window.addEventListener('wheel', () => {
+    //     if (!scrollStart) {
+    //         scrollStart = true;
+    //         console.log(123);
+    //     }
+    // });
+
+    const testFunction2 = () => {
+
+        let currentIndex = 0;
+        let animationInProgress = false;
+        let scrollStart = false;
+
+
+        const thirdScreen1Anim = function () {
+            gsap.to(screens[3], {
+                // delay: 1,
+                onStart: function () {
+                    screens[3].classList.add('third-screen--filter');
+                },
+                onReverseComplete: function () {
+                    screens[3].classList.remove('third-screen--filter');
+                },
+                onComplete: function () {
+                    animationInProgress = false;
+
+                }
+            });
         }
-    });
-    tline3.fromTo(thirdScreenButton, {
-        opacity: 0
-    }, {
-        opacity: 1
-    });
-    thirdScreenTextBlocks.forEach((element, index) => {
-        tline3.fromTo(element, {
-            opacity: 0,
-            y: 50,
-            duration: 1
-        }, {
-            opacity: 1,
-            y: 0,
-            delay: 1 + index,
-            // duration: 5,
-            transition: 1,
-        });
-        tline3.to(element, {
-            delay: 1 + index,
-            opacity: 0,
-            y: 50,
-        });
-    });
 
-
-
-    tline3.to(screens[3], {
-        delay: 1,
-        onStart: function () {
-            screens[2].classList.remove('third-screen--filter');
+        const thirdScreen2Anim = function () {
+            gsap.fromTo(thirdScreenButton, {
+                opacity: 0
+            }, {
+                opacity: 1,
+                duration: .5
+            });
+            gsap.fromTo(thirdScreenTextBlocks[0], {
+                opacity: 0,
+                y: 50,
+                // duration: 1
+            }, {
+                opacity: 1,
+                y: 0,
+                // delay: 1,
+                duration: .5,
+                onComplete: function () {
+                    animationInProgress = false;
+                }
+            });
         }
-    });
+        const thirdScreen3Anim = function () {
+            gsap.to(thirdScreenTextBlocks[0], {
+                // delay: 1,
+                opacity: 0,
+                y: 50,
+                duration: .5,
+                onComplete: function () {
+                    animationInProgress = false;
+                }
+            });
+        }
+        const thirdScreen4Anim = function () {
+            gsap.fromTo(thirdScreenTextBlocks[1], {
+                opacity: 0,
+                y: 50,
+                // duration: 1
+            }, {
+                opacity: 1,
+                y: 0,
+                // delay: 1,
+                duration: .5,
+                onComplete: function () {
+                    animationInProgress = false;
+                }
+            });
+        }
+        const thirdScreen5Anim = function () {
+            gsap.to(thirdScreenTextBlocks[1], {
+                // delay: 1,
+                opacity: 0,
+                y: 50,
+                duration: .5,
+                onComplete: function () {
+                    animationInProgress = false;
+                }
+            });
+        }
+        const thirdScreen6Anim = function () {
+            gsap.fromTo(thirdScreenTextBlocks[2], {
+                opacity: 0,
+                y: 50,
+                // duration: 1
+            }, {
+                opacity: 1,
+                y: 0,
+                // delay: 1,
+                duration: .5,
+                onComplete: function () {
+                    animationInProgress = false;
+                }
+            });
+        }
+        // const thirdScreen7Anim = function () {
+        //     gsap.to(thirdScreenTextBlocks[2], {
+        //         // delay: 1,
+        //         opacity: 0,
+        //         y: 50,
+        //         duration: .5,
+        //         onComplete: function () {
+        //             animationInProgress = false;
+        //         }
+        //     });
+        // }
+        // const thirdScreen8Anim = function () {
+
+        //     gsap.to(screens[3], {
+        //         delay: 1,
+        //         onStart: function () {
+        //             screens[2].classList.remove('third-screen--filter');
+        //         }
+        //     });
+        // }
+
+        const animationsThird = [thirdScreen1Anim, thirdScreen2Anim, thirdScreen3Anim, thirdScreen4Anim, thirdScreen5Anim, thirdScreen6Anim];
+
+        const startNextAnimation = (arrayAnimFunc) => {
+            if (scrollStart && !animationInProgress && currentIndex < arrayAnimFunc.length) {
+                animationInProgress = true;
+                arrayAnimFunc[currentIndex]();
+                currentIndex++;
+            }
+        };
+
+        // Добавляем обработчик события для скролла колесика мыши
+        const wheelHandler = (e) => {
+            if (!scrollStart) {
+                scrollStart = true;
+            }
+            startNextAnimation(animationsThird);
+        };
+
+        window.addEventListener('wheel', wheelHandler);
+
+    }
 
     ScrollTrigger.create({
         trigger: screens[3],
-        start: 'top top+500',
+        start: 'top top+=400',
         end: '+=2000',
-        scrub: true,
-        animation: tline3,
+        // pin: true,
+        // scrub: true,
+        onEnter: () => {
+            // blockScroll();
+            testFunction2();
+        },
+        // onLeave: () => {
+        //     allowScroll();
+        // },
+        once: true
     });
 
 
@@ -963,7 +999,7 @@ const gsapAnimate = () => {
 
     ScrollTrigger.create({
         trigger: screens[4],
-        start: 'top top+500',
+        start: 'top top+=700',
         end: '+=500',
         scrub: true,
         animation: tline4,
@@ -1002,7 +1038,7 @@ const gsapAnimate = () => {
 
     ScrollTrigger.create({
         trigger: screens[6], // Триггер (можете использовать свой)
-        start: 'top top',
+        start: 'top top+=400',
         // end: '+=1000',
         // scrub: true,
         toggleActions: "play none none none",
@@ -1022,7 +1058,7 @@ const gsapAnimate = () => {
 
     ScrollTrigger.create({
         trigger: screens[7], // Триггер (можете использовать свой)
-        start: 'top top',
+        start: 'top top+=400',
         // end: '+=1000',
         // scrub: true,
         toggleActions: "play none none none",

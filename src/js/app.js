@@ -8,6 +8,7 @@ import gsapAnimate from "./modules/gsapAnimate.js";
 // import test from "./modules/test.js";
 import header from "./modules/header.js";
 import navigation from "./modules/navigation.js";
+import modals from "./modules/modals.js";
 
 mainFuncs.isWebp();
 
@@ -19,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	ramaObserve();
 	header();
 	navigation();
+	modals();
 	// scrollByPixels();
 	if (window.matchMedia("(min-width: 1000px)").matches) {
 		gsapAnimate();

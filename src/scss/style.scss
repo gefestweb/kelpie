@@ -9,11 +9,8 @@
 @import "ui/buttons.scss";
 @import "ui/colors.scss";
 
-
 @import "pages/product-page";
 @import "pages/test";
-
-
 
 @import "blocks/header";
 @import "blocks/switcher";
@@ -22,6 +19,4 @@
 @import "blocks/burger";
 @import "blocks/topBtn";
 
-// body {
-//     overflow: hidden;
-// }
+@import "modals/modalMainVideo";

@@ -12,6 +12,7 @@ export const path={
             html:`${buildFolder}`,
             files:`${buildFolder}/files/`,
             fonts:`${buildFolder}/fonts/`,
+            video:`${buildFolder}/video/`,
         },
         src:{
             img: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp}`,
@@ -23,6 +24,7 @@ export const path={
             files:`${srcFolder}/files/**/*.*`,
             svgicons:`${srcFolder}/svgicons/*.svg`,
             fonts:`${srcFolder}/fonts/**/*.*`,
+            video: `${srcFolder}/video/**/*.*`,
         },
         watch:{
             images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp,svg,ico}`,
@@ -31,6 +33,8 @@ export const path={
             html:`${srcFolder}/**/*.html`,
             files:`${srcFolder}/files/**/*.*`,
             fonts:`${srcFolder}/fonts/**/*.*`,
+            video: `${srcFolder}/video/**/*.*`,
+
         },
         clean:buildFolder,
         buildFolder:buildFolder,

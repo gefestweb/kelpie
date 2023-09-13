@@ -27,17 +27,17 @@
                     <a href="#holostand">
                         <li class="menu__item menu-items-txt">Kelpi3 holostand</li>
                     </a>
-                    <a href="#characteristics">
-                        <li class="menu__item menu-items-txt">Характеристики</li>
+                    <a href="#">
+                        <li class="menu__item menu-items-txt">Технологии</li>
                     </a>
-                    <a href="#interactive">
-                        <li class="menu__item menu-items-txt">Интерактив</li>
-                    </a>
-                    <a href="#using">
+                    <a href="#">
                         <li class="menu__item menu-items-txt">Сценарии использования</li>
                     </a>
-                    <a href="#rent">
-                        <li class="menu__item menu-items-txt">Аренда и продажа</li>
+                    <a href="#">
+                        <li class="menu__item menu-items-txt">Портфолио</li>
+                    </a>
+                    <a href="#">
+                        <li class="menu__item menu-items-txt">Контакты</li>
                     </a>
                 </ul>
             </nav>
@@ -46,6 +46,11 @@
                 <button class="button button_purple-text" data-href="#feedback">Обратная связь</button>
             </div>
         </div>
+        <nav class="header__nav for-desc-block">
+                <ul class="header__submenu">
+                    <!-- Подгрузка из header.js -->
+                </ul>
+            </nav>
         <img class="header__logo--mob-top logo for-mob-block" src="../img/ico/logo-mob-new.svg" alt="">
         <div class="burger for-mob-block">
             <div class="burger__center-stick"></div>
@@ -63,27 +68,27 @@
                 <li class="mob-menu__items">Kelpi3 holostand</li>
             </a>
             <a href="#characteristics">
-                <li class="mob-menu__items">Характеристики</li>
+                <li class="mob-menu__items">Технологии</li>
             </a>
             <a href="#interactive">
-                <li class="mob-menu__items">Интерактив</li>
-            </a>
-            <a href="#using">
                 <li class="mob-menu__items">Сценарии использования</li>
             </a>
+            <a href="#using">
+                <li class="mob-menu__items">Портфолио</li>
+            </a>
             <a href="#rent">
-                <li class="mob-menu__items">Аренда и продажа</li>
+                <li class="mob-menu__items">Контакты</li>
             </a>
         </div>
         <div class="mob-menu__buttons">
-            <button class="button button_transparent mob-menu__button">Купить</button>
-            <button class="button button_purple-text mob-menu__button">Обратная связь</button>
+            <button class="button button_transparent mob-menu__button" data-href="#purchase">Купить</button>
+            <button class="button button_purple-text mob-menu__button" data-href="#feedback">Обратная связь</button>
         </div>
     </div>
 </div>
 
 <div class="content">
-	<section class="screen first-screen scrolling-item">
+	<section id="about" class="screen first-screen scrolling-item">
 		<div class="container-page-margin shadow">
 			<div class="socials abolusteY-center for-desc-flex">
 				<div class="socials__item">
@@ -98,28 +103,19 @@
 			</div>
 			<div class="scroll-ico absolutX-center for-desc-block">
 				<img src="../img/ico/scroll-ico.svg" alt="" />
-			</div>
+			</div> 
 
-			<div
-				class="first-screen__bcg container-content container-content--no-margin"
-			>
+			<div class="first-screen__bcg container-content container-content--no-margin">
 				<div class="container-relative">
-					<h1
-						class="title first-screen__first-title animate-element"
-						data-animate="firstScreenText"
-					>
+					<h1 class="title first-screen__first-title animate-element" data-animate="firstScreenText">
 						Уникальная технология, которую легко применить уже сегодня
 					</h1>
-					<h1
-						class="title first-screen__first-title animate-element for-desc-block"
-						data-animate="firstScreen"
-					>
+					<h1 class="title first-screen__first-title animate-element for-desc-block"
+						data-animate="firstScreen">
 						VR-эффект без дополнительного оборудования
 					</h1>
-					<h1
-						class="title first-screen__first-title animate-element for-desc-block"
-						data-animate="firstScreen"
-					>
+					<h1 class="title first-screen__first-title animate-element for-desc-block"
+						data-animate="firstScreen">
 						OLED-transparent для реализации самых креативных рекламных решений
 					</h1>
 
@@ -130,16 +126,12 @@
 								<div class="switcher__toggler" data-animate="firstScreen"></div>
 							</div>
 						</div>
-						<div
-							class="first-screen__content animate-element for-desc-block"
-							data-firstScreen-content="2-content"
-						>
+						<div class="first-screen__content animate-element for-desc-block"
+							data-firstScreen-content="2-content">
 							<img src="../img/Product-page/1-screen-2-elem.svg" alt="" />
 						</div>
-						<div
-							class="first-screen__content animate-element for-desc-block"
-							data-firstScreen-content="3-content"
-						>
+						<div class="first-screen__content animate-element for-desc-block"
+							data-firstScreen-content="3-content">
 							<img src="../img/Product-page/1-screen-3-elem.png" alt="" />
 						</div>
 					</div>
@@ -163,11 +155,7 @@
 								</div>
 							</div>
 							<div class="dop-screen__downer-part">
-								<img
-									src="../img/Product-page/dop-screen-1.png"
-									alt=""
-									class="dop-screen__image"
-								/>
+								<img src="../img/Product-page/dop-screen-1.png" alt="" class="dop-screen__image" />
 							</div>
 						</div>
 						<div class="dop-screen__item swiper-slide animate-element">
@@ -182,11 +170,7 @@
 								</div>
 							</div>
 							<div class="dop-screen__downer-part">
-								<img
-									src="../img/Product-page/dop-screen-2.png"
-									alt=""
-									class="dop-screen__image"
-								/>
+								<img src="../img/Product-page/dop-screen-2.png" alt="" class="dop-screen__image" />
 							</div>
 						</div>
 						<div class="dop-screen__item swiper-slide animate-element">
@@ -200,11 +184,7 @@
 								</div>
 							</div>
 							<div class="dop-screen__downer-part">
-								<img
-									src="../img/Product-page/dop-screen-3.png"
-									alt=""
-									class="dop-screen__image"
-								/>
+								<img src="../img/Product-page/dop-screen-3.png" alt="" class="dop-screen__image" />
 							</div>
 						</div>
 						<div class="dop-screen__item swiper-slide animate-element">
@@ -219,11 +199,7 @@
 								</div>
 							</div>
 							<div class="dop-screen__downer-part">
-								<img
-									src="../img/Product-page/dop-screen-4.png"
-									alt=""
-									class="dop-screen__image"
-								/>
+								<img src="../img/Product-page/dop-screen-4.png" alt="" class="dop-screen__image" />
 							</div>
 						</div>
 					</div>
@@ -307,7 +283,8 @@
 									<p>Заказать</p>
 									<img src="../img/ico/percent-ico.svg" alt="" />
 								</div>
-								<div class="button button_purple-text second-screen__button" data-href="#characteristics">
+								<div class="button button_purple-text second-screen__button"
+									data-href="#characteristics">
 									<p>Характеристики</p>
 									<img src="../img/ico/characteristic-ico.svg" alt="" />
 								</div>
@@ -318,7 +295,10 @@
 			</div>
 		</div>
 	</section>
-	<section class="screen third-screen scrolling-item">
+	<section id="video" class="screen third-screen scrolling-item">
+		<div class="third-screen__video for-desc-flex">
+			<video autoplay muted loop src="../video/Kelpie_Holostand_OLED_55.mp4"></video>
+		</div>
 		<div class="container-page">
 			<div class="container-content">
 				<div class="third-screen__content">
@@ -331,9 +311,7 @@
 							Потому что он основан на технологии органических светодиодов, которые
 							излучают свет самостоятельно, когда через них проходит электрический ток.
 						</p>
-						<button
-							class="button second-screen__button third-screen__button for-mob-flex"
-						>
+						<button class="button second-screen__button third-screen__button for-mob-flex">
 							<p>Смотреть видео</p>
 							<img src="../img/ico/Forward.svg" alt="" />
 						</button>
@@ -363,9 +341,7 @@
 							взаимодействуйте качественно и на перспективу.
 						</p>
 					</div>
-					<button
-						class="button second-screen__button third-screen__button for-desc-flex"
-					>
+					<button class="button second-screen__button third-screen__button for-desc-flex">
 						<p>Смотреть видео</p>
 						<img src="../img/ico/Forward.svg" alt="" />
 					</button>
@@ -392,28 +368,12 @@
 
 			<div class="four-screen__bcg container-content container-content--no-margin">
 				<div class="container-relative">
-					<img
-						class="four-screen__rama-item"
-						src="../img/Product-page/4-screen-1-item.png"
-						alt=""
-					/>
-					<img
-						class="four-screen__rama-item"
-						src="../img/Product-page/4-screen-3-item.png"
-						alt=""
-					/>
-					<img
-						class="four-screen__rama-item"
-						src="../img/Product-page/4-screen-2-item.png"
-						alt=""
-					/>
+					<img class="four-screen__rama-item" src="../img/Product-page/4-screen-1-item.png" alt="" />
+					<img class="four-screen__rama-item" src="../img/Product-page/4-screen-3-item.png" alt="" />
+					<img class="four-screen__rama-item" src="../img/Product-page/4-screen-2-item.png" alt="" />
 					<div class="four-screen__rama">
 						<div class="four-screen__rama-blur"></div>
-						<img
-							class="four-screen__rama-img"
-							src="../img/Product-page/4-screen-rama.png"
-							alt=""
-						/>
+						<img class="four-screen__rama-img" src="../img/Product-page/4-screen-rama.png" alt="" />
 					</div>
 					<div class="four-screen__buttons for-desc-flex">
 						<button class="button second-screen__button four-screen__button">
@@ -438,11 +398,7 @@
 			<div class="container-content">
 				<div class="fifth-screen__content">
 					<div class="fifth-screen__text-block">
-						<img
-							class="fifth-screen__bcg animate-element"
-							src="../img/Product-page/hero-bg.png"
-							alt=""
-						/>
+						<img class="fifth-screen__bcg animate-element" src="../img/Product-page/hero-bg.png" alt="" />
 						<h3 class="fifth-screen__text">
 							Всё, что нужно —
 							<br />
@@ -453,10 +409,8 @@
 							немного креативности!
 						</h3>
 					</div>
-					<div
-						class="button button_purple-text second-screen__button fifth-screen__button"
-						data-href="#purchase"
-					>
+					<div class="button button_purple-text second-screen__button fifth-screen__button"
+						data-href="#purchase">
 						<p>Заказать</p>
 						<img src="../img/ico/percent-ico.svg" alt="" />
 					</div>
@@ -469,9 +423,7 @@
 			<div class="container-content">
 				<div class="dop-screen2__content-wrapper">
 					<div class="dop-screen2__left-part dop-screen2__part">
-						<p
-							class="rent-content__title six-screen-anim dop-screen2__title animate-element"
-						>
+						<p class="rent-content__title six-screen-anim dop-screen2__title animate-element">
 							Аренда и контент
 						</p>
 						<div class="rent-content__tabs six-screen-anim dop-screen2__tabs">
@@ -514,28 +466,20 @@
 							</p>
 						</div>
 						<div class="second-screen__buttons dop-screen2__buttons">
-							<div
-								class="button button_purple-text second-screen__button dop-screen2__button animate-element"
-								data-href="#purchase"
-							>
+							<div class="button button_purple-text second-screen__button dop-screen2__button animate-element"
+								data-href="#purchase">
 								<p>Заказать</p>
 								<img src="../img/ico/percent-ico.svg" alt="" />
 							</div>
-							<div
-								class="button button_purple-text second-screen__button dop-screen2__button animate-element"
-								data-href="#characteristics"
-							>
+							<div class="button button_purple-text second-screen__button dop-screen2__button animate-element"
+								data-href="#characteristics">
 								<p>Характеристики</p>
 								<img src="../img/ico/characteristic-ico.svg" alt="" />
 							</div>
 						</div>
 					</div>
 					<div class="dop-screen2__right-part dop-screen2__part animate-element">
-						<img
-							src="../img/Product-page/6-slider-1.png"
-							alt=""
-							class="dop-screen2__img"
-						/>
+						<img src="../img/Product-page/6-slider-1.png" alt="" class="dop-screen2__img" />
 					</div>
 				</div>
 			</div>
@@ -549,10 +493,8 @@
 					<div class="sixth-screen__parts">
 						<div class="sixth-screen__left-part">
 							<div class="sixth-screen__content">
-								<div
-									id="rent-content-swiper"
-									class="swiper-container rent-content-swiper animate-element"
-								>
+								<div id="rent-content-swiper"
+									class="swiper-container rent-content-swiper animate-element">
 									<div class="swiper-wrapper">
 										<div class="swiper-slide rent-content-slide">
 											<img src="../img/Product-page/6-slider-1.png" />
@@ -573,10 +515,10 @@
 							</div>
 							<div class="width-1000-1300">
 								<div class="list-wrapper">
-									<div class="list-item">
+									<!-- <div class="list-item">
 										первая аренда
 										<span>со скидкой 20%</span>
-									</div>
+									</div> -->
 									<div class="list-item">
 										третий день аренды
 										<span>бесплатно</span>
@@ -585,9 +527,7 @@
 							</div>
 						</div>
 
-						<div
-							class="sixth-screen__right-part sixth-screen__content animate-element"
-						>
+						<div class="sixth-screen__right-part sixth-screen__content animate-element">
 							<div class="rent-content__container">
 								<p class="rent-content__title six-screen-anim">Аренда и контент</p>
 								<div class="rent-content__content-wrapper">
@@ -645,21 +585,12 @@
 										</div>
 										<div class="form-item">
 											<label for="phone"></label>
-											<input
-												type="number"
-												id="phone"
-												name="phone"
-												placeholder="+7 _ _ _   _ _ _   _ _   _ _"
-											/>
+											<input type="number" id="phone" name="phone"
+												placeholder="+7 _ _ _   _ _ _   _ _   _ _" />
 										</div>
 										<div class="form-item">
 											<label for="email"></label>
-											<input
-												type="email"
-												id="email"
-												name="email"
-												placeholder="Ваш email"
-											/>
+											<input type="email" id="email" name="email" placeholder="Ваш email" />
 										</div>
 									</div>
 									<div class="rent-content-form__row six-screen-anim">
@@ -670,22 +601,19 @@
 										</p>
 										<button
 											class="rent-content-form__submit button button_purple-text button_purple-text--submit"
-											type="submit"
-										>
+											type="submit">
 											Отправить
 										</button>
 									</div>
 								</form>
-								<script
-									async
-									src="https://okocrm.ru/static/oko-static/js/form.js?token=DGklp8IO7_iwlJgAzOp8Cw65VsZDw27EwagtkfzAb4A0LeP3klBWcCB2r-QFx-NS7vSntheO1Pe5hx7rn_Etc_IY8p2HQnscsHo4xRZRWU084a3wSrZemcC95ymMjfwcnNaaMrQB2PStjLzA4Gq4C1OvT7IME36xium5xPZdX2UNFLo3cXDhC107aPHdlHAMa4wy9HegDfL5zk70zqFX4lUYh86hYTNAQkWXhmOl0GSLkpKPcbywk9y3Koj9xR0VxCGUrOJ1GXiBSwHwczBqdX050pGQIFI8sFG2U4Es5bMdRTo4VLEmm2plF2iZ7QIg9j0qgLRP_4Pi4JTJ6nbMuw%3D%3D"
-								></script>
+								<script async
+									src="https://okocrm.ru/static/oko-static/js/form.js?token=DGklp8IO7_iwlJgAzOp8Cw65VsZDw27EwagtkfzAb4A0LeP3klBWcCB2r-QFx-NS7vSntheO1Pe5hx7rn_Etc_IY8p2HQnscsHo4xRZRWU084a3wSrZemcC95ymMjfwcnNaaMrQB2PStjLzA4Gq4C1OvT7IME36xium5xPZdX2UNFLo3cXDhC107aPHdlHAMa4wy9HegDfL5zk70zqFX4lUYh86hYTNAQkWXhmOl0GSLkpKPcbywk9y3Koj9xR0VxCGUrOJ1GXiBSwHwczBqdX050pGQIFI8sFG2U4Es5bMdRTo4VLEmm2plF2iZ7QIg9j0qgLRP_4Pi4JTJ6nbMuw%3D%3D"></script>
 								<div class="width-900-1600">
 									<div class="list-wrapper six-screen-anim">
-										<div class="list-item">
+										<!-- <div class="list-item">
 											первая аренда
 											<span>со скидкой 20%</span>
-										</div>
+										</div> -->
 										<div class="list-item">
 											третий день аренды
 											<span>бесплатно</span>
@@ -720,10 +648,10 @@
 						</div>
 						<div class="" style="display: none">
 							<div class="list-wrapper six-screen-anim">
-								<div class="list-item">
+								<!-- <div class="list-item">
 									первая аренда
 									<span>со скидкой 20%</span>
-								</div>
+								</div> -->
 								<div class="list-item">
 									третий день аренды
 									<span>бесплатно</span>
@@ -794,37 +722,21 @@
 			<div class="seventh-screen__bcg container-content">
 				<div class="container-relative container-relative--z-index">
 					<div class="rent-content-swiper__nav seventh-screen__swiper-nav">
-						<div
-							class="swiper-button-prev rent-content-left seventh-screen__left"
-						></div>
+						<div class="swiper-button-prev rent-content-left seventh-screen__left"></div>
 						<div class="counterMain seventh-screen__counter">1/3</div>
-						<div
-							class="swiper-button-next rent-content-right seventh-screen__right"
-						></div>
+						<div class="swiper-button-next rent-content-right seventh-screen__right"></div>
 					</div>
 				</div>
 				<div class="swiper-container seventh-screen__swiper-container">
 					<div class="swiper-wrapper seventh-screen__swiper-wrapper">
 						<div class="swiper-slide seventh-screen__swiper-slide">
-							<img
-								src="../img/Product-page/7-screen-bg1.png"
-								alt=""
-								class="seventh-screen__slide-img"
-							/>
+							<img src="../img/Product-page/7-screen-bg1.png" alt="" class="seventh-screen__slide-img" />
 						</div>
 						<div class="swiper-slide seventh-screen__swiper-slide">
-							<img
-								src="../img/Product-page/hero-bg.png"
-								alt=""
-								class="seventh-screen__slide-img"
-							/>
+							<img src="../img/Product-page/hero-bg.png" alt="" class="seventh-screen__slide-img" />
 						</div>
 						<div class="swiper-slide seventh-screen__swiper-slide">
-							<img
-								src="../img/Product-page/4-screen-bg1.png"
-								alt=""
-								class="seventh-screen__slide-img"
-							/>
+							<img src="../img/Product-page/4-screen-bg1.png" alt="" class="seventh-screen__slide-img" />
 						</div>
 					</div>
 				</div>
@@ -850,12 +762,8 @@
 							</div>
 							<div class="form-item">
 								<label for="phone"></label>
-								<input
-									type="number"
-									id="phone"
-									name="phone"
-									placeholder="+7 _ _ _   _ _ _   _ _   _ _"
-								/>
+								<input type="number" id="phone" name="phone"
+									placeholder="+7 _ _ _   _ _ _   _ _   _ _" />
 							</div>
 						</div>
 						<div class="rent-content-form__row">
@@ -872,8 +780,7 @@
 							</p>
 							<button
 								class="rent-content-form__submit button button_purple-text button_purple-text--submit"
-								type="submit"
-							>
+								type="submit">
 								Отправить
 							</button>
 						</div>
@@ -883,7 +790,6 @@
 		</div>
 	</section>
 </div>
-
 
 </main>
 <footer class="footer">
@@ -939,3 +845,13 @@
 </body>
 
 </html>
+
+<div id="modalMainVideo" class="modal">
+    <div class="modal-content">
+        <span class="close for-desc-block">&times;</span>
+        <video controls id="video-main">
+            <source src="../video/Kelpie_Holostand_OLED_55.mp4" type="video/mp4">
+            <!-- Ваш браузер не поддерживает HTML5 видео. -->
+        </video>
+    </div>
+</div>

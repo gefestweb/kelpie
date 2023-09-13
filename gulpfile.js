@@ -24,6 +24,7 @@ import { svgSprive } from "./gulp/tasks/svgSprive.js";
 import { zip } from "./gulp/tasks/zip.js";
 import { ftp } from "./gulp/tasks/ftp.js";
 import { fonts2 } from "./gulp/tasks/fonts2.js";
+import { video } from './gulp/tasks/video.js';
 //Наблюдатель
 function watcher() {
     gulp.watch(path.watch.files, copy);
@@ -32,14 +33,13 @@ function watcher() {
     gulp.watch(path.watch.js, js);
     gulp.watch(path.watch.images, images);
     gulp.watch(path.watch.fonts, fonts2);
-
-
+    gulp.watch(path.watch.video, video);
 }
 
 export { svgSprive }
 
-const mainTasks = gulp.parallel(copy, fonts2, html, scss, js, images);
-const beforeMainTasks = gulp.parallel(copy, html, scss, js);
+const mainTasks = gulp.parallel(copy, fonts2, html, scss, js, images, video);
+const beforeMainTasks = gulp.parallel(copy, html, scss, js, video);
 //Построение сценариев для выполнения задач
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 const build = gulp.series(reset, mainTasks, ftp);

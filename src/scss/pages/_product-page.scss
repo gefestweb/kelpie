@@ -415,6 +415,7 @@
 		&__content {
 			flex-direction: column-reverse;
 			gap: 40px;
+			margin-top: 50px;
 		}
 
 		&__right-part {
@@ -438,8 +439,8 @@
 		}
 
 		&__tabs {
-			column-gap: 22px;
-			row-gap: 12px;
+			column-gap: 25px;
+			row-gap: 25px;
 		}
 
 		&__button {
@@ -507,7 +508,6 @@
 // THIRD SCREEN
 
 .third-screen {
-	background: url("../../img/Product-page/3-bg.png") no-repeat center center/cover;
 	position: relative;
 
 	&::before {
@@ -517,13 +517,23 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background-color: rgba(0, 0, 0, 0.5);
+		background-color: rgba(0, 0, 0, 0.7);
 		opacity: 0;
 		transition: opacity 0.5s;
 	}
 
 	&--filter::before {
 		opacity: 1;
+	}
+
+	&__video {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		z-index: 1;
 	}
 
 	&__content {
@@ -578,15 +588,19 @@
 			-webkit-text-fill-color: transparent;
 			font-size: calc($index * 0.45);
 			font-weight: bold;
+			pointer-events: none;
 		}
 
-		img {}
+		img {
+			pointer-events: none;
+		}
 	}
 }
 
 @media (max-width: 1000px) {
 	.third-screen {
 		height: 100vh;
+		background: url("../../img/Product-page/3-bg.png") no-repeat center center/cover;
 
 		&::before {
 			opacity: 1;

@@ -646,7 +646,7 @@ const gsapAnimate = () => {
     fixScreen(screens[0], 3000);
     // fixScreen(screens[1], 1000); /*  - доп-скрин */
     // fixScreen(screens[2], 1400);
-    fixScreen(screens[3], 1000);
+    fixScreen(screens[3], 3000);
     // fixScreen(screens[4], 1200);
     fixScreen(screens[5], 3000);
     // fixScreen(screens[6], 1200); /* - доп-скрин2 */
@@ -841,6 +841,7 @@ const gsapAnimate = () => {
                 // delay: 1,
                 onStart: function () {
                     screens[3].classList.add('third-screen--filter');
+                    document.querySelector('.third-screen__video').style.zIndex = "-1"
                 },
                 onReverseComplete: function () {
                     screens[3].classList.remove('third-screen--filter');
@@ -970,7 +971,7 @@ const gsapAnimate = () => {
 
     ScrollTrigger.create({
         trigger: screens[3],
-        start: 'top top+=400',
+        start: 'top top',
         end: '+=2000',
         // pin: true,
         // scrub: true,
@@ -978,9 +979,9 @@ const gsapAnimate = () => {
             // blockScroll();
             testFunction2();
         },
-        // onLeave: () => {
-        //     allowScroll();
-        // },
+        onLeave: () => {
+            // allowScroll();
+        },
         once: true
     });
 

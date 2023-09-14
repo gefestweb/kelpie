@@ -19,7 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
 	oko();
 	ramaObserve();
 	header();
-	navigation();
+	setTimeout(() => {
+		navigation();		
+	}, 5000);
 	modals();
 	// scrollByPixels();
 	if (window.matchMedia("(min-width: 1000px)").matches) {

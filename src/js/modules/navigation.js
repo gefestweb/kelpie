@@ -19,7 +19,7 @@ const navigation = () => {
                 // const topOffset = document.querySelector('.header').offsetHeight;
                 const topOffset = 0;
                 const elementPosition = scrollTarget.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + 10;
+                const offsetPosition = elementPosition;
 
                 window.scrollBy({
                     top: offsetPosition,
@@ -28,7 +28,6 @@ const navigation = () => {
             } catch (error) {
                 console.error('Якорь не найден');
             }
-
         });
     });
 

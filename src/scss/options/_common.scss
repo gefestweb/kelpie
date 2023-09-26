@@ -8,12 +8,17 @@
 	// max-width: 1825px;
 	margin: 20px auto;
 	// transition: .3s;
+	padding-top: 50px;
+	&:first-child {
+		padding-top: unset;	
+	}
 
 	@media (max-width: 1000px) {
 		max-height: unset;
 		width: calc(100% - 20px);
 		height: unset;
 		margin: 10px auto;
+		padding-top: unset;
 	}
 }
 
@@ -174,14 +179,6 @@
 .shadow {
 	filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.6));
 }
-.scrolling-content {
-	// @media(min-width: 1001px) {
-	//     scroll-snap-type: y mandatory;
-	//     height: 100vh;
-	//     overflow-x: hidden;
-	//     overflow-y: auto;
-	// }
-}
-.scrolling-item {
-	// scroll-snap-align: start;
+.max-w-320 {
+	max-width: 320px !important;
 }

@@ -1,5 +1,5 @@
 .swiper-container {
-    overflow: hidden;
+    overflow-x: clip;
 }
 
 .swiper-container {
@@ -16,6 +16,7 @@
 .swiper-slide>img {
     width: 100%;
     object-fit: cover;
+    height: 100%;
 }
 
 .swiper-button-prev.rent-content-left,
@@ -33,10 +34,41 @@
 
 .swiper-button-prev.rent-content-left::after,
 .swiper-button-next.rent-content-right::after {
+    width: 61px;
+    height: 61px;
     font-family: unset;
     content: url('../../img/ico/arrow-left.svg');
 }
 
 .swiper-button-next.rent-content-right::after {
     transform: rotate(180deg);
+}
+
+.swiper-pagination {
+    bottom: -42px !important;
+    z-index: 1 !important;
+}
+
+.swiper-pagination-bullet {
+    /* Ваши стили для неактивных точек */
+    transition: all 0.3s ease !important; /* Добавьте это для плавного перехода */
+}
+
+.swiper-pagination-bullet-active {
+    /* Ваши стили для активных точек */
+    transform: scale(1.5) !important; /* Увеличивает размер активной точки */
+    transition: all 0.3s ease !important; /* Добавьте это для плавного перехода */
+}
+
+.swiper-pagination-bullet {
+    width: 10px !important;
+    height: 10px !important;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 7px !important;
 }

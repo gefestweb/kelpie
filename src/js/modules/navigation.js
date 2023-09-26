@@ -16,17 +16,17 @@ const navigation = () => {
             }
             try {
                 const scrollTarget = document.getElementById(href);
-                // const topOffset = document.querySelector('.header').offsetHeight;
-                const topOffset = 0;
+                const topOffset = document.querySelector('.header').offsetHeight;
+                // const topOffset = 0;
                 const elementPosition = scrollTarget.getBoundingClientRect().top;
-                const offsetPosition = elementPosition;
+                const offsetPosition = elementPosition - topOffset;
 
                 window.scrollBy({
                     top: offsetPosition,
                     behavior: "smooth"
                 });
             } catch (error) {
-                console.error('Якорь не найден');
+                console.error(`Якорь для ${href} не найден`);
             }
         });
     });

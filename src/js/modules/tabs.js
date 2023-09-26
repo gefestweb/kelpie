@@ -5,7 +5,7 @@ const tabs = () => {
             content = document.querySelectorAll(contentSelector),
             activeTab = activeContent - 1;
 
-        if (tabs && content) {
+        try {
 
             function removeActiveTabClass() {
                 tabs.forEach(tab => {
@@ -30,15 +30,14 @@ const tabs = () => {
                     content[tabIndex].style.display = displayProperty;
                 });
             });
-        } else {
+        } catch(error) {
+            console.error(error);
         }
-
-
     }
 
     tabsBinder('.six-screen__tab', '.rent-content__tab-content', 'rent-content__tab--active', 1, 'flex');
     tabsBinder('.four-screen__button', '.four-screen__rama-item', 'four-screen__button--active', 1, 'block');
-    tabsBinder('.dop-screen2__tab', '.dop-screen2__tab-content', 'rent-content__tab--active', 1, 'block');
+    // tabsBinder('.dop-screen2__tab', '.dop-screen2__tab-content', 'rent-content__tab--active', 1, 'block');
 
 }
 

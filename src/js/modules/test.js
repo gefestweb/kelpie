@@ -5,67 +5,85 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 
 const test = () => {
-    // Подключение ScrollTrigger
-    // Подключение ScrollTrigger
-    // Подключение ScrollTrigger
-    gsap.registerPlugin(ScrollTrigger);
 
-    const blueContainer = document.querySelector('.blue');
-    const texts = blueContainer.querySelectorAll('.text');
+    const screens = document.querySelectorAll('.screen');
+    const firstScreenElements = screens[0].querySelectorAll('.animate-element');
+    const switcherNode = screens[0].querySelector('.switcher__toggler');
+    const ramaElements = screens[0].querySelector('.rama').querySelectorAll('.animate-element');
+    const firstScreenText = screens[0].querySelectorAll('.first-screen__first-title');
 
-    // Фиксация первого синего контейнера
-    gsap.to(blueContainer, {
-        scrollTrigger: {
-            trigger: blueContainer,
-            start: 'top top', // Фиксируем контейнер, когда его верх достигает верха экрана
-            end: 'bottom top', // Отменяем фиксацию, когда его низ достигает верха экрана
-            pin: true, // Фиксируем контейнер на месте
-            pinSpacing: false // Отключаем добавление пространства для фиксированного контейнера
+    let canIAnimate = true;
+
+    function fixScreen(screen, scroll) {
+        const trigger = ScrollTrigger.create({
+            trigger: screen,
+            start: "top top",
+            end: "+=" + scroll,
+            pin: true,
+            // onLeaveBack: self => self.kill(),
+            // pinSpacing: false,
+            // once: true, // Делаем фиксацию один раз
+        });
+    }
+
+    fixScreen(screens[0], 3000);
+
+    gsap.fromTo(
+        firstScreenText[0], {
+        opacity: 1,
+        y: 0,
+        transition: .5
+    }, {
+        opacity: 0, y: -300, duration: 2,
+        onStart: function () {
+            switcherNode.classList.add('switcher__toggler--scroll');
+            canIAnimate = false;
+        },
+        onReverseComplete: function () {
+            switcherNode.classList.remove('switcher__toggler--scroll');
+        },
+        // scrollTrigger: {
+        //     trigger: screens[0],
+        //     start: "top top",
+        //     end: "+=500",
+        //     pin: true,
+        //     scrub: true,
+        //     // markers: true
+        // },
+        onComplete: function () {
+            canIAnimate = true;
+            gsap.fromTo(
+                firstScreenText[1], {
+                opacity: 0,
+                y: 300
+            }, {
+                opacity: 1, y: 0, duration: .5,
+                onStart: function () {
+                    canIAnimate = false;
+                    screens[0].querySelector('.rama').classList.remove('rama--circle');
+                    gsap.to(ramaElements[1], {
+                        opacity: 1, duration: .5,
+                    });
+                    gsap.to(ramaElements[0], {
+                        opacity: 0, duration: .5,
+                    });
+                },
+                // scrollTrigger: {
+                //     trigger: firstScreenText[0],
+                //     start: 'top top',
+                //     end: '+=500',
+                //     pin: true,
+                //     scrub: true,
+                //     markers: true
+    
+                // }
+            }
+            );
         }
-    });
+    }
+    );
 
-    const tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: blueContainer,
-            start: 'top center', // Старт анимации, когда верх контейнера достигает центра экрана
-            end: 'bottom center', // Конец анимации, когда низ контейнера достигает центра экрана
-            scrub: true // Плавное изменение анимации при скролле
-        }
-    });
-
-    texts.forEach((text, index) => {
-        const offsetY = -index * 100;
-
-        tl.to(text, {
-            y: offsetY,
-            opacity: 0,
-            duration: 1,
-            onStart: () => {
-                text.style.zIndex = index * -1; // Поднимаем текcт наверх
-            }
-        });
-
-        tl.fromTo(text, { opacity: 0, y: 100 }, {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            onStart: () => {
-                text.style.zIndex = (index + 1) * -1; // Опускаем новый текст
-            }
-        });
-
-        tl.to(text, {
-            y: offsetY,
-            opacity: 0,
-            duration: 1,
-            onStart: () => {
-                text.style.zIndex = (index + 2) * -1; // Поднимаем новый текст наверх
-            }
-        });
-    });
-
-
-
+    // if (canIAnimate) {
 
 }
 

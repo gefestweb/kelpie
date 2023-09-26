@@ -107,3 +107,13 @@
 		text-transform: capitalize;
 	}
 }
+.sub-mob-menu {
+	display: flex;
+	flex-direction: column;
+	gap: 7px;
+}
+.sub-mob-menu__item {
+	font-size: 15px;
+	list-style-type: none;
+
+}

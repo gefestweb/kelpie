@@ -18,7 +18,7 @@ const header = () => {
 					headerLogo.classList.add("header__logo--mob-top");
 				}
 			} else {
-				if (window.scrollY > 3000) {
+				if (window.scrollY > 0) {
 					headerDesc.classList.add("active");
 				} else {
 					headerDesc.classList.remove("active");
@@ -31,12 +31,12 @@ const header = () => {
 	const submenuToggle = () => {
 
 		const subNavigation = {
-			'KELPI3 HOLOSTAND': {
+			'Kelpi3 holostand': {
 				'about': 'Описание',
 				'characteristics': 'Характеристики',
 				'video': 'Видео',
 				'rent': 'Аренда и контент',
-				'feedback': 'Контакты'
+				'portfolio': 'Портфолио'
 			}, 'Технологии': {
 				'1': '111',
 				'11': '111',
@@ -57,22 +57,29 @@ const header = () => {
 		}
 
 		function createSubmenu(menuItem) {
-
 			const submenu = document.querySelector('.header__submenu');
+			const mobMenuItems = document.querySelector('.mob-menu__nav').querySelectorAll('.mob-menu__items');
 			submenu.innerHTML = '';
-
 			const submenuItems = subNavigation[menuItem];
-
+			let mobSubMenu;
+			mobMenuItems.forEach(mobItem => {
+				if (mobItem.textContent == menuItem) {
+					mobSubMenu = mobItem.nextElementSibling;
+				}
+			})
 			for (let key in submenuItems) {
 				const a = document.createElement('a');
 				a.href = '#' + key;
-
 				const li = document.createElement('li');
-				li.className = 'menu__item menu-items-txt';
+				li.className = 'sub-mob-menu__item';
 				li.textContent = submenuItems[key];
-
 				a.appendChild(li);
 				submenu.appendChild(a);
+				if (mobSubMenu) {
+					console.log(mobSubMenu);
+					const aCopy = a.cloneNode(true);
+					mobSubMenu.appendChild(aCopy);
+				}
 			}
 		}
 
@@ -81,7 +88,7 @@ const header = () => {
 
 			switch (currentURL) {
 				case '/':
-					createSubmenu('KELPI3 HOLOSTAND');
+					createSubmenu('Kelpi3 holostand');
 					break;
 				case '/1':
 					createSubmenu('Технологии');
@@ -95,7 +102,7 @@ const header = () => {
 				case '/4':
 					createSubmenu('Контакты');
 					break;
-			} 
+			}
 		}
 		window.onload = checkURL;
 	}

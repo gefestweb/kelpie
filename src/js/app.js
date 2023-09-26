@@ -9,6 +9,9 @@ import gsapAnimate from "./modules/gsapAnimate.js";
 import header from "./modules/header.js";
 import navigation from "./modules/navigation.js";
 import modals from "./modules/modals.js";
+import test from "./modules/test.js";
+import animations from "./modules/animations.js"
+// import { controlVideo } from "./modules/video.js";
 
 mainFuncs.isWebp();
 
@@ -23,8 +26,10 @@ document.addEventListener("DOMContentLoaded", function () {
 		navigation();		
 	}, 5000);
 	modals();
+	// test();
 	// scrollByPixels();
 	if (window.matchMedia("(min-width: 1000px)").matches) {
+		// animations();
 		gsapAnimate();
 	}
 });

@@ -1,2 +1,5 @@
 node_modules
+.vscode
 src/html/test.html
+dist
+src\video\Kelpie Holostand Oled 55.webm

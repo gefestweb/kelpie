@@ -42,7 +42,7 @@ const mainTasks = gulp.parallel(copy, fonts2, html, scss, js, images, video);
 const beforeMainTasks = gulp.parallel(copy, html, scss, js, video);
 //Построение сценариев для выполнения задач
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
-const build = gulp.series(reset, mainTasks, ftp);
+const build = gulp.series(reset, mainTasks);
 const prevBuild = gulp.series(reset, beforeMainTasks);
 const deployZIP = gulp.series(reset, mainTasks, zip);
 const deployFTP = gulp.series(reset, mainTasks, ftp);

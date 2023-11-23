@@ -581,9 +581,9 @@ const gsapAnimate = () => {
     // Элементы с первого экрана
 
     const screens = document.querySelectorAll('.screen');
-    const firstScreenElements = screens[0].querySelectorAll('.animate-element');
-    const switcherNode = screens[0].querySelector('.switcher__toggler');
-    const ramaElements = screens[0].querySelector('.rama').querySelectorAll('.animate-element');
+    // const firstScreenElements = screens[0].querySelectorAll('.animate-element');
+    // const switcherNode = screens[0].querySelector('.switcher__toggler');
+    // const ramaElements = screens[0].querySelector('.rama').querySelectorAll('.animate-element');
     const firstScreenText = screens[0].querySelectorAll('.first-screen__first-title');
 
     // Элементы с первого доп экрана (второго)
@@ -768,25 +768,25 @@ const gsapAnimate = () => {
     // testFunction();
 
 
-    gsap.fromTo(firstScreenText[0], {
-        opacity: 1,
-        y: 0,
-        // transition: 1,
+    // gsap.fromTo(firstScreenText[0], {
+    //     opacity: 1,
+    //     y: 0,
+    //     // transition: 1,
 
-    }, {
-        opacity: 0,
-        y: -300,
-        scrollTrigger: {
-            trigger: screens[0],
-            start: "top top",
-            end: "+=300",
-            // pin: true,
-            scrub: true,
-        },
-        onStart: function () {
-            switcherNode.classList.toggle('switcher__toggler--scroll');
-        },
-    })
+    // }, {
+    //     opacity: 0,
+    //     y: -300,
+    //     scrollTrigger: {
+    //         trigger: screens[0],
+    //         start: "top top",
+    //         end: "+=300",
+    //         // pin: true,
+    //         scrub: true,
+    //     },
+    //     onStart: function () {
+    //         switcherNode.classList.toggle('switcher__toggler--scroll');
+    //     },
+    // })
 
 
     const dopScreen1Elements = screens[1].querySelectorAll('.animate-element');

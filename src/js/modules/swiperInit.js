@@ -38,8 +38,6 @@ export const swiperInit = () => {
             },
         });
     }
-    initSwiper1('.counterMain', '.swiper-container.rent-content-swiper')
-
 
     function initSwiper2(counterSelector, swiperSelector) {
         let counterElem = document.querySelector(counterSelector);
@@ -62,13 +60,17 @@ export const swiperInit = () => {
                     updateCounter(this, counterElem);
                 }
             },
-            autoplay: {
-                delay: 5000,
-            },
+            breakpoints: {
+                1000: {
+                    slidesPerView: 3,
+
+                }
+            }
+            // autoplay: {
+            //     delay: 5000,
+            // },
         });
     }
-    initSwiper2('.seventh-screen__counter', '.seventh-screen__swiper-container')
-
 
     function initSwiper3(counterSelector, swiperSelector) {
         let counterElem = document.querySelector(counterSelector);
@@ -108,9 +110,12 @@ export const swiperInit = () => {
                 //     return `<span class="${className}">${this.realIndex === index ? bulletActive : bulletInactive}</span>`;
                 // },
             },
-            
+
 
         });
     }
+
+    initSwiper1('.counterMain', '.swiper-container.rent-content-swiper')
+    initSwiper2('.seventh-screen__counter', '.seventh-screen__swiper-container')
     initSwiper3('.dop-screen__counter', '.dop-screen__swiper-container.swiper-container');
 }

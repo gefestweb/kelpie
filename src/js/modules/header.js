@@ -31,12 +31,13 @@ const header = () => {
 	const submenuToggle = () => {
 
 		const subNavigation = {
-			'Kelpi3 holostand': {
+			'Kelpie holostand': {
 				'about': 'Описание',
 				'characteristics': 'Характеристики',
 				'video': 'Видео',
 				'rent': 'Аренда и контент',
-				'portfolio': 'Портфолио'
+				'portfolio': 'Портфолио',
+				'feedback': 'Связаться'
 			}, 'Технологии': {
 				'1': '111',
 				'11': '111',
@@ -76,7 +77,6 @@ const header = () => {
 				a.appendChild(li);
 				submenu.appendChild(a);
 				if (mobSubMenu) {
-					console.log(mobSubMenu);
 					const aCopy = a.cloneNode(true);
 					mobSubMenu.appendChild(aCopy);
 				}
@@ -88,7 +88,7 @@ const header = () => {
 
 			switch (currentURL) {
 				case '/':
-					createSubmenu('Kelpi3 holostand');
+					createSubmenu('Kelpie holostand');
 					break;
 				case '/1':
 					createSubmenu('Технологии');
@@ -107,6 +107,61 @@ const header = () => {
 		window.onload = checkURL;
 	}
 	submenuToggle();
+
+	function activeSection() {
+		const headerSubnav = document.querySelector('.header__subnav');
+		let activeItemDefault = null;
+		const getSubmenuItem = setInterval(() => {
+
+			activeItemDefault = document.querySelector(".header__submenu").firstChild;
+			if (activeItemDefault) {
+				activeItemDefault.classList.add('active');
+				clearInterval(getSubmenuItem);
+			}
+		}, 100)
+
+
+		window.addEventListener("scroll", function () {
+			if (window.scrollY > 10) {
+				headerSubnav.classList.add('active');
+			} else {
+				headerSubnav.classList.remove('active');
+			}
+			let sections = document.querySelectorAll("section[id]");
+			let currentSection = null;
+			let activeItemDefault = document
+				.querySelector(".header__submenu")
+				.querySelectorAll('a');
+
+			sections.forEach(function (section) {
+				let rect = section.getBoundingClientRect();
+				if (rect.bottom >= 0 && rect.top <= window.innerHeight) {
+					currentSection = section;
+					// console.log(currentSection);
+
+				}
+			});
+
+			// Удалите класс активности из всех пунктов меню
+			let menuItems = document
+				.querySelector(".header__submenu")
+				.querySelectorAll('a');
+			menuItems.forEach(function (item) {
+				item.classList.remove("active");
+			});
+
+			// Добавьте класс активности к соответствующему пункту меню
+			if (currentSection) {
+				// console.log(currentSection);
+				let menuItem = document.querySelector('a[href="#' + currentSection.id + '"]');
+				// console.log(menuItem);
+				menuItem.classList.add("active");
+			}
+		});
+	}
+
+	activeSection();
+
 };
 export default header;
 

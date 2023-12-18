@@ -78,10 +78,10 @@ export const swiperInit = () => {
             modules: [Pagination],
             loop: true,
             slidesPerView: 1,
-            spaceBetween: 20,
+            spaceBetween: 30,
             speed: 450,
             effect: 'slide',
-            autoplay: true,
+            // autoplay: true,
             breakpoints: {
                 1000: {
                     slidesPerView: 2,

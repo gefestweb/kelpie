@@ -23,9 +23,10 @@
 	height: 100vh;
 
 	&__bcg {
-		background: url(../../img/Product-page/hero-bg.png) no-repeat center center / cover;
-		filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.2));
-		border-radius: 40px;
+		background: url(../../img/Product-page/hero-bg.png) lightgray 50% / cover no-repeat;
+		//fill: url('../../img/Product-page/hero-bg.png'), lightgray 50% / cover no-repeat;
+		filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.20));
+		border-radius: 30px;
 		overflow: hidden;
 	}
 
@@ -220,7 +221,7 @@
 		}
 
 		&__bcg {
-			border-radius: 11px;
+			border-radius: 30px;
 			// overflow: hidden;
 		}
 	}
@@ -229,7 +230,7 @@
 @media (max-width: 460px) {
 	.first-screen {
 		&__first-title {
-			font-size: 26px;
+			font-size: 36px;
 		}
 	}
 
@@ -646,12 +647,12 @@
 			gap: 50px;
 
 			h2 {
-				font-size: 20px;
+				font-size: 25px;
 				font-weight: 500;
 			}
 
 			p {
-				font-size: 12px;
+				font-size: 18px;
 				line-height: 161.5%;
 				letter-spacing: 0.4px;
 			}
@@ -1173,7 +1174,10 @@ body>main>main>div.content>section:nth-child(6) {
 		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
-		font-size: calc($index * 1.4);
+		//font-size: calc($index * 1.4);
+		font-size: 25px;
+		font-style: normal;
+		font-weight: 400;
 	}
 
 	&__content-wrapper {
@@ -1232,6 +1236,7 @@ body>main>main>div.content>section:nth-child(6) {
 		display: flex;
 		flex-direction: row;
 		width: 100%;
+		grid-gap: 10px;
 	}
 
 	&__key,
@@ -1356,17 +1361,17 @@ body>main>main>div.content>section:nth-child(6) {
 		font-weight: bold;
 	}
 
-	&::before {
-		content: "";
-		position: absolute;
-		width: 3px;
-		height: 3px;
-		border-radius: 100%;
-		background-color: #7c44a8;
-		left: 5px;
-		top: 50%;
-		transform: translateY(-50%);
-	}
+	//&::before {
+	//	content: "";
+	//	position: absolute;
+	//	width: 3px;
+	//	height: 3px;
+	//	border-radius: 100%;
+	//	background-color: #7c44a8;
+	//	left: 5px;
+	//	top: 50%;
+	//	transform: translateY(-50%);
+	//}
 }
 
 .rent-content__conditionals {
@@ -1395,6 +1400,10 @@ body>main>main>div.content>section:nth-child(6) {
 	&-tab {
 		width: max-content;
 		height: 38px;
+		&:nth-child(1) {
+			position: relative;
+			padding-right: 60px;
+		}
 
 		div:nth-child(3) {
 			font-size: 13px;
@@ -1487,7 +1496,26 @@ body>main>main>div.content>section:nth-child(6) {
 		&-swiper__nav {
 			max-width: 150px;
 		}
+		&__tab {
+			height: 27px;
+			font-size: 16px;
+			text-transform: lowercase;
+			font-weight: 400;
+		}
 	}
+	.tab-content__key {
+		font-size: 16px;
+		font-weight: 500;
+		text-transform: lowercase;
+		padding: 9px 20px;
+	}
+	.tab-content__value {
+		font-size: 16px;
+		font-weight: 500;
+		text-transform: lowercase;
+		padding: 9px 20px;
+	}
+
 
 	.sixth-screen {
 		.container-content {
@@ -1540,13 +1568,33 @@ body>main>main>div.content>section:nth-child(6) {
 
 		&__row {
 			flex-direction: column;
-
+			input {
+				border-radius: 11px;
+				border: 1px solid $purple-text;
+				padding: 12px 36px;
+				width: 100%;
+			}
 			&>p {
 				max-width: 285px;
 				text-align: center;
 			}
 		}
 	}
+	.near-form {
+		flex-direction: column;
+		flex-wrap: unset;
+		&>.second-screen__tab {
+			width: 100%;
+		}
+		&>.second-screen__tab {
+			justify-content: center;
+			&>.tab__key {
+				text-align: center;
+			}
+		}
+	}
+
+
 }
 
 @media(max-width: 500px) {
@@ -1604,7 +1652,8 @@ body>main>main>div.content>section:nth-child(6) {
 
 	.swiper-slide.seventh-screen__swiper-slide>img {
 		object-fit: cover;
-		border-radius: 40px;
+		border-radius: 30px;
+		filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.20));
 		// height: unset;
 	}
 
@@ -1670,7 +1719,7 @@ body>main>main>div.content>section:nth-child(6) {
 		width: calc(50% - 15px);
 		border-radius: 30px;
 		background: #fdfdfd;
-		box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.2);
+		box-shadow: 0px 0px 18px 0px rgba(35, 39, 121, 0.10);
 		overflow: hidden;
 		flex-direction: column;
 		justify-content: space-between;
@@ -1826,7 +1875,7 @@ body>main>main>div.content>section:nth-child(6) {
 @media (max-width: 700px) {
 	.dop-screen {
 		&__title {
-			font-size: 26px;
+			font-size: 25px;
 		}
 
 		&__desc {
@@ -1837,8 +1886,11 @@ body>main>main>div.content>section:nth-child(6) {
 
 @media (max-width: 550px) {
 	.dop-screen {
+		&__title {
+			font-size: 25px;
+		}
 		&__desc {
-			font-size: 11px;
+			font-size: 16px;
 		}
 
 		&__upper-part {
@@ -1849,13 +1901,13 @@ body>main>main>div.content>section:nth-child(6) {
 
 @media (max-width: 400px) {
 	.dop-screen {
-		&__desc {
-			font-size: 10px;
-		}
-
-		&__title {
-			font-size: 15px;
-		}
+		//&__desc {
+		//	font-size: 10px;
+		//}
+		//
+		//&__title {
+		//	font-size: 15px;
+		//}
 
 		&__downer-part {
 			height: 55%;

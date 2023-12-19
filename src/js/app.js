@@ -9,6 +9,7 @@ import gsapAnimate from "./modules/gsapAnimate.js";
 import header from "./modules/header.js";
 import navigation from "./modules/navigation.js";
 import modals from "./modules/modals.js";
+import iMask from "./modules/mask.js";
 import test from "./modules/test.js";
 import animations from "./modules/animations.js"
 // import { controlVideo } from "./modules/video.js";
@@ -22,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	oko();
 	ramaObserve();
 	header();
+	iMask();
 	setTimeout(() => {
 		navigation();		
 	}, 5000);

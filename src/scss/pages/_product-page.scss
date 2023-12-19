@@ -1162,7 +1162,7 @@ body>main>main>div.content>section:nth-child(6) {
 		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;
-		max-width: calc($index * 6.5);
+		max-width: calc($index * 7.5);
 		width: 100%;
 		// background: rgba(0, 0, 0, 0.60);
 		// filter: blur(25px);
@@ -1278,6 +1278,12 @@ body>main>main>div.content>section:nth-child(6) {
 			top: 50%;
 			transform: translateY(calc(-50% - 1px));
 		}
+	}
+}
+
+@media (max-width: 1000px) {
+	.tab-content__key::before {
+		display: none;
 	}
 }
 

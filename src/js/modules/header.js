@@ -26,7 +26,7 @@ const header = () => {
 			}
 		});
 	}
-	// headerToggle();
+	headerToggle();
 
 	const submenuToggle = () => {
 
@@ -88,25 +88,25 @@ const header = () => {
 
 			switch (currentURL) {
 				case '/':
-					// createSubmenu('Kelpie holostand');
+					createSubmenu('Kelpie holostand');
 					break;
 				case '/1':
-					// createSubmenu('Технологии');
+					createSubmenu('Технологии');
 					break;
 				case '/2':
-					// createSubmenu('Сценарии использования');
+					createSubmenu('Сценарии использования');
 					break;
 				case '/3':
-					// createSubmenu('Портфолио');
+					createSubmenu('Портфолио');
 					break;
 				case '/4':
-					// createSubmenu('Контакты');
+					createSubmenu('Контакты');
 					break;
 			}
 		}
 		window.onload = checkURL;
 	}
-	// submenuToggle();
+	submenuToggle();
 
 	function activeSection() {
 		const headerSubnav = document.querySelector('.header__subnav');
@@ -160,7 +160,7 @@ const header = () => {
 		});
 	}
 
-	// activeSection();
+	activeSection();
 
 };
 export default header;

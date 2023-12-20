@@ -18,17 +18,14 @@ const tabs = () => {
                     contentItem.style.display = 'none';
                 });
             }
-            // tabs[activeTab].classList.add(activeClass);
-            // hideContent();
-            // content[activeTab].style.display = displayProperty;
 
-            // Добавлено условие для исключения автоматического присваивания класса при первом рендере
-            // if (tabSelector !== '.four-screen__button') {
-            //     tabs[activeTab].classList.add(activeClass);
-            //     hideContent();
-            //     content[activeTab].style.display = displayProperty;
-            // }
-            hideContent();
+            if (tabSelector === '.four-screen__button') {
+                hideContent();
+            } else {
+                tabs[activeTab].classList.add(activeClass);
+                hideContent();
+                content[activeTab].style.display = displayProperty;
+            }
 
             tabs.forEach((tab, tabIndex) => {
 

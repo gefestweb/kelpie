@@ -26,7 +26,7 @@ const header = () => {
 			}
 		});
 	}
-	headerToggle();
+	// headerToggle();
 
 	const submenuToggle = () => {
 
@@ -106,31 +106,23 @@ const header = () => {
 		}
 		window.onload = checkURL;
 	}
-	submenuToggle();
+	// submenuToggle();
 
 	function activeSection() {
-		const headerSubnav = document.querySelector('.header__subnav');
-		let activeItemDefault = null;
-		const getSubmenuItem = setInterval(() => {
+		const headerNav = document.querySelector('.header__nav');
 
-			activeItemDefault = document.querySelector(".header__submenu").firstChild;
-			if (activeItemDefault) {
-				activeItemDefault.classList.add('active');
-				clearInterval(getSubmenuItem);
-			}
-		}, 100)
-
+		const activeItemDefault = Array.from(document.querySelectorAll(".header__menu a"));
+		if (activeItemDefault[0]) {
+			activeItemDefault[0].classList.add('active');
+		}
 
 		window.addEventListener("scroll", function () {
-			if (window.scrollY > 10) {
-				headerSubnav.classList.add('active');
-			} else {
-				headerSubnav.classList.remove('active');
-			}
+
+			headerNav.classList.add('active')
 			let sections = document.querySelectorAll("section[id]");
 			let currentSection = null;
 			let activeItemDefault = document
-				.querySelector(".header__submenu")
+				.querySelector(".header__menu")
 				.querySelectorAll('a');
 
 			sections.forEach(function (section) {
@@ -138,13 +130,12 @@ const header = () => {
 				if (rect.bottom >= 0 && rect.top <= window.innerHeight) {
 					currentSection = section;
 					// console.log(currentSection);
-
 				}
 			});
 
 			// Удалите класс активности из всех пунктов меню
 			let menuItems = document
-				.querySelector(".header__submenu")
+				.querySelector(".header__menu")
 				.querySelectorAll('a');
 			menuItems.forEach(function (item) {
 				item.classList.remove("active");
@@ -154,14 +145,13 @@ const header = () => {
 			if (currentSection) {
 				// console.log(currentSection);
 				let menuItem = document.querySelector('a[href="#' + currentSection.id + '"]');
-				// console.log(menuItem);
-				menuItem.classList.add("active");
+				if(menuItem) {
+					menuItem.classList.add("active");
+				}
 			}
 		});
 	}
-
 	activeSection();
-
 };
 export default header;
 

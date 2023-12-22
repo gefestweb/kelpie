@@ -31,6 +31,8 @@ const navigation = () => {
         });
     });
 
+    let lastScrollPosition = window.pageYOffset;
+
     toTopBtn.addEventListener('click', () => {
         window.scrollBy({
             top: -window.pageYOffset,
@@ -39,15 +41,31 @@ const navigation = () => {
     })
 
     window.addEventListener('scroll', function () {
-        if (window.pageYOffset > 4000) {
+        const currentScrollPosition = window.pageYOffset;
+
+        if (currentScrollPosition > 4000 && currentScrollPosition < lastScrollPosition) {
             toTopBtn.style.opacity = 1;
             toTopBtn.style.pointerEvents = 'auto';
-
         } else {
             toTopBtn.style.opacity = 0;
             toTopBtn.style.pointerEvents = 'none';
         }
+
+        // Обновление позиции скролла
+        lastScrollPosition = currentScrollPosition;
     });
+
+
+    // window.addEventListener('scroll', function () {
+    //     if (window.pageYOffset > 4000) {
+    //         toTopBtn.style.opacity = 1;
+    //         toTopBtn.style.pointerEvents = 'auto';
+    //
+    //     } else {
+    //         toTopBtn.style.opacity = 0;
+    //         toTopBtn.style.pointerEvents = 'none';
+    //     }
+    // });
 }
 
 export default navigation;

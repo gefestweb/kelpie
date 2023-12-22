@@ -9,12 +9,14 @@ const oko = () => {
 
         let formInputs = customForm.querySelectorAll('input'),
             formName = customForm.querySelector('input[type="text"]'),
-            formPhone = customForm.querySelector('input[type="number"]'),
+            formPhone = customForm.querySelectorAll('input[type="text"]')[1],
+            // formPhone = customForm.querySelector('input[type="number"]'),
             formEmail = customForm.querySelector('input[type="email"]'),
             formButton = customForm.querySelector('button[type="submit"]');
 
         let okoName = okoForm.querySelector('input[type="text"]'),
-            okoPhone = okoForm.querySelector('input[type="number"]'),
+            okoPhone = okoForm.querySelectorAll('input[type="text"]')[1],
+            // okoPhone = okoForm.querySelector('input[type="number"]'),
             okoEmail = okoForm.querySelector('input[type="email"]'),
             okoButton = okoForm.querySelector('button');
 
@@ -29,7 +31,8 @@ const oko = () => {
                         okoName.value = event.target.value;
                         break;
                     case formPhone:
-                        okoPhone = okoForm.querySelector('input[type="number"]');
+                        // okoPhone = okoForm.querySelector('input[type="number"]');
+                        okoPhone = okoForm.querySelectorAll('input[type="text"]')[1];
                         okoPhone.value = event.target.value;
                         break;
                     case formEmail:

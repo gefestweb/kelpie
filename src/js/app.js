@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	swiperInit();
 	tabs();
 	oko();
-	ramaObserve();
+	// ramaObserve();
 	header();
 	iMask();
 	setTimeout(() => {

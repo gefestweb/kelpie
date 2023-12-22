@@ -606,7 +606,7 @@ const gsapAnimate = () => {
     // Элементы с четвертого экрана
 
     const fourRamaItems = screens[4].querySelectorAll('.four-screen__rama-item');
-    const fourRamaBlur = screens[4].querySelector('.four-screen__rama-blur');
+    // const fourRamaBlur = screens[4].querySelector('.four-screen__rama-blur');
 
     // Элементы с пятото экрана
 
@@ -1041,18 +1041,18 @@ const gsapAnimate = () => {
 
     const tline4 = gsap.timeline();
 
-    tline4.to(screens[4], {
-        delay: 1,
-        onStart: function () {
-            fourRamaBlur.classList.add('four-screen__rama-blur--full-blur');
-        },
-        onReverseComplete: function () {
-            fourRamaBlur.classList.remove('four-screen__rama-blur--full-blur');
-        },
-        onComplete: () => {
-            // screenScroll();
-        }
-    });
+    // tline4.to(screens[4], {
+    //     delay: 1,
+    //     onStart: function () {
+    //         fourRamaBlur.classList.add('four-screen__rama-blur--full-blur');
+    //     },
+    //     onReverseComplete: function () {
+    //         fourRamaBlur.classList.remove('four-screen__rama-blur--full-blur');
+    //     },
+    //     onComplete: () => {
+    //         // screenScroll();
+    //     }
+    // });
 
     // ScrollTrigger.create({
     //     trigger: screens[4],

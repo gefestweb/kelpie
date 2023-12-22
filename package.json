@@ -57,5 +57,7 @@
     "webpack": "^5.88.2",
     "webpack-stream": "^7.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "imask": "^7.2.1"
+  }
 }

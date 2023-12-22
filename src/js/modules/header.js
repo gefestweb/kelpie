@@ -26,13 +26,13 @@ const header = () => {
 			}
 		});
 	}
-	// headerToggle();
+	headerToggle();
 
 	const submenuToggle = () => {
 
 		const subNavigation = {
 			'Kelpie holostand': {
-				'holostand': 'Описание',
+				'about': 'Описание',
 				'characteristics': 'Характеристики',
 				'video': 'Видео',
 				'rent': 'Аренда и контент',
@@ -106,23 +106,31 @@ const header = () => {
 		}
 		window.onload = checkURL;
 	}
-	// submenuToggle();
+	submenuToggle();
 
 	function activeSection() {
-		const headerNav = document.querySelector('.header__nav');
+		const headerSubnav = document.querySelector('.header__subnav');
+		let activeItemDefault = null;
+		const getSubmenuItem = setInterval(() => {
 
-		const activeItemDefault = Array.from(document.querySelectorAll(".header__menu a"));
-		if (activeItemDefault[0]) {
-			activeItemDefault[0].classList.add('active');
-		}
+			activeItemDefault = document.querySelector(".header__submenu").firstChild;
+			if (activeItemDefault) {
+				activeItemDefault.classList.add('active');
+				clearInterval(getSubmenuItem);
+			}
+		}, 100)
+
 
 		window.addEventListener("scroll", function () {
-
-			headerNav.classList.add('active')
+			if (window.scrollY > 10) {
+				headerSubnav.classList.add('active');
+			} else {
+				headerSubnav.classList.remove('active');
+			}
 			let sections = document.querySelectorAll("section[id]");
 			let currentSection = null;
 			let activeItemDefault = document
-				.querySelector(".header__menu")
+				.querySelector(".header__submenu")
 				.querySelectorAll('a');
 
 			sections.forEach(function (section) {
@@ -130,12 +138,13 @@ const header = () => {
 				if (rect.bottom >= 0 && rect.top <= window.innerHeight) {
 					currentSection = section;
 					// console.log(currentSection);
+
 				}
 			});
 
 			// Удалите класс активности из всех пунктов меню
 			let menuItems = document
-				.querySelector(".header__menu")
+				.querySelector(".header__submenu")
 				.querySelectorAll('a');
 			menuItems.forEach(function (item) {
 				item.classList.remove("active");
@@ -145,13 +154,14 @@ const header = () => {
 			if (currentSection) {
 				// console.log(currentSection);
 				let menuItem = document.querySelector('a[href="#' + currentSection.id + '"]');
-				if(menuItem) {
-					menuItem.classList.add("active");
-				}
+				// console.log(menuItem);
+				menuItem.classList.add("active");
 			}
 		});
 	}
+
 	activeSection();
+
 };
 export default header;
 

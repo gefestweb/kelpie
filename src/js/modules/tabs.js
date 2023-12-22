@@ -27,9 +27,21 @@ const tabs = () => {
                 content[activeTab].style.display = displayProperty;
             }
 
+            function handleClickOutside(event) {
+                const isInsideTab = event.target.closest(tabSelector);
+
+                if (!isInsideTab) {
+                    removeActiveTabClass();
+                    hideContent();
+                }
+            }
+
+            document.addEventListener('click', handleClickOutside);
+
             tabs.forEach((tab, tabIndex) => {
 
-                tab.addEventListener('click', () => {
+                tab.addEventListener('click', (event) => {
+                    event.stopPropagation();
                     removeActiveTabClass();
                     hideContent();
                     tab.classList.add(activeClass);

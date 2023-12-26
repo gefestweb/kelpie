@@ -30,8 +30,20 @@
     background-color: transparent;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     color: $purple-text;
+    transition: 0.3s all;
+}
 
+.button.button_transparent:hover {
+    border: 1px solid rgba(154, 125, 192, 0.80);
+    color: rgba(154, 125, 192, 0.80);
+    filter:(rgba(154, 125, 192, 0.8));
+}
 
+.button.button_transparent:active {
+    border: 1px solid rgba(82, 11, 174, 0.80);
+    color: #ffff;
+    background-color: #B081CB;
+    transition: 0.3s all;
 }
 
 .button.button_purple-text {
@@ -45,6 +57,16 @@
             max-width: 320px;
         }
     }
+}
+
+.button.button_purple-text:hover {
+    background: rgba(139, 118, 145, 1);
+    color: rgba(188, 188, 188, 1);
+}
+
+.button.button_purple-text:active {
+    background: linear-gradient(84deg, #1D0C33 1.12%, #654293 134.38%);
+    color: #fff;
 }
 
 .button_submit {

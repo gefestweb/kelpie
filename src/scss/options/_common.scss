@@ -203,3 +203,15 @@
 a:hover {
 	opacity: 0.8;
 }
+
+.d {
+	&-flex {
+		display: flex;
+	}
+}
+
+.flex {
+	&-dc {
+		flex-direction: column;
+	}
+}

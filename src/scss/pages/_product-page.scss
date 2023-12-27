@@ -808,7 +808,7 @@
 	.four-screen {
 		&__rama {
 			// max-width: calc($index * 18);
-			bottom: -11px;
+			//bottom: -11px;
 			height: 100%;
 
 			&::before {
@@ -829,16 +829,18 @@
 	.four-screen {
 		&__bcg {
 			border-radius: 11px;
-			overflow: hidden;
+			//overflow: hidden;
+			overflow: initial;
 		}
 
 		&__rama {
 			// max-width: calc($index * 18);
 			// bottom: -11px;
 			// height: 100%;
-			margin-top: 20px;
+			//margin-top: 20px;
 			position: relative;
 			transform: none;
+			bottom: 0;
 			left: unset;
 
 			&::before {
@@ -873,24 +875,48 @@
 				gap: 15px;
 			}
 		}
+
+		&__button p {
+			font-size: calc((1vw + 1vh) * 0.9);
+		}
 	}
 }
 
 @media (max-width: 1000px) {
 	.four-screen {
 		&__rama-item {
-			width: 80%;
+			//width: 80%;
+			width: 40%;
 			max-width: 400px;
 			transform: translate(-45%, -50%);
 		}
 
 		&__buttons {
 			top: unset;
-			bottom: 60px;
-			transform: translateX(-43%);
+			//bottom: 60px;
+			bottom: -185px;
+			//transform: translateX(-43%);
+			transform: translateX(-50%);
 			left: 50%;
-			max-width: calc(100% - 100px);
+			//max-width: calc(100% - 100px);
+			max-width: 100%;
 			gap: 15px;
+		}
+
+		&__container-mob {
+			padding-bottom: 180px;
+		}
+	}
+}
+
+@media (max-width: 680px) {
+	.four-screen {
+		&__bcg {
+			padding: 0 20px;
+		}
+
+		&__rama-item {
+			width: 60%;
 		}
 	}
 }

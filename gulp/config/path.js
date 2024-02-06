@@ -15,7 +15,7 @@ export const path={
             video:`${buildFolder}/video/`,
         },
         src:{
-            img: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp}`,
+            img: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp,ico}`,
             svg:`${srcFolder}/img/**/*.svg`,
             js: `${srcFolder}/js/app.js`,
             scrollSmoother: `${srcFolder}/js/scrollSmoother.js`,

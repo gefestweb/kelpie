@@ -341,7 +341,8 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	padding: 10px 40px;
+	padding: 10px 30px;
+	position: relative;
 
 	background-color: rgba(120, 113, 165, 0.12);
 	border-radius: 27px;
@@ -350,8 +351,17 @@
 	&__dot {
 		width: 6px;
 		height: 6px;
+		position: absolute;
+		left: 15px;
+		top: 50%;
+		transform: translate(-50%, -50%);
 		background-color: $purple-text;
 		border-radius: 100%;
+
+		//width: 6px;
+		//height: 6px;
+		//background-color: $purple-text;
+		//border-radius: 100%;
 	}
 
 	&__key {
@@ -360,6 +370,10 @@
 		font-weight: 600;
 		text-transform: uppercase;
 		letter-spacing: 0.6px;
+
+		&--four-screen {
+			color: #fff;
+		}
 	}
 
 	&__value {
@@ -367,6 +381,7 @@
 		font-style: normal;
 		font-weight: bold;
 		letter-spacing: 0.84px;
+		line-height: 130%;
 		background: $pink-to-purple;
 		-webkit-text-fill-color: transparent;
 		background-clip: text;
@@ -401,11 +416,11 @@
 		}
 
 		&__button {
-			max-width: calc($index * 9);
+			//max-width: calc($index * 9);
 			font-size: 8px;
-			letter-spacing: 0.26px;
-			text-transform: capitalize;
-			padding: 3px 0;
+			//letter-spacing: 0.26px;
+			//text-transform: capitalize;
+			//padding: 5px 0;
 
 			&:nth-child(2) {
 				background: rgba(29, 12, 51, 0.8);
@@ -419,8 +434,13 @@
 		gap: 5.5px;
 
 		&__dot {
-			width: 3.2px;
-			height: 3.2px;
+			width: 5px;
+			height: 5px;
+			left: 10px;
+
+			&--rent	{
+				left: 15px;
+			}
 		}
 
 		&__key {
@@ -487,9 +507,9 @@
 			width: 6px;
 			height: 6px;
 			position: absolute;
-			left: 10px;
+			left: 15px;
 			top: 50%;
-			transform: translateY(-50%);
+			transform: translate(-50%, -50%);
 		}
 
 		&__key {
@@ -572,6 +592,7 @@
 		position: absolute;
 		opacity: 0;
 		max-width: 1072px;
+		width: calc(100% - 10px);
 
 		h2 {
 			// font-size: calc($index * .9);
@@ -750,7 +771,8 @@
 		left: 50%;
 		top: 50%;
 		transform: translate(-43%, -45%);
-		width: 21%;
+		max-width: 450px;
+		width: 35%;
 	}
 
 	&__buttons {
@@ -762,7 +784,7 @@
 		width: 100%;
 		top: calc(50% + 55px);
 		transform: translateY(-50%);
-		right: 10%;
+		right: 0;
 	}
 
 	&__button {
@@ -775,7 +797,8 @@
 
 		&--active {
 			border-radius: 20px;
-			background: linear-gradient(90deg, #3926ad 0%, #c367d6 100%) !important;
+			//background: linear-gradient(90deg, #3926ad 0%, #c367d6 100%) !important;
+			background: #8322cf !important;
 			/* нажатая кнопка */
 			//box-shadow: 0px 3px 7px 4px rgba(23, 4, 47, 0.25),
 			//	0px -3px 4px 0px rgba(239, 175, 255, 0.19);
@@ -790,16 +813,17 @@
 	}
 
 	&__button:hover {
-		background: rgba(139, 118, 145, 1);
+		//background: rgba(139, 118, 145, 1);
+		background: #8322cf;
 		color: rgba(188, 188, 188, 1);
 		transition: 0.3s all;
 	}
 }
 
-@media (max-width: 1400px) {
+@media (min-width: 1400px) {
 	.four-screen {
-		&__buttons {
-			right: 5%;
+		&__rama-item {
+			max-width: 725px;
 		}
 	}
 }
@@ -876,8 +900,10 @@
 			}
 		}
 
-		&__button p {
-			font-size: calc((1vw + 1vh) * 0.9);
+		&__button  {
+			p {
+				font-size: calc((1vw + 1vh) * 0.9);
+			}
 		}
 	}
 }
@@ -885,13 +911,13 @@
 @media (max-width: 1000px) {
 	.four-screen {
 		&__rama-item {
-			//width: 80%;
-			width: 40%;
-			max-width: 400px;
-			transform: translate(-45%, -50%);
+			width: 80%;
+			max-width: 300px;
+			transform: translate(-44%, -50%);
 		}
 
 		&__buttons {
+			align-items: center;
 			top: unset;
 			//bottom: 60px;
 			bottom: -185px;
@@ -899,7 +925,8 @@
 			transform: translateX(-50%);
 			left: 50%;
 			//max-width: calc(100% - 100px);
-			max-width: 100%;
+			max-width: 320px;
+			width: 100%;
 			gap: 15px;
 		}
 
@@ -915,8 +942,20 @@
 			padding: 0 20px;
 		}
 
+		//&__rama-item {
+		//	width: 50%;
+		//}
+	}
+}
+
+@media (max-width: 450px) {
+	.four-screen {
+		&__bcg {
+			padding: 0 20px;
+		}
+
 		&__rama-item {
-			width: 60%;
+			width: 80%;
 		}
 	}
 }
@@ -1292,12 +1331,12 @@ body>main>main>div.content>section:nth-child(6) {
 
 	&__key,
 	&__value {
-		padding: 15px 20px;
+		padding: 9px 20px;
 	}
 
 	&__value {
 		width: 100%;
-		border-radius: 27px;
+		border-radius: 20px;
 		background: #8322cf;
 		color: white;
 		text-align: center;
@@ -1309,7 +1348,7 @@ body>main>main>div.content>section:nth-child(6) {
 		max-width: 167px;
 		width: 100%;
 		text-align: center;
-		border-radius: 27px;
+		border-radius: 20px;
 		background: #eee;
 		text-transform: uppercase;
 		font-size: 10px;
@@ -1367,7 +1406,7 @@ body>main>main>div.content>section:nth-child(6) {
 		input {
 			border-radius: 20px;
 			border: 1px solid $purple-text;
-			padding: 12px 20px;
+			padding: 9px 20px;
 			width: 100%;
 		}
 
@@ -1479,9 +1518,13 @@ body>main>main>div.content>section:nth-child(6) {
 		height: 6px;
 		border-radius: 100%;
 		background-color: #7c44a8;
-		left: -20px;
+		left: -15px;
 		top: 50%;
-		transform: translateY(-50%);
+		transform: translate(-50%, -50%);
+	}
+
+	&__tab-dot--four-screen:before {
+		background-color: #fff;
 	}
 }
 
@@ -1701,7 +1744,7 @@ body>main>main>div.content>section:nth-child(6) {
 //Седьмой экран
 
 .seventh-screen {
-	margin: 20px 0;
+	margin: 130px 0;
 	&__bcg {
 		// background: url(../../img/Product-page/7-screen-bg1.png) no-repeat top center / cover;
 		filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.2));
@@ -1833,7 +1876,7 @@ body>main>main>div.content>section:nth-child(6) {
 		// position: absolute;
 		// bottom: -100px;
 		width: 100%;
-		height: 50%;
+		height: 70%;
 		// position: absolute;
 		// bottom: 0;
 	}
@@ -1896,9 +1939,9 @@ body>main>main>div.content>section:nth-child(6) {
 
 @media (max-width: 1440px) {
 	.dop-screen {
-		&__downer-part {
-			height: 50%;
-		}
+		//&__downer-part {
+		//	height: 50%;
+		//}
 
 		&__title {
 			font-size: 30px;
@@ -1911,11 +1954,11 @@ body>main>main>div.content>section:nth-child(6) {
 }
 
 @media (max-width: 1200px) {
-	.dop-screen {
-		&__downer-part {
-			height: 50%;
-		}
-	}
+	//.dop-screen {
+	//	&__downer-part {
+	//		height: 50%;
+	//	}
+	//}
 }
 
 @media (max-width: 1024px) {
@@ -1985,7 +2028,7 @@ body>main>main>div.content>section:nth-child(6) {
 		//}
 
 		&__downer-part {
-			height: 55%;
+			height: 30%;
 		}
 	}
 }

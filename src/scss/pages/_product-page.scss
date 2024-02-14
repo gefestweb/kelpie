@@ -333,6 +333,9 @@
 
 		&:nth-child(2) {
 			background: rgba(29, 12, 51, 0.8);
+			&:hover {
+
+			}
 		}
 	}
 }
@@ -357,6 +360,7 @@
 		transform: translate(-50%, -50%);
 		background-color: $purple-text;
 		border-radius: 100%;
+		padding-top: 2px;
 
 		//width: 6px;
 		//height: 6px;
@@ -370,19 +374,22 @@
 		font-weight: 600;
 		text-transform: uppercase;
 		letter-spacing: 0.6px;
+		line-height: 0;
+		padding-top: 2px;
 
 		&--four-screen {
 			color: #fff;
+			line-height: normal;
 		}
 	}
-
+	
 	&__value {
 		font-size: 14px;
 		font-style: normal;
 		font-weight: bold;
 		letter-spacing: 0.84px;
-		line-height: 130%;
-		background: $pink-to-purple;
+		// line-height: 130%;
+		background: #3e304e;
 		-webkit-text-fill-color: transparent;
 		background-clip: text;
 	}
@@ -785,45 +792,76 @@
 		top: calc(50% + 55px);
 		transform: translateY(-50%);
 		right: 0;
+
 	}
 
 	&__button {
+		position: relative;
 		padding: 10px 0;
 		align-items: center;
 		background-color: #3e304e;
 		text-transform: none;
 		//box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.2);
 		transition: 0.3s all;
-
-		&--active {
-			border-radius: 20px;
-			//background: linear-gradient(90deg, #3926ad 0%, #c367d6 100%) !important;
-			background: #8322cf !important;
-			/* нажатая кнопка */
-			//box-shadow: 0px 3px 7px 4px rgba(23, 4, 47, 0.25),
-			//	0px -3px 4px 0px rgba(239, 175, 255, 0.19);
+		&:nth-child(2) {
+			.four-screen__icons {
+				top: 45%;
+			}
 		}
-
-		p {
-			color: #fff;
-			font-size: calc($index * 0.45);
-			font-weight: normal;
-			letter-spacing: 0.26px;
+		&:nth-child(1) {
+			.four-screen__icons {
+				width: 26px;
+				left: 10px;
+			}
 		}
+		// &::before {
+		// 	content: "";
+		// 	position: absolute;
+		// 	width: 6px;
+		// 	height: 6px;
+		// 	border-radius: 100%;
+		// 	background-color: #7c44a8;
+		// 	left: 25px;
+		// }
+		// &--active {
+		// 	border-radius: 20px;
+		// 	//background: linear-gradient(90deg, #3926ad 0%, #c367d6 100%) !important;
+		// 	background: #8322cf !important;
+		// 	/* нажатая кнопка */
+		// 	//box-shadow: 0px 3px 7px 4px rgba(23, 4, 47, 0.25),
+		// 	//	0px -3px 4px 0px rgba(239, 175, 255, 0.19);
 	}
 
+	&__icons {
+		position: absolute;
+		left: 15px;
+		width: 15px;
+		&:nth-child(3) {
+			display: none;
+		}
+	}
+	
 	&__button:hover {
-		//background: rgba(139, 118, 145, 1);
-		background: #8322cf;
-		color: rgba(188, 188, 188, 1);
-		transition: 0.3s all;
+		@media(min-width: 1200px)  {
+			background: #8322cf;
+			color: rgba(188, 188, 188, 1);
+			transition: 0.3s all;
+		}
 	}
 }
 
 @media (min-width: 1400px) {
 	.four-screen {
 		&__rama-item {
-			max-width: 725px;
+			max-width: 385px;
+		}
+	}
+}
+
+@media (min-width: 1400px) {
+	.four-screen {
+		&__rama-item {
+			max-width: 385px;
 		}
 	}
 }
@@ -1356,6 +1394,7 @@ body>main>main>div.content>section:nth-child(6) {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		padding-top: 12px;
 
 		&::before {
 			content: "";
@@ -1493,7 +1532,7 @@ body>main>main>div.content>section:nth-child(6) {
 			column-gap: 45px;
 			row-gap: 6px;
 		}
-
+		
 		&-tab {
 			width: max-content;
 			height: 38px;
@@ -1505,29 +1544,24 @@ body>main>main>div.content>section:nth-child(6) {
 
 			div:nth-child(3) {
 				font-size: 13px;
+				padding-top: 2px;
 			}
 		}
 	}
 	&__tab-dot {
-		position: relative;
-	}
-	&__tab-dot::before {
-		content: "";
-		position: absolute;
-		width: 6px;
-		height: 6px;
-		border-radius: 100%;
-		background-color: #7c44a8;
-		left: -15px;
-		top: 50%;
-		transform: translate(-50%, -50%);
+		// position: relative;
 	}
 
 	&__tab-dot--four-screen:before {
 		background-color: #fff;
 	}
 }
+.tab__value.spans-highlight {
 
+}
+.tab__value.spans-highlight.sq {
+	padding-bottom: 6px;
+}
 @media (max-width: 1600px) {
 	.rent-content-form__row {
 		flex-direction: column;
@@ -1614,9 +1648,7 @@ body>main>main>div.content>section:nth-child(6) {
 			max-width: 150px;
 		}
 		&__tab {
-			height: 27px;
-			font-size: 16px;
-			//text-transform: lowercase;
+			font-size: 13px;
 			font-weight: 400;
 		}
 	}
@@ -1744,7 +1776,7 @@ body>main>main>div.content>section:nth-child(6) {
 //Седьмой экран
 
 .seventh-screen {
-	margin: 130px 0;
+	// margin: 130px 0;
 	&__bcg {
 		// background: url(../../img/Product-page/7-screen-bg1.png) no-repeat top center / cover;
 		filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.2));

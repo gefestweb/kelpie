@@ -112,13 +112,17 @@ const header = () => {
 		const headerSubnav = document.querySelector('.header__subnav');
 		let activeItemDefault = null;
 		const getSubmenuItem = setInterval(() => {
+			try{
+				activeItemDefault = document.querySelector(".header__submenu").firstChild
+				if (activeItemDefault) {
+					activeItemDefault.classList.add('active');
+					clearInterval(getSubmenuItem);
+				}
+			} catch(e){
 
-			activeItemDefault = document.querySelector(".header__submenu").firstChild;
-			if (activeItemDefault) {
-				activeItemDefault.classList.add('active');
-				clearInterval(getSubmenuItem);
 			}
-		}, 100)
+		}, 100)	
+		
 
 
 		window.addEventListener("scroll", function () {

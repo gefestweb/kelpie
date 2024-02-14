@@ -39,34 +39,37 @@
     filter:(rgba(154, 125, 192, 0.8));
 }
 
-.button.button_transparent:active {
-    border: 1px solid rgba(82, 11, 174, 0.80);
-    color: #ffff;
-    background-color: #B081CB;
-    transition: 0.3s all;
-}
 
 .button.button_purple-text {
-    background: $purple-to-pink;
+    background: linear-gradient(57deg, #1D0C33 0%, #D283EA 100%);
     color: #fff;
+    transition: background 0.3s ease;
+    // position: relative;
+    //     overflow: hidden;
+    // &::before {
+    //     content: '';
+    //     position: absolute;
+    //     right: 0;
+    //     width: 100%;
+    //     height: 100%;
+    //     transition: .3s;
+    //     border-radius: inherit;
+    //     opacity: 0;
+    //     background-color: #C178D9
+    // }
+    // &:hover {
+    //     &::before {
+    //         opacity: 1;
+    //     }
+    // }
 
     &--submit {
-        //max-width: unset;
+    //max-width: unset;
         @media(max-width: 1000px) {
             font-size: 12px;
             max-width: 320px;
         }
     }
-}
-
-.button.button_purple-text:hover {
-    background: rgba(139, 118, 145, 1);
-    color: rgba(188, 188, 188, 1);
-}
-
-.button.button_purple-text:active {
-    background: linear-gradient(84deg, #1D0C33 1.12%, #654293 134.38%);
-    color: #fff;
 }
 
 .button_submit {
